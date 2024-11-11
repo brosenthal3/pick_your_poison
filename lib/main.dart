@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pick_your_poison/pages/home_page.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello People in the world!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage()
     );
   }
 }
