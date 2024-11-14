@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +49,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  DotsIndicator(currentIndex: currentIndex),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Row(
@@ -52,7 +60,15 @@ class HomePage extends StatelessWidget {
                                 backgroundColor: Colors.black,
                                 padding: EdgeInsets.symmetric(vertical: 20),
                               ),
-                              onPressed: () => print("PRESSED"),
+                              onPressed: (){
+                                setState(() {
+                                  if (currentIndex < 2) {
+                                    currentIndex += 1;
+                                  } else {
+                                    currentIndex = 0;
+                                  }
+                                });
+                              },
                               child: Text(
                                 "Continue",
                                 style: GoogleFonts.poppins(
@@ -71,6 +87,31 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+
+class DotsIndicator extends StatelessWidget {
+  final int currentIndex;
+
+  DotsIndicator({required this.currentIndex});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(3, (index) {
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 4.0),
+          width: 12.0,
+          height: 12.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: currentIndex == index ? Colors.black : Colors.grey,
+          ),
+        );
+      }),
     );
   }
 }
