@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'widgets.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,8 +8,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,34 +48,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  DotsIndicator(currentIndex: currentIndex),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Expanded(
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                padding: EdgeInsets.symmetric(vertical: 20),
-                              ),
-                              onPressed: (){
-                                setState(() {
-                                  if (currentIndex < 2) {
-                                    currentIndex += 1;
-                                  } else {
-                                    currentIndex = 0;
-                                  }
-                                });
-                              },
-                              child: Text(
-                                "Continue",
-                                style: GoogleFonts.poppins(
-                                  color:Colors.white,
-                                  fontSize: 20,
-                                )
-                              ),
-                            ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: HomeButton("Continue", startDesigner),
+                          ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: HomeButton("Tutorial", startTutorial),
                           ),
                         ],
                       ),
@@ -89,29 +72,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
-
-
-class DotsIndicator extends StatelessWidget {
-  final int currentIndex;
-
-  DotsIndicator({required this.currentIndex});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(3, (index) {
-        return Container(
-          margin: EdgeInsets.symmetric(horizontal: 4.0),
-          width: 12.0,
-          height: 12.0,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: currentIndex == index ? Colors.black : Colors.grey,
-          ),
-        );
-      }),
-    );
+  
+  startTutorial(){
+    Navigator.pushNamed(context, '/tutorial');
   }
+  startDesigner(){
+    Navigator.pushNamed(context, '/mushroom_designer');
+  }
+  
+  
 }
+

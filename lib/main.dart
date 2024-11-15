@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pick_your_poison/pages/home_page.dart';
+import 'package:pick_your_poison/pages/mushroom_designer.dart';
+import 'package:pick_your_poison/pages/tutorial.dart';
 
 
 void main() {
@@ -13,7 +15,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/tutorial': (context) => Tutorial(),
+        '/mushroom_designer': (context) => MushroomDesigner(),
+      }
     );
   }
 }
