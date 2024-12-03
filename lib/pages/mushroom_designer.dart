@@ -20,14 +20,14 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ElevatedButton(onPressed: goBack(), child: Text('Previous'))
+              currentPage == "cap" ? Container() : BackButton(onPressed: goBackward), // if currentPage is cap, don't show back button
               StandardText(currentPage, 25),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent[200],
                   padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                 ),
-                onPressed: 
+                onPressed: goForward,
                 child: Text(
                   currentPage == "other" ? "Predict" : "Next",
                   style: TextStyle(
@@ -57,10 +57,36 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
   }
 
   startPrediction(){
-    Navigator.pushNamed(context, '/prediction_page');
+    // TODO: perform API call to predict mushroom
+    Navigator.pushReplacementNamed(context, '/prediction_page');
   }
-}
 
+  goForward() {
+    setState(() {
+      if (currentPage == "cap") {
+        currentPage = "stem";
+      } else if (currentPage == "stem") {
+        currentPage = "gills";
+      } else if (currentPage == "gills") {
+        currentPage = "other";
+      } else {
+        startPrediction();
+      }
+    });
+  }
+  goBackward() {
+    setState(() {
+      if (currentPage == "other") {
+        currentPage = "gills";
+      } else if (currentPage == "stem") {
+        currentPage = "cap";
+      } else if (currentPage == "gills") {
+        currentPage = "stem";
+      }
+    });
+  }
+
+}
 
 
 class MushroomDesignerOptions extends StatelessWidget {
@@ -239,7 +265,7 @@ class DynamicMushroomDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Image(image: AssetImage("assets/mushroom_concept.png")),
+        Image(image: AssetImage("assets/mushroom_template.png"), height: 200),
         Text('Design your mushroom here!'),
       ],
     );
@@ -279,16 +305,3 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
   }
 }
 
-goForward() {
-  setState(() {
-    if (currentPage == "cap") {
-      currentPage = "stem";
-    } else if (currentPage == "stem") {
-      currentPage = "gills";
-    } else if (currentPage == "gills") {
-      currentPage = "other";
-    } else {
-      startPrediction();
-    }
-  });
-}

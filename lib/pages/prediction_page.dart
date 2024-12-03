@@ -36,7 +36,7 @@ class _PredictionPageState extends State<PredictionPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Center(
-                    child: Image(image: AssetImage("../assets/mushroom_concept.png")),
+                    child: Image(image: AssetImage("../assets/mushroom_template.png")),
                   ),
                   const SizedBox(height: 20),
                   Center(
@@ -61,13 +61,17 @@ class _PredictionPageState extends State<PredictionPage> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          child: HomeButton("Read More", (){}),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: HomeButton("Read More", getSpeciesPrediction),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: HomeButton("Start again", newMushroomDesign),
                           ),
                         ],
                       ),
@@ -80,5 +84,16 @@ class _PredictionPageState extends State<PredictionPage> {
       ),
     );
   }
+
+  getSpeciesPrediction(){
+    Navigator.pushNamed(context, '/species_page');
+  }
+
+  newMushroomDesign(){
+    Navigator.pushReplacementNamed(context, '/mushroom_designer');
+    // TODO: reset global state variables of mushroom features, or dont lol
+  }
+
 }
+
 

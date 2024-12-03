@@ -41,6 +41,7 @@ class _TutorialState extends State<Tutorial> {
       if (currentIndex < 3) {
         currentIndex += 1;
       } else {
+        print('Go to mushroom designer');
         Navigator.pushReplacementNamed(context, '/mushroom_designer');
       }
     });
@@ -52,16 +53,10 @@ class Tutorial1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Center(
-          child: Image(image: AssetImage("../assets/tutorial_1.0.png")),
-        ),
+    return
         Container(
           child: StandardText("Design your own mushroom", 20),
-        ),
-      ],
-    );
+        );
   }
 }
 
