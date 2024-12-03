@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class Tutorial extends StatefulWidget {
   const Tutorial({super.key});
@@ -41,7 +41,7 @@ class _TutorialState extends State<Tutorial> {
       if (currentIndex < 3) {
         currentIndex += 1;
       } else {
-        currentIndex = 0;
+        Navigator.pushReplacementNamed(context, '/mushroom_designer');
       }
     });
   }
@@ -58,14 +58,7 @@ class Tutorial1 extends StatelessWidget {
           child: Image(image: AssetImage("../assets/tutorial_1.0.png")),
         ),
         Container(
-          child: Text(
-              "Create your own mushroom!",
-              style: GoogleFonts.poppins(
-                color: Colors.black,
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+          child: StandardText("Design your own mushroom", 20),
         ),
       ],
     );
@@ -78,7 +71,7 @@ class Tutorial2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Find out if it could be POISONOUS or EDIBLE"),
+      child: StandardText("Find out if it could be \n POISONOUS or EDIBLE", 20),
     );
   }
 }
@@ -89,7 +82,7 @@ class Tutorial3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Our classification models gives you an idea of its safety"),
+      child: StandardText("Our classification models gives \n you an idea of its safety", 20),
     );
   }
 }
@@ -100,7 +93,7 @@ class Tutorial4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("See which real-life mushroom species your creation resembles"),
+      child: StandardText("See which real-life mushroom species \n your creation resembles", 20),
     );
   }
 }

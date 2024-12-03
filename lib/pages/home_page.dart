@@ -19,14 +19,7 @@ class _HomePageState extends State<HomePage> {
             const Center(
               child: Image(image: AssetImage("../assets/logo.png")),
             ),
-            Text(
-              "Welcome to the",
-              style: GoogleFonts.poppins(
-                color: Colors.black,
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            StandardText("Welcome to the", 25),
             Text(
               "Mushroom Designer",
               style: GoogleFonts.poppins(
@@ -89,10 +82,10 @@ class _HomePageState extends State<HomePage> {
   }
   
   startTutorial(){
-    Navigator.pushNamed(context, '/tutorial');
+    Navigator.pushReplacementNamed(context, '/tutorial');
   }
   startDesigner(){
-    Navigator.pushNamed(context, '/mushroom_designer');
+    Navigator.pushReplacementNamed(context, '/mushroom_designer');
   }
   
   

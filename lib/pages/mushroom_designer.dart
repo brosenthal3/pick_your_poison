@@ -16,36 +16,18 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
       appBar: AppBar(
         toolbarHeight: 150,
         title: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                currentPage,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700
-                )
-              ),
+              ElevatedButton(onPressed: goBack(), child: Text('Previous'))
+              StandardText(currentPage, 25),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent[200],
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                 ),
-                onPressed: () {
-                  setState(() {
-                    if (currentPage == "cap") {
-                      currentPage = "stem";
-                    } else if (currentPage == "stem") {
-                      currentPage = "gills";
-                    } else if (currentPage == "gills") {
-                      currentPage = "other";
-                    } else {
-                      startPrediction();
-                    }
-                  });
-                },
+                onPressed: 
                 child: Text(
                   currentPage == "other" ? "Predict" : "Next",
                   style: TextStyle(
@@ -78,6 +60,8 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     Navigator.pushNamed(context, '/prediction_page');
   }
 }
+
+
 
 class MushroomDesignerOptions extends StatelessWidget {
   const MushroomDesignerOptions({
@@ -293,4 +277,18 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
       ],
     ));
   }
+}
+
+goForward() {
+  setState(() {
+    if (currentPage == "cap") {
+      currentPage = "stem";
+    } else if (currentPage == "stem") {
+      currentPage = "gills";
+    } else if (currentPage == "gills") {
+      currentPage = "other";
+    } else {
+      startPrediction();
+    }
+  });
 }

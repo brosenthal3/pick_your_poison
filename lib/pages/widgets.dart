@@ -35,3 +35,14 @@ ElevatedButton MushroomOptionButton(String textInput, Function onPressed) {
     ),
   );
 }
+
+Text StandardText(String text, double size) {
+    return Text(
+        text,
+        style: GoogleFonts.poppins(
+          color: Colors.black,
+          fontSize: size,
+          fontWeight: FontWeight.w700,
+        ),
+      );
+}
