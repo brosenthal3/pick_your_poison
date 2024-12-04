@@ -125,7 +125,7 @@ class _CapOptionsState extends State<CapOptions> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ScrollableOptionsContainer(
       child: Column(
         children: [
             MushroomDesignerOptionsColumn(
@@ -175,30 +175,36 @@ class GillOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ScrollableOptionsContainer(
       child: Column(
-        children: [
-            MushroomDesignerOptionsColumn(
-              label: "Spacing",
-              options: [MushroomOptionButton("Option 1", () {}),
-              MushroomOptionButton("Option 2", () {}),
-              MushroomOptionButton("Option 3", () {})]
-            ),
-            const SizedBox(height: 20),
-            MushroomDesignerOptionsColumn(
-              label: "Size",
-              options: [MushroomOptionButton("Option 1", () {})]
-            ),
-            const SizedBox(height: 20),
-            MushroomDesignerOptionsColumn(
-              label: "Color",
-              options: [MushroomOptionButton("Option 1", () {}),
-              MushroomOptionButton("Option 2", () {}),
-              MushroomOptionButton("Option 3", () {})]
-            ),
-          ],
-        ),
-      );
+      children: [
+          MushroomDesignerOptionsColumn(
+            label: "Spacing",
+            options: [MushroomOptionButton("Option 1", () {}),
+            MushroomOptionButton("Option 2", () {}),
+            MushroomOptionButton("Option 3", () {})]
+          ),
+          const SizedBox(height: 20),
+          MushroomDesignerOptionsColumn(
+            label: "Size",
+            options: [MushroomOptionButton("Option 1", () {})]
+          ),
+          const SizedBox(height: 20),
+          MushroomDesignerOptionsColumn(
+            label: "Color",
+            options: [MushroomOptionButton("Option 1", () {}),
+            MushroomOptionButton("Option 2", () {}),
+            MushroomOptionButton("Option 3", () {})]
+          ),
+          MushroomDesignerOptionsColumn(
+            label: "Color",
+            options: [MushroomOptionButton("Option 1", () {}),
+            MushroomOptionButton("Option 2", () {}),
+            MushroomOptionButton("Option 3", () {})]
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -209,7 +215,7 @@ class StalkOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ScrollableOptionsContainer(
       child: Column(
         children: [
             MushroomDesignerOptionsColumn(
@@ -236,7 +242,7 @@ class OtherOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ScrollableOptionsContainer(
       child: Column(
         children: [
             MushroomDesignerOptionsColumn(
@@ -288,14 +294,9 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
       child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w700),
-          ),
-        const SizedBox(height: 10),
+        SizedBox(height: 20),
+        StandardText(label, 20),
+        const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: options 
@@ -305,3 +306,26 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
   }
 }
 
+class ScrollableOptionsContainer extends StatefulWidget {
+  Widget child;
+
+  ScrollableOptionsContainer({super.key, required this.child});
+
+  @override
+  State<ScrollableOptionsContainer> createState() => _ScrollableOptionsContainerState();
+}
+
+class _ScrollableOptionsContainerState extends State<ScrollableOptionsContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: const Color(0xFFF2EDE2),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: widget.child,
+        ),
+      ),
+    );
+  }
+}
