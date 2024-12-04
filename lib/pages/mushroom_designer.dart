@@ -307,7 +307,7 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
 }
 
 class ScrollableOptionsContainer extends StatefulWidget {
-  Widget child;
+  final Widget child;
 
   ScrollableOptionsContainer({super.key, required this.child});
 
