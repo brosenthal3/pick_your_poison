@@ -25,6 +25,7 @@ class MushroomFeaturesProvider with ChangeNotifier {
   Map<String, dynamic> get mushroomFeatures => _mushroomFeatures;
 
   void updateFeature(String category, String feature, dynamic value) {
+    print('feature updating');
     _mushroomFeatures[category][feature] = value;
     notifyListeners();
   }

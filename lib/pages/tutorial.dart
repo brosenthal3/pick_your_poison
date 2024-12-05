@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets.dart';
+import '../widgets/widgets.dart';
 
 
 class Tutorial extends StatefulWidget {

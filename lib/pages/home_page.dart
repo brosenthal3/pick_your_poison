@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'widgets.dart';
+import '../widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   @override

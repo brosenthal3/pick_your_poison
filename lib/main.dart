@@ -4,9 +4,16 @@ import 'package:pick_your_poison/pages/mushroom_designer.dart';
 import 'package:pick_your_poison/pages/tutorial.dart';
 import 'package:pick_your_poison/pages/prediction_page.dart';
 import 'package:pick_your_poison/pages/species_page.dart';
+import 'package:provider/provider.dart';
+import 'providers/mushroom_features.dart'; // Import the provider class
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => MushroomFeaturesProvider(),
+      child: const MainApp(),
+    )
+  );
 }
 
 class MainApp extends StatelessWidget {
