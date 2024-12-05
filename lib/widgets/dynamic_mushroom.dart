@@ -37,32 +37,34 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
     final mushroomFeatures = mushroomFeaturesProvider.mushroomFeatures;
 
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // cap and gills
         Stack(
+          alignment: Alignment.bottomCenter,
           children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                    colorMapper[mushroomFeatures["cap"]["color"]], // color overlay of cap
-                    BlendMode.modulate,
-                  ),
-                  child: SvgPicture.asset("../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg", fit: BoxFit.cover, height: 150),
-              ),
+            ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  colorMapper[mushroomFeatures["cap"]["color"]], // color overlay of cap
+                  BlendMode.modulate,
+                ),
+                child: SvgPicture.asset("../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg", fit: BoxFit.cover, height: 150),
             ),
-            // cap texture
-            SvgPicture.asset("../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.svg", fit: BoxFit.cover, height: 150),
             // gills
-            Positioned(
-              bottom: 10, left:85, right:90,
-              child: ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                    colorMapper[mushroomFeatures["gills"]["color"]], // color overlay of gills
-                    BlendMode.modulate,
-                  ),
-                  child: SvgPicture.asset("../assets/gills/${mushroomFeatures["gills"]["spacing"]}.svg", fit: BoxFit.cover, height: 50),
+            ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  colorMapper[mushroomFeatures["gills"]["color"]], // color overlay of gills
+                  BlendMode.modulate,
+                ),
+                child: SvgPicture.asset("../assets/gills/${mushroomFeatures["gills"]["spacing"]}.svg", fit: BoxFit.cover, width: 250),
+            ),
+            // cap texture, doesnt wanna work :(
+            ColorFiltered(
+              colorFilter: const ColorFilter.mode(
+                Colors.black, // color overlay of cap texture
+                BlendMode.modulate,
               ),
+              child: SvgPicture.asset("../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.svg", fit: BoxFit.cover, width: 150)
             ),
           ],
         ),

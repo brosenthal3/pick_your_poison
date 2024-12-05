@@ -140,7 +140,10 @@ class _CapOptionsState extends State<CapOptions> {
               label: "Shape",
               options: [MushroomOptionButton("Bell", () {}),
               MushroomOptionButton("Conical", () {}),
-              MushroomOptionButton("Convex", () {})]
+              MushroomOptionButton("Convex", () {}),
+              MushroomOptionButton("Flat", () {}),
+              MushroomOptionButton("Sunken", () {}),
+              MushroomOptionButton("Spherical", () {})]
             ),
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
@@ -161,14 +164,22 @@ class _CapOptionsState extends State<CapOptions> {
               label: "Surface",
               options: [MushroomOptionButton("Fibrous", () {}),
               MushroomOptionButton("Grooves", () {}),
-              MushroomOptionButton("Scaley", () {})]
+              MushroomOptionButton("Scaley", () {}),
+              MushroomOptionButton("Smooth", () {})]
             ),
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Color",
               options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
               MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
-              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");})]
+              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
+              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
+              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
+              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
+              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
+              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
+              ]
+
             ),
           ],
         ),
@@ -283,32 +294,35 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 20),
-        StandardText(label, 20),
-        const SizedBox(height: 15),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: options 
-        ),
-      ],
-    ));
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(height: 10),
+          StandardText(label, 20),
+          const SizedBox(height: 15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: options 
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+        ],
+      )
+    );
   }
 }
 
 
 
-class ScrollableOptionsContainer extends StatefulWidget {
+class ScrollableOptionsContainer extends StatelessWidget {
   final Widget child;
 
   ScrollableOptionsContainer({super.key, required this.child});
 
-  @override
-  State<ScrollableOptionsContainer> createState() => _ScrollableOptionsContainerState();
-}
-
-class _ScrollableOptionsContainerState extends State<ScrollableOptionsContainer> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -316,7 +330,7 @@ class _ScrollableOptionsContainerState extends State<ScrollableOptionsContainer>
         color: const Color(0xFFF2EDE2),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: widget.child,
+          child: child,
         ),
       ),
     );
