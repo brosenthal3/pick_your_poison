@@ -127,6 +127,12 @@ class _CapOptionsState extends State<CapOptions> {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
+
+    void updateMushroomFeatures(String feature, String value) {
+      mushroomFeaturesProvider.updateFeature("cap", feature, value);
+    }
+
     return ScrollableOptionsContainer(
       child: Column(
         children: [
@@ -160,9 +166,9 @@ class _CapOptionsState extends State<CapOptions> {
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Color",
-              options: [MushroomOptionButton("Black", () {}),
-              MushroomOptionButton("Brown", () {}),
-              MushroomOptionButton("Buff", () {})]
+              options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
+              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
+              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");})]
             ),
           ],
         ),
@@ -290,6 +296,8 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
     ));
   }
 }
+
+
 
 class ScrollableOptionsContainer extends StatefulWidget {
   final Widget child;

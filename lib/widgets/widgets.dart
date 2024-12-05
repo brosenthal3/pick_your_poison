@@ -19,13 +19,13 @@ ElevatedButton HomeButton(String text, Function onPressed) {
 }
 
 
-ElevatedButton MushroomOptionButton(String textInput, Function onPressed) {
+ElevatedButton MushroomOptionButton(String textInput, VoidCallback onPressed) {
     return ElevatedButton(
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.white30,
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
     ),
-    onPressed: () {},
+    onPressed: onPressed,
     child: Text(
       textInput,
       style: TextStyle(

@@ -33,7 +33,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
 
   @override
   Widget build(BuildContext context) {
-    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
+    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context, listen: true);
     final mushroomFeatures = mushroomFeaturesProvider.mushroomFeatures;
 
     return Column(
