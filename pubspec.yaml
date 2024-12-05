@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  provider: ^6.1.6
     
   #icons
   flutter_svg: ^2.0.14

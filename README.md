@@ -21,3 +21,19 @@ Our ML algorithms predict the most similar real-life mushroom species and its to
 * add asynch code to communicate with API during each global state change
 * integrate all information from predictions dynamically into the prediction pages
 * Include queries to more information about the species, or include data locally
+
+# Mushroom features overview:
+### Cap:
+- Shape: bell (b), conical (C), convex (x), flat (f), sunken (s), spherical (p)
+- Surface: fibrous (i), grooves (g), scaley (y), smooth (s)
+- Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+
+### Gill:
+- Spacing: close (c), crowded (d), none (f)
+- Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+
+### Stem: 
+- Ring: none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+- Root: swollen (s), bulbous (b), club (c), cup (u), equal (e), rhizomorphous (z), rooted (r)
+- color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+- Surface: fibrous (i), grooves (g), scaley (y), smooth (s), shiny (h), leathery (l), silky (k), sticky (t), wrinkled (w), fleshy (e)

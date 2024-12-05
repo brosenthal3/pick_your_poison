@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Center(
-                    child: Image(image: AssetImage("../assets/mushroom_template.png")),
+                    child: Image(image: AssetImage("../assets/mushroom_template.png")), // potentially animation of mushroom being designed
                   ),
                   Center(
                     child: Text(
