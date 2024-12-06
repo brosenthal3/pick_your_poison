@@ -66,10 +66,10 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
   goForward() {
     setState(() {
       if (currentPage == "cap") {
-        currentPage = "stem";
-      } else if (currentPage == "stem") {
         currentPage = "gills";
       } else if (currentPage == "gills") {
+        currentPage = "stem";
+      } else if (currentPage == "stem") {
         currentPage = "other";
       } else {
         startPrediction();
@@ -79,15 +79,14 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
   goBackward() {
     setState(() {
       if (currentPage == "other") {
-        currentPage = "gills";
-      } else if (currentPage == "stem") {
-        currentPage = "cap";
-      } else if (currentPage == "gills") {
         currentPage = "stem";
+      } else if (currentPage == "gills") {
+        currentPage = "cap";
+      } else if (currentPage == "stem") {
+        currentPage = "gills";
       }
     });
   }
-
 }
 
 // builds the correct options section based on the current stage
@@ -179,7 +178,6 @@ class _CapOptionsState extends State<CapOptions> {
               MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
               MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
               ]
-
             ),
           ],
         ),
@@ -195,33 +193,34 @@ class GillOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
+
+    void updateMushroomFeatures(String feature, String value) {
+      mushroomFeaturesProvider.updateFeature("gills", feature, value);
+    }
+
     return ScrollableOptionsContainer(
       child: Column(
       children: [
           MushroomDesignerOptionsColumn(
             label: "Spacing",
-            options: [MushroomOptionButton("Option 1", () {}),
-            MushroomOptionButton("Option 2", () {}),
-            MushroomOptionButton("Option 3", () {})]
-          ),
-          const SizedBox(height: 20),
-          MushroomDesignerOptionsColumn(
-            label: "Size",
-            options: [MushroomOptionButton("Option 1", () {})]
+            options: [MushroomOptionButton("None", () {}),
+            MushroomOptionButton("Close", () {}),
+            MushroomOptionButton("Distant", () {})]
           ),
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(
             label: "Color",
-            options: [MushroomOptionButton("Option 1", () {}),
-            MushroomOptionButton("Option 2", () {}),
-            MushroomOptionButton("Option 3", () {})]
-          ),
-          MushroomDesignerOptionsColumn(
-            label: "Color",
-            options: [MushroomOptionButton("Option 1", () {}),
-            MushroomOptionButton("Option 2", () {}),
-            MushroomOptionButton("Option 3", () {})]
-          ),
+            options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
+              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
+              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
+              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
+              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
+              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
+              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
+              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
+            ],
+          )
         ],
       ),
     );
@@ -235,21 +234,53 @@ class StalkOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
+
+    void updateMushroomFeatures(String feature, String value) {
+      mushroomFeaturesProvider.updateFeature("stem", feature, value);
+    }
+
     return ScrollableOptionsContainer(
       child: Column(
         children: [
             MushroomDesignerOptionsColumn(
-              label: "Surface",
-              options: [MushroomOptionButton("Option 1", () {}),
-              MushroomOptionButton("Option 2", () {}),
-              MushroomOptionButton("Option 3", () {})]
+              label: "Root",
+              //- Root: swollen (s), bulbous (b), club (c), cup (u), equal (e), rhizomorphous (z), rooted (r)
+              options: [MushroomOptionButton("Swollen", () {}),
+              MushroomOptionButton("Bulbous", () {}),
+              MushroomOptionButton("Cup", () {}),
+              MushroomOptionButton("Equal", () {}),
+              MushroomOptionButton("Rhizomorphous", () {}),
+              MushroomOptionButton("Rooted", () {}),
+              ]
             ),
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Color",
-              options: [MushroomOptionButton("Option 1", () {}),
-              MushroomOptionButton("Option 2", () {}),
-              MushroomOptionButton("Option 3", () {}),]
+              options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
+              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
+              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
+              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
+              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
+              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
+              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
+              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
+            ],
+            ),
+            const SizedBox(height: 20),
+            MushroomDesignerOptionsColumn(
+              label: "Surface",
+              //- Surface: fibrous (i), grooves (g), scaley (y), smooth (s), shiny (h), leathery (l), silky (k), sticky (t), wrinkled (w), fleshy (e)
+              options: [MushroomOptionButton("Fibrous", () {}),
+              MushroomOptionButton("Grooves", () {}),
+              MushroomOptionButton("Scaley", () {}),
+              MushroomOptionButton("Smooth", () {}),
+              MushroomOptionButton("Shiny", () {}),
+              MushroomOptionButton("Leathery", () {}),
+              MushroomOptionButton("Silky", () {}),
+              MushroomOptionButton("Sticky", () {}),
+              MushroomOptionButton("Wrinkled", () {}),
+              MushroomOptionButton("Fleshy", () {}),]
             ),
           ],
         ),
@@ -269,10 +300,34 @@ class OtherOptions extends StatelessWidget {
         children: [
             MushroomDesignerOptionsColumn(
               label: "Ring type",
-              options: [MushroomOptionButton("Option 1", () {}),
-              MushroomOptionButton("Option 2", () {}),
-              MushroomOptionButton("Option 3", () {}),
-              MushroomOptionButton("Option 4", () {})]
+              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
+              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+              options: [MushroomOptionButton("None", () {}),
+              MushroomOptionButton("Cobwebby", () {}),
+              MushroomOptionButton("Evenescent", () {})]
+            ),
+            MushroomDesignerOptionsColumn(
+              label: "Ring type",
+              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
+              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+              options: [MushroomOptionButton("Flaring", () {}),
+              MushroomOptionButton("Grooved", () {}),
+              MushroomOptionButton("Large", () {})]
+            ),
+            MushroomDesignerOptionsColumn(
+              label: "Ring type",
+              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
+              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+              options: [MushroomOptionButton("Pendant", () {}),
+              MushroomOptionButton("Sheathing", () {}),
+              MushroomOptionButton("Zone", () {})]
+            ),
+            MushroomDesignerOptionsColumn(
+              label: "Ring type",
+              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
+              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+              options: [MushroomOptionButton("Scaly", () {}),
+              MushroomOptionButton("Moveable", () {})]
             ),
           ],
         ),
