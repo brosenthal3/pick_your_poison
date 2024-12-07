@@ -8,12 +8,10 @@ import 'package:provider/provider.dart';
 import 'providers/mushroom_features.dart'; // Import the provider class
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => MushroomFeaturesProvider(),
-      child: const MainApp(),
-    )
-  );
+  runApp(ChangeNotifierProvider(
+    create: (context) => MushroomFeaturesProvider(),
+    child: const MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -22,15 +20,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/tutorial': (context) => Tutorial(),
-        '/mushroom_designer': (context) => MushroomDesigner(),
-        '/prediction_page': (context) => PredictionPage(),
-        '/species_page': (context) => SpeciesPredictionPage(),
-      }
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => HomePage(),
+          '/tutorial': (context) => Tutorial(),
+          '/mushroom_designer': (context) => MushroomDesigner(),
+          '/prediction_page': (context) => PredictionPage(),
+          '/species_page': (context) => SpeciesPredictionPage(),
+        });
   }
 }
