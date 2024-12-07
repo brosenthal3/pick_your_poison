@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../widgets/widgets.dart';
-
 
 class Tutorial extends StatefulWidget {
   const Tutorial({super.key});
@@ -20,23 +20,31 @@ class _TutorialState extends State<Tutorial> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFF2EDE2),
+          centerTitle: true,
+          elevation: 0.0,
+          toolbarHeight: 200,
+          title: const Center(
+            child: SvgPicture(
+              SvgAssetLoader("../assets/logo.svg"),
+              height: 100,
+            ),
+          ),
+        ),
         backgroundColor: const Color(0xFFF2EDE2),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Center(
-              child: Image(image: AssetImage("../assets/logo.png")),
-            ),
             tutorials[currentIndex],
             DotsIndicator(currentIndex: currentIndex),
             const SizedBox(height: 30),
             HomeButton("Continue", goThroughIndex)
           ],
-        )
-      );
+        ));
   }
 
-  goThroughIndex(){
+  goThroughIndex() {
     setState(() {
       if (currentIndex < 3) {
         currentIndex += 1;
@@ -53,10 +61,9 @@ class Tutorial1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        Container(
-          child: StandardText("Design your own mushroom", 20),
-        );
+    return Container(
+      child: StandardText("Design your own mushroom", 20),
+    );
   }
 }
 
@@ -77,7 +84,8 @@ class Tutorial3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: StandardText("Our classification models gives \n you an idea of its safety", 20),
+      child: StandardText(
+          "Our classification models gives \n you an idea of its safety", 20),
     );
   }
 }
@@ -88,7 +96,9 @@ class Tutorial4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: StandardText("See which real-life mushroom species \n your creation resembles", 20),
+      child: StandardText(
+          "See which real-life mushroom species \n your creation resembles",
+          20),
     );
   }
 }
