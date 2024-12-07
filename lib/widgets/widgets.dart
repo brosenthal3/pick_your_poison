@@ -17,6 +17,22 @@ ElevatedButton HomeButton(String text, Function onPressed) {
   );
 }
 
+ElevatedButton SkipButton(String text, Function onPressed) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+    ),
+    onPressed: () => onPressed(),
+    child: Text(text,
+        style: GoogleFonts.poppins(
+          color: Colors.black54,
+          fontSize: 17,
+          fontWeight: FontWeight.w600,
+        )),
+  );
+}
+
 ElevatedButton MushroomOptionButton(String textInput, VoidCallback onPressed) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
