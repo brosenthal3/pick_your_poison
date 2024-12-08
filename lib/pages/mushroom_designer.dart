@@ -16,11 +16,12 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 150,
+        toolbarHeight: 100,
+        backgroundColor: const Color(0xFFF2EDE2),
         title: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               currentPage == "cap" ? Container() : BackButton(onPressed: goBackward), // if currentPage is cap, don't show back button
               StandardText(currentPage, 25),
@@ -32,7 +33,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                 onPressed: goForward,
                 child: Text(
                   currentPage == "other" ? "Predict" : "Next",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                   ),
@@ -43,6 +44,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
         ),
       ),
       body: Container(
+        color: const Color(0xFFF2EDE2),
         child: Center(
           child: Column(
             children: [
@@ -50,7 +52,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
               const DynamicMushroomDesign(),
               const SizedBox(height: 30),
               // mushroom design options (to be implemented)
-              MushroomDesignerOptions(stage:currentPage),
+              MushroomDesignerOptions(currentPage),
             ],
           ),
         ),
@@ -87,15 +89,13 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
       }
     });
   }
+
 }
 
 // builds the correct options section based on the current stage
 class MushroomDesignerOptions extends StatelessWidget {
-  const MushroomDesignerOptions({
-    super.key, required this.stage
-  });
-
   final String stage;
+  MushroomDesignerOptions(this.stage);
 
   Widget getOptions(String stage){
     if (stage == "cap") {
@@ -107,6 +107,26 @@ class MushroomDesignerOptions extends StatelessWidget {
     } else {
       return OtherOptions();
     }
+  }
+
+  List<Widget> getColorOptions(onClick) {
+      List<Map<String, String>> colorOptions = [
+        {"label": "Black", "value": "k"},
+        {"label": "Brown", "value": "n"},
+        {"label": "Buff", "value": "b"},
+        {"label": "Cinnamon", "value": "o"},
+        {"label": "Grey", "value": "g"},
+        {"label": "Green", "value": "r"},
+        {"label": "Pink", "value": "p"},
+        {"label": "Purple", "value": "u"},
+      ];
+      return colorOptions.map((colorOption) {
+        return MushroomOptionButtonColor(
+          colorOption["label"]!,
+          () { onClick("color", colorOption["value"]!); },
+          colorOption["value"]!
+        );
+      }).toList();
   }
 
   @override
@@ -126,7 +146,9 @@ class CapOptions extends StatefulWidget {
 }
 
 class _CapOptionsState extends State<CapOptions> {
+  final MushroomDesignerOptions mushroomDesignerOptions = MushroomDesignerOptions("cap");
   double capDiameter = 10;
+  final colorMapper = colorMapperFunc();
 
   @override
   Widget build(BuildContext context) {
@@ -174,15 +196,7 @@ class _CapOptionsState extends State<CapOptions> {
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Color",
-              options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
-              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
-              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
-              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
-              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
-              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
-              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
-              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
-              ]
+              options: mushroomDesignerOptions.getColorOptions(updateMushroomFeatures)
             ),
           ],
         ),
@@ -239,6 +253,7 @@ class StalkOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final MushroomDesignerOptions mushroomDesignerOptions = MushroomDesignerOptions("cap");
     final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
 
     void updateMushroomFeatures(String feature, String value) {
@@ -262,15 +277,7 @@ class StalkOptions extends StatelessWidget {
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Color",
-              options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
-              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
-              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
-              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
-              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
-              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
-              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
-              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
-            ],
+              options: mushroomDesignerOptions.getColorOptions(updateMushroomFeatures)
             ),
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
@@ -309,33 +316,18 @@ class OtherOptions extends StatelessWidget {
               // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
               options: [MushroomOptionButton("None", () {}),
               MushroomOptionButton("Cobwebby", () {}),
-              MushroomOptionButton("Evenescent", () {})]
-            ),
-            MushroomDesignerOptionsColumn(
-              label: "Ring type",
-              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
-              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
-              options: [MushroomOptionButton("Flaring", () {}),
+              MushroomOptionButton("Evenescent", () {}),
+              MushroomOptionButton("Flaring", () {}),
               MushroomOptionButton("Grooved", () {}),
-              MushroomOptionButton("Large", () {})]
-            ),
-            MushroomDesignerOptionsColumn(
-              label: "Ring type",
-              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
-              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
-              options: [MushroomOptionButton("Pendant", () {}),
+              MushroomOptionButton("Large", () {}),
+              MushroomOptionButton("Pendant", () {}),
               MushroomOptionButton("Sheathing", () {}),
-              MushroomOptionButton("Zone", () {})]
-            ),
-            MushroomDesignerOptionsColumn(
-              label: "Ring type",
-              // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), 
-              // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
-              options: [MushroomOptionButton("Scaly", () {}),
-              MushroomOptionButton("Moveable", () {})]
-            ),
-          ],
+              MushroomOptionButton("Zone", () {}),
+              MushroomOptionButton("Scaly", () {}),
+              MushroomOptionButton("Moveable", () {}),]
         ),
+        ],
+      )
       );
   }
 }
@@ -387,7 +379,7 @@ class ScrollableOptionsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: const Color(0xFFF2EDE2),
+        color: Colors.white,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: child,

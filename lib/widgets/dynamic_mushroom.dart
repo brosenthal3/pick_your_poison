@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import '../providers/mushroom_features.dart';
+import 'package:pick_your_poison/widgets/widgets.dart';
 
 class DynamicMushroomDesign extends StatefulWidget {
   const DynamicMushroomDesign({
@@ -15,21 +16,7 @@ class DynamicMushroomDesign extends StatefulWidget {
 
 class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
 
-  Map colorMapper = {
-  // Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
-    "k": Color.fromARGB(255, 0, 0, 0),       // black
-    "n": Color.fromARGB(255, 139, 69, 19),   // brown
-    "b": Color.fromARGB(255, 218, 165, 32),  // buff
-    "o": Color.fromARGB(255, 210, 105, 30),  // cinnamon
-    "g": Color.fromARGB(255, 128, 128, 128), // grey
-    "r": Color.fromARGB(255, 0, 128, 0),     // green
-    "p": Color.fromARGB(255, 255, 192, 203), // pink
-    "u": Color.fromARGB(255, 128, 0, 128),   // purple
-    "e": Color.fromARGB(255, 255, 0, 0),     // red
-    "w": Color.fromARGB(255, 255, 255, 255), // white
-    "y": Color.fromARGB(255, 255, 255, 0),   // yellow
-    "l": Color.fromARGB(255, 0, 0, 255),     // blue
-  };
+  Map colorMapper = colorMapperFunc();
 
   @override
   Widget build(BuildContext context) {
