@@ -110,6 +110,7 @@ class MushroomDesignerOptions extends StatelessWidget {
   }
 
   List<Widget> getColorOptions(onClick) {
+    //- Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
       List<Map<String, String>> colorOptions = [
         {"label": "Black", "value": "k"},
         {"label": "Brown", "value": "n"},
@@ -119,6 +120,10 @@ class MushroomDesignerOptions extends StatelessWidget {
         {"label": "Green", "value": "r"},
         {"label": "Pink", "value": "p"},
         {"label": "Purple", "value": "u"},
+        {"label": "Red", "value": "e"},
+        {"label": "White", "value": "w"},
+        {"label": "Yellow", "value": "y"},
+        {"label": "Blue", "value": "l"},
       ];
       return colorOptions.map((colorOption) {
         return MushroomOptionButtonColor(
@@ -212,6 +217,7 @@ class GillOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomDesignerOptions = MushroomDesignerOptions("cap");
     final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
 
     void updateMushroomFeatures(String feature, String value) {
@@ -230,15 +236,7 @@ class GillOptions extends StatelessWidget {
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(
             label: "Color",
-            options: [MushroomOptionButton("Black", () {updateMushroomFeatures("color", "k");}),
-              MushroomOptionButton("Brown", () {updateMushroomFeatures("color", "n");}),
-              MushroomOptionButton("Buff", () {updateMushroomFeatures("color", "b");}),
-              MushroomOptionButton("Cinnamon", () {updateMushroomFeatures("color", "o");}),
-              MushroomOptionButton("Grey", () {updateMushroomFeatures("color", "g");}),
-              MushroomOptionButton("Green", () {updateMushroomFeatures("color", "r");}),
-              MushroomOptionButton("Pink", () {updateMushroomFeatures("color", "p");}),
-              MushroomOptionButton("Purple", () {updateMushroomFeatures("color", "u");}),
-            ],
+            options: mushroomDesignerOptions.getColorOptions(updateMushroomFeatures)
           )
         ],
       ),
@@ -344,6 +342,7 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -354,11 +353,10 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
           const SizedBox(height: 15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: options 
-              ),
+            child: Wrap(
+//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              spacing: 15,
+              children: options 
             ),
           ),
           const SizedBox(height: 10),

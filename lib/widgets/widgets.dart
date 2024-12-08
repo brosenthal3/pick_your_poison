@@ -19,21 +19,30 @@ ElevatedButton HomeButton(String text, Function onPressed) {
 }
 
 
-ElevatedButton MushroomOptionButton(String textInput, VoidCallback onPressed) {
-    return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.white30,
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-    ),
-    onPressed: onPressed,
-    child: Text(
-      textInput,
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-      ),
-    ),
-  );
+Column MushroomOptionButton(String textInput, VoidCallback onPressed) {
+    // transform textinput to lowercase and remove spaces
+    final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
+    final String imagePath = "../assets/icons/$textInputLower.svg"; // will later be used as image path for icon
+
+    return Column(
+      children: [
+        ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white30,
+          padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+        ),
+        onPressed: onPressed,
+        child: Container(), // add image here based on the textInput
+        ),
+        Text(
+          textInput,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 17,
+          ),
+        ),
+      ],
+    );
 }
 
 
@@ -54,7 +63,7 @@ Column MushroomOptionButtonColor(String textInput, VoidCallback onPressed, Strin
           textInput,
           style: TextStyle(
             color: Colors.black,
-            fontSize: 15,
+            fontSize: 17,
           )
         ),
       ],
@@ -75,18 +84,18 @@ Text StandardText(String text, double size) {
 //function colorMapper that returns a map of colors
 Map<String, Color> colorMapperFunc() {
   return {
-  // Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
-    "k": Color.fromARGB(255, 0, 0, 0),       // black
-    "n": Color.fromARGB(255, 139, 69, 19),   // brown
-    "b": Color.fromARGB(255, 218, 165, 32),  // buff
-    "o": Color.fromARGB(255, 210, 105, 30),  // cinnamon
-    "g": Color.fromARGB(255, 128, 128, 128), // grey
-    "r": Color.fromARGB(255, 0, 128, 0),     // green
-    "p": Color.fromARGB(255, 255, 192, 203), // pink
-    "u": Color.fromARGB(255, 128, 0, 128),   // purple
-    "e": Color.fromARGB(255, 255, 0, 0),     // red
-    "w": Color.fromARGB(255, 255, 255, 255), // white
-    "y": Color.fromARGB(255, 255, 255, 0),   // yellow
-    "l": Color.fromARGB(255, 0, 0, 255),     // blue
+    // Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+    "k": Color.fromARGB(255, 50, 50, 50),    // muted black
+    "n": Color.fromARGB(255, 101, 67, 33),   // muted brown
+    "b": Color.fromARGB(255, 205, 183, 158), // muted buff
+    "o": Color.fromARGB(255, 176, 101, 50),  // muted cinnamon
+    "g": Color.fromARGB(255, 169, 169, 169), // muted grey
+    "r": Color.fromARGB(255, 85, 107, 47),   // muted green
+    "p": Color.fromARGB(255, 255, 182, 193), // muted pink
+    "u": Color.fromARGB(255, 147, 112, 219), // muted purple
+    "e": Color.fromARGB(255, 220, 20, 60),   // muted red
+    "w": Color.fromARGB(255, 245, 245, 245), // muted white
+    "y": Color.fromARGB(255, 255, 255, 224), // muted yellow
+    "l": Color.fromARGB(255, 100, 149, 237), // muted blue
   };
 }
