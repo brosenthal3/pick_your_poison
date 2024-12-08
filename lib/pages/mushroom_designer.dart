@@ -60,7 +60,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
 
   startPrediction(){
     // TODO: perform API call to predict mushroom
-    Navigator.pushReplacementNamed(context, '/prediction_page');
+    Navigator.pushNamed(context, '/prediction_page');
   }
 
   goForward() {
@@ -97,8 +97,7 @@ class MushroomDesignerOptions extends StatelessWidget {
 
   final String stage;
 
-  @override
-  Widget build(BuildContext context) {
+  Widget getOptions(String stage){
     if (stage == "cap") {
       return CapOptions();
     } else if (stage == "stem") {
@@ -108,6 +107,11 @@ class MushroomDesignerOptions extends StatelessWidget {
     } else {
       return OtherOptions();
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return getOptions(stage);
   }
 }
 
@@ -144,6 +148,7 @@ class _CapOptionsState extends State<CapOptions> {
               MushroomOptionButton("Sunken", () {}),
               MushroomOptionButton("Spherical", () {})]
             ),
+            /*
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Diameter",
@@ -157,7 +162,7 @@ class _CapOptionsState extends State<CapOptions> {
                   max: 20
                 )
                 ]
-            ),
+            ), */
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Surface",

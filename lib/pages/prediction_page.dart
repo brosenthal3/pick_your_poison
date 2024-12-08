@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
+import '../widgets/dynamic_mushroom.dart';
 
 class PredictionPage extends StatefulWidget {
   @override
@@ -8,79 +10,66 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
+  final String prediction = "POISONOUS";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 150,
-        title: Text(
-          "Your Mushroom Prediction",
-          style: GoogleFonts.poppins(
-            color:Colors.black,
-            fontSize: 40,
-            fontWeight: FontWeight.w700,
+        toolbarHeight: 100,
+        title: Container(
+          child: StandardText("Back", 25),
+        ),
+      ),
+      body: Expanded(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 20),
+              Center(
+                child: StandardText("Your mushroom is likely", 20),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                color: Colors.red,
+                child: Center(
+                  child: Text(
+                    prediction,
+                    style: GoogleFonts.poppins(
+                      color:Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Center(
+                child: DynamicMushroomDesign(),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: const Text(
+                  "Want to learn about the most similar real-life species?",
+                  style: TextStyle(
+                    color:Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: HomeButton("Read More", getSpeciesPrediction),
+              ),
+            ],
           ),
         ),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        elevation: 0.0
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const Center(
-                    child: Image(image: AssetImage("../assets/mushroom_template.png")),
-                  ),
-                  const SizedBox(height: 20),
-                  Center(
-                    child: Text(
-                      "IT IS POISONOUS",
-                      style: GoogleFonts.poppins(
-                        color:Colors.red[600],
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Center(
-                    child: Text(
-                      "Want to learn about the most similar real-life species?",
-                      style: TextStyle(
-                        color:Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: HomeButton("Read More", getSpeciesPrediction),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: HomeButton("Start again", newMushroomDesign),
-                          ),
-                        ],
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
