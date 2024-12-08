@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
-import '../widgets/dynamic_mushroom.dart';
 
 class PredictionPage extends StatefulWidget {
   @override
@@ -15,8 +14,9 @@ class _PredictionPageState extends State<PredictionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF2EDE2),
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF2EDE2),
         toolbarHeight: 100,
         title: Container(
           child: StandardText("Back", 25),
@@ -24,14 +24,12 @@ class _PredictionPageState extends State<PredictionPage> {
       ),
       body: Expanded(
         child: Container(
-          color: Colors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 20),
               Center(
-                child: StandardText("Your mushroom is likely", 20),
+                child: StandardText("Your mushroom is likely*", 20),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),

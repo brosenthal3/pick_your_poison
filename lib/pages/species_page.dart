@@ -10,41 +10,63 @@ class SpeciesPredictionPage extends StatefulWidget {
 }
 
 class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
+
+  final String mushroomFamily = "Amanitaceae";
+  final String mushroomSpecies = "Amanita phalloides";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF2EDE2),
       appBar: AppBar(
-        toolbarHeight: 150,
-        title: Text(
-          "Species Prediction",
-          style: GoogleFonts.poppins(
-            color:Colors.black,
-            fontSize: 40,
-            fontWeight: FontWeight.w700,
-          ),
+        backgroundColor: const Color(0xFFF2EDE2),
+        toolbarHeight: 100,
+        title: Container(
+          child: StandardText("Back", 25),
         ),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        elevation: 0.0
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
             child: Container(
-              color: Colors.white,
+              padding: EdgeInsets.fromLTRB(40, 0, 40, 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Center(
-                    child: StandardText("The most similar species is:", 20),
-                  ),
-                  Center(
-                    child: StandardText("Amanita phalloides", 20),
-                  ),
-                  const Center(
-                    child: Image(image: AssetImage("../assets/deathcap.jpg")),
+                  Stack(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: ColorFiltered(
+                            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
+                            child: Image(image: AssetImage("../assets/deathcap.jpg"), height: 330, width: 350, fit: BoxFit.cover)
+                          ),
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        left: 25,
+                        child: Text(
+                          mushroomFamily,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),),
+                      ),
+                      Positioned(
+                        bottom: 40,
+                        left: 25,
+                        child: Text(
+                          mushroomSpecies,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700,
+                          ),),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   Center(
