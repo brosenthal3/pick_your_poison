@@ -59,13 +59,13 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(40.0),
-                      child: Image(
-                          image: AssetImage("../assets/mushroom_template.png")),
-                    ), // potentially animation of mushroom being designed
-                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: SvgPicture(
+                      SvgAssetLoader("../assets/mushroom.svg"),
+                      height: 250,
+                    ),
+                  ), // potentially animation of mushroom being designed
                   Center(
                     child: Text(
                       "How does it work?",

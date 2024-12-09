@@ -34,7 +34,7 @@ class _TutorialState extends State<Tutorial> {
         ),
         backgroundColor: const Color(0xFFF2EDE2),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             tutorials[currentIndex],
             DotsIndicator(currentIndex: currentIndex),
@@ -61,9 +61,19 @@ class Tutorial1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StandardText("Design your own mushroom", 20),
-    );
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.all(20),
+        child: StandardText("Design your own mushroom", 20),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(30),
+        child: SvgPicture(
+          SvgAssetLoader("../assets/tutorial/tutorial-1.svg"),
+          height: 250,
+        ),
+      ),
+    ]);
   }
 }
 
@@ -72,8 +82,21 @@ class Tutorial2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StandardText("Find out if it could be \n POISONOUS or EDIBLE", 20),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: StandardText(
+              "Find out if it could be \n POISONOUS or EDIBLE", 20),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: SvgPicture(
+            SvgAssetLoader("../assets/tutorial/tutorial-2.svg"),
+            height: 250,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -83,9 +106,24 @@ class Tutorial3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StandardText(
-          "Our classification models gives \n you an idea of its safety", 20),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: StandardText(
+              "Our classification models gives \n you an idea of its safety",
+              20),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: SvgPicture(
+            SvgAssetLoader("../assets/tutorial/tutorial-3.svg"),
+            height: 250,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -95,10 +133,20 @@ class Tutorial4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StandardText(
-          "See which real-life mushroom species \n your creation resembles",
-          20),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: StandardText(
+              "See which real-life mushroom species \n your creation resembles",
+              20),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: Image.asset("..assets/tutorial/tutorial-4.png",
+              width: 100), //png doesn't want to cooperate
+        ),
+      ],
     );
   }
 }
