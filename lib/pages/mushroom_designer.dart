@@ -333,7 +333,7 @@ class OtherOptions extends StatelessWidget {
               MushroomOptionButton("Pendant", () {}),
               MushroomOptionButton("Sheathing", () {}),
               MushroomOptionButton("Zone", () {}),
-              MushroomOptionButton("Scaly", () {}),
+              MushroomOptionButton("Scales", () {}),
               MushroomOptionButton("Moveable", () {}),
             ]),
       ],
