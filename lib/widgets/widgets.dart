@@ -113,18 +113,18 @@ Text StandardText(String text, double size) {
 //function colorMapper that returns a map of colors
 Map<String, Color> colorMapperFunc() {
   return {
-    // Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+    // Color: black (k), brown (n), buff (b), orange (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
     "k": Color.fromARGB(255, 50, 50, 50), // muted black
-    "n": Color.fromARGB(255, 101, 67, 33), // muted brown
-    "b": Color.fromARGB(255, 205, 183, 158), // muted buff
-    "o": Color.fromARGB(255, 176, 101, 50), // muted cinnamon
-    "g": Color.fromARGB(255, 169, 169, 169), // muted grey
-    "r": Color.fromARGB(255, 85, 107, 47), // muted green
-    "p": Color.fromARGB(255, 255, 182, 193), // muted pink
-    "u": Color.fromARGB(255, 147, 112, 219), // muted purple
-    "e": Color.fromARGB(255, 220, 20, 60), // muted red
+    "n": Color.fromARGB(255, 115, 84, 64), // muted brown
+    "b": Color.fromARGB(255, 254, 246, 158), // muted buff
+    "o": Color.fromARGB(255, 238, 144, 56), // muted orange
+    "g": Color.fromARGB(255, 168, 168, 168), // muted grey
+    "r": Color.fromARGB(255, 94, 135, 67), // muted green
+    "p": Color.fromARGB(255, 236, 105, 97), // muted pink
+    "u": Color.fromARGB(255, 130, 102, 153), // muted purple
+    "e": Color.fromARGB(255, 237, 34, 20), // muted red
     "w": Color.fromARGB(255, 245, 245, 245), // muted white
-    "y": Color.fromARGB(255, 255, 255, 224), // muted yellow
-    "l": Color.fromARGB(255, 100, 149, 237), // muted blue
+    "y": Color.fromARGB(255, 255, 220, 40), // muted yellow
+    "l": Color.fromARGB(255, 44, 136, 255), // muted blue
   };
 }

@@ -115,13 +115,12 @@ class MushroomDesignerOptions extends StatelessWidget {
   }
 
   List<Widget> getColorOptions(onClick) {
-    // !! Secondary Mushroom Dataset Data Set Colors: brown=n, buff=b, gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y, blue=l, orange=o,  black=k
-    //- Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
+    // Colors: brown=n, buff=b, gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y, blue=l, orange=o,  black=k
     List<Map<String, String>> colorOptions = [
       {"label": "Black", "value": "k"},
       {"label": "Brown", "value": "n"},
       {"label": "Buff", "value": "b"},
-      {"label": "Cinnamon", "value": "o"},
+      {"label": "Orange", "value": "o"},
       {"label": "Grey", "value": "g"},
       {"label": "Green", "value": "r"},
       {"label": "Pink", "value": "p"},
