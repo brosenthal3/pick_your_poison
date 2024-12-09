@@ -34,17 +34,17 @@ ElevatedButton SkipButton(String text, Function onPressed) {
   );
 }
 
-Column MushroomOptionButton(String textInput, VoidCallback onPressed) {
+Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
   final String imagePath =
       "../assets/icons/$textInputLower.svg"; // will later be used as image path for icon
 
-  return Column(
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(right: 10),
-        child: ElevatedButton(
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      children: [
+        ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white60,
             fixedSize: Size(75, 75),
@@ -62,16 +62,16 @@ Column MushroomOptionButton(String textInput, VoidCallback onPressed) {
             ),
           ), // // add image here based on the textInput
         ),
-      ),
-      SizedBox(height: 10),
-      Text(
-        textInput,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 17,
+        SizedBox(height: 10),
+        Text(
+          textInput,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 17,
+          ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }
 

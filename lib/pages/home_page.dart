@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
               top: 0,
               child: Padding(
                 padding: EdgeInsets.all(10),
-                child: SkipButton("Skip >", startTutorial),
+                child: SkipButton("Skip >", startDesigner),
               ),
             ),
           ],

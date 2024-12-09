@@ -29,7 +29,7 @@ Our ML algorithms predict the most similar real-life mushroom species and its to
 - Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
 
 ### Gill:
-- Spacing: close (c), crowded (d), none (f)
+- Spacing: close (c), distant (d), none (f)
 - Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
 
 ### Stem: 

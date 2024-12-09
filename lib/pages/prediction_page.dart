@@ -25,45 +25,81 @@ class _PredictionPageState extends State<PredictionPage> {
       body: Expanded(
         child: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                child: StandardText("Your mushroom is likely*", 20),
+                child: Text(
+                  "Your mushroom is likely*",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
+              SizedBox(height: 10),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-                color: Colors.red,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                color: const Color.fromARGB(255, 214, 27, 14),
                 child: Center(
                   child: Text(
                     prediction,
                     style: GoogleFonts.poppins(
-                      color:Colors.white,
+                      color: Colors.white,
                       fontSize: 25,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               const Center(
                 child: DynamicMushroomDesign(),
               ),
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: const Text(
+                child: Text(
                   "Want to learn about the most similar real-life species?",
-                  style: TextStyle(
-                    color:Colors.black,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.poppins(
+                    color: Colors.black,
                     fontSize: 20,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
+              SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: HomeButton("Read More", getSpeciesPrediction),
+              ),
+              SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Text.rich(
+                  TextSpan(
+                      text: "*DISCLAIMER: ",
+                      style: GoogleFonts.poppins(
+                        color: Colors.black87,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      children: [
+                        TextSpan(
+                            text:
+                                "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
+                            //textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                              color: Colors.black87,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400,
+                            ))
+                      ]),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),
@@ -72,15 +108,12 @@ class _PredictionPageState extends State<PredictionPage> {
     );
   }
 
-  getSpeciesPrediction(){
+  getSpeciesPrediction() {
     Navigator.pushNamed(context, '/species_page');
   }
 
-  newMushroomDesign(){
+  newMushroomDesign() {
     Navigator.pushReplacementNamed(context, '/mushroom_designer');
     // TODO: reset global state variables of mushroom features, or dont lol
   }
-
 }
-
-
