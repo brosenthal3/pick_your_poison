@@ -33,7 +33,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   "Your mushroom is likely*",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    color: Colors.black,
+                    color: const Color.fromARGB(255, 20, 20, 20),
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                   ),
@@ -65,7 +65,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   "Want to learn about the most similar real-life species?",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    color: Colors.black,
+                    color: const Color.fromARGB(255, 20, 20, 20),
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                   ),
@@ -83,7 +83,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   TextSpan(
                       text: "*DISCLAIMER: ",
                       style: GoogleFonts.poppins(
-                        color: Colors.black87,
+                        color: const Color.fromARGB(255, 20, 20, 20),
                         fontSize: 17,
                         fontWeight: FontWeight.w700,
                       ),
@@ -93,7 +93,7 @@ class _PredictionPageState extends State<PredictionPage> {
                                 "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
                             //textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
-                              color: Colors.black87,
+                              color: Color.fromARGB(255, 20, 20, 20),
                               fontSize: 17,
                               fontWeight: FontWeight.w400,
                             ))

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 ElevatedButton HomeButton(String text, Function onPressed) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 20, 20, 20),
       padding: EdgeInsets.symmetric(vertical: 25, horizontal: 80),
     ),
     onPressed: () => onPressed(),
@@ -66,7 +66,7 @@ Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
         Text(
           textInput,
           style: TextStyle(
-            color: Colors.black,
+            color: Color.fromARGB(255, 20, 20, 20),
             fontSize: 17,
           ),
         ),
@@ -92,7 +92,7 @@ Column MushroomOptionButtonColor(
       SizedBox(height: 10),
       Text(textInput,
           style: TextStyle(
-            color: Colors.black,
+            color: Color.fromARGB(255, 20, 20, 20),
             fontSize: 17,
           )),
     ],
@@ -103,7 +103,7 @@ Text StandardText(String text, double size) {
   return Text(
     text,
     style: GoogleFonts.poppins(
-      color: Colors.black,
+      color: const Color.fromARGB(255, 20, 20, 20),
       fontSize: size,
       fontWeight: FontWeight.w700,
     ),

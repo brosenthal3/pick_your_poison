@@ -58,7 +58,8 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
               bottom: 20,
               child: ColorFiltered(
                   colorFilter: const ColorFilter.mode(
-                    Colors.black, // color overlay of cap texture
+                    Color.fromARGB(
+                        255, 20, 20, 20), // color overlay of cap texture
                     BlendMode.modulate,
                   ),
                   child: SvgPicture.asset(

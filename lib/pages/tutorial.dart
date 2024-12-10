@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../widgets/widgets.dart';
 
 class Tutorial extends StatefulWidget {
@@ -63,9 +64,16 @@ class Tutorial1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Padding(
-        padding: const EdgeInsets.all(20),
-        child: StandardText("Design your own mushroom", 20),
-      ),
+          padding: const EdgeInsets.all(20),
+          child: Text(
+            textAlign: TextAlign.center,
+            "Design your own mushroom",
+            style: GoogleFonts.poppins(
+              color: const Color.fromARGB(255, 20, 20, 20),
+              fontSize: 26,
+              fontWeight: FontWeight.w700,
+            ),
+          )),
       Padding(
         padding: const EdgeInsets.all(30),
         child: SvgPicture(
@@ -86,8 +94,15 @@ class Tutorial2 extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: StandardText(
-              "Find out if it could be \n POISONOUS or EDIBLE", 20),
+          child: Text(
+            textAlign: TextAlign.center,
+            "Find out if it could be \n POISONOUS or EDIBLE",
+            style: GoogleFonts.poppins(
+              color: const Color.fromARGB(255, 20, 20, 20),
+              fontSize: 26,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.all(30),
@@ -112,9 +127,14 @@ class Tutorial3 extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20.0),
-          child: StandardText(
+          child: Text(
+              textAlign: TextAlign.center,
               "Our classification models gives \n you an idea of its safety",
-              20),
+              style: GoogleFonts.poppins(
+                color: const Color.fromARGB(255, 20, 20, 20),
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+              )),
         ),
         Padding(
           padding: const EdgeInsets.all(30),
@@ -137,9 +157,14 @@ class Tutorial4 extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: StandardText(
+          child: Text(
+              textAlign: TextAlign.center,
               "See which real-life mushroom species \n your creation resembles",
-              20),
+              style: GoogleFonts.poppins(
+                color: const Color.fromARGB(255, 20, 20, 20),
+                fontSize: 26,
+                fontWeight: FontWeight.w700,
+              )),
         ),
         Padding(
           padding: const EdgeInsets.all(30),
@@ -167,7 +192,9 @@ class DotsIndicator extends StatelessWidget {
           height: 12.0,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: currentIndex == index ? Colors.black : Colors.grey,
+            color: currentIndex == index
+                ? const Color.fromARGB(255, 20, 20, 20)
+                : Colors.grey,
           ),
         );
       }),

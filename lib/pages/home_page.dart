@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                       "How does it work?",
                       style: GoogleFonts.poppins(
-                        color: Colors.black,
+                        color: const Color.fromARGB(255, 20, 20, 20),
                         fontSize: 26,
                         fontWeight: FontWeight.w600,
                       ),
