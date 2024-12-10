@@ -94,14 +94,41 @@ class Tutorial2 extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: Text(
+          child: Text.rich(
             textAlign: TextAlign.center,
-            "Find out if it could be \n POISONOUS or EDIBLE",
-            style: GoogleFonts.poppins(
-              color: const Color.fromARGB(255, 20, 20, 20),
-              fontSize: 26,
-              fontWeight: FontWeight.w700,
-            ),
+            TextSpan(
+                text: "Find out if it could be \n",
+                style: GoogleFonts.poppins(
+                  color: const Color.fromARGB(255, 20, 20, 20),
+                  fontSize: 26,
+                  fontWeight: FontWeight.w700,
+                ),
+                children: [
+                  TextSpan(
+                    text: "POISONOUS ",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 237, 34, 20),
+                      fontSize: 26,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "or ",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 20, 20, 20),
+                      fontSize: 26,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "EDIBLE",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 94, 135, 67),
+                      fontSize: 26,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  )
+                ]),
           ),
         ),
         Padding(
@@ -129,7 +156,7 @@ class Tutorial3 extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Text(
               textAlign: TextAlign.center,
-              "Our classification models gives \n you an idea of its safety",
+              "Our classification models gives you an idea of its safety",
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 20, 20, 20),
                 fontSize: 26,

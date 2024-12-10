@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../widgets/widgets.dart';
 
 class SpeciesPredictionPage extends StatefulWidget {
@@ -9,8 +10,7 @@ class SpeciesPredictionPage extends StatefulWidget {
 }
 
 class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
-
-  final String mushroomFamily = "Amanitaceae";
+  final String mushroomFamily = "Amanitaceae Family";
   final String mushroomSpecies = "Amanita phalloides";
 
   @override
@@ -37,25 +37,31 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                   Stack(
                     children: [
                       ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: ColorFiltered(
-                            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
-                            child: Image(image: AssetImage("../assets/deathcap.jpg"), height: 330, width: 350, fit: BoxFit.cover)
-                          ),
+                        borderRadius: BorderRadius.circular(30),
+                        child: ColorFiltered(
+                            colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.5),
+                                BlendMode.darken),
+                            child: Image(
+                                image: AssetImage("../assets/deathcap.jpg"),
+                                height: 330,
+                                width: 350,
+                                fit: BoxFit.cover)),
                       ),
                       Positioned(
-                        bottom: 10,
+                        bottom: 20,
                         left: 25,
                         child: Text(
                           mushroomFamily,
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                          ),),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                       Positioned(
-                        bottom: 40,
+                        bottom: 50,
                         left: 25,
                         child: Text(
                           mushroomSpecies,
@@ -63,13 +69,25 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                             color: Colors.white,
                             fontSize: 25,
                             fontWeight: FontWeight.w700,
-                          ),),
+                          ),
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Center(
-                    child: StandardText("Amanita phalloides, commonly known as the death cap, is a deadly poisonous basidiomycete fungus, one of many in the genus Amanita. Widely distributed across Europe, A. phalloides forms ectomycorrhizas with various broadleaved trees.", 15),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 20, 8, 20),
+                    child: Center(
+                      child: Text(
+                        textAlign: TextAlign.left,
+                        "Amanita phalloides, commonly known as the death cap, is a deadly poisonous basidiomycete fungus, one of many in the genus Amanita. Widely distributed across Europe, A. phalloides forms ectomycorrhizas with various broadleaved trees.",
+                        style: GoogleFonts.poppins(
+                          color: const Color.fromARGB(255, 20, 20, 20),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
