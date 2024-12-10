@@ -5,7 +5,7 @@ class MushroomFeaturesProvider with ChangeNotifier {
     "cap": {
       "shape": "b",
       "diameter": 10,
-      "surface": "s",
+      "surface": "i",
       "color": "e",
     },
     "gills": {

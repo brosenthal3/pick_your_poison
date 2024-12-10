@@ -23,26 +23,40 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
         Provider.of<MushroomFeaturesProvider>(context, listen: true);
     final mushroomFeatures = mushroomFeaturesProvider.mushroomFeatures;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        // cap and gills
-        Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            ColorFiltered(
+    double capWidth = 250;
+
+    return SizedBox(
+      height: 300,
+      width: double.infinity,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // cap
+          Positioned(
+            top: 0,
+            child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                colorMapper[mushroomFeatures["cap"]
-                    ["color"]], // color overlay of cap
+                colorMapper[mushroomFeatures["cap"]["color"]], // color overlay of cap
                 BlendMode.modulate,
               ),
               child: SvgPicture.asset(
                   "../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg",
                   fit: BoxFit.cover,
-                  height: 150),
+                  width: capWidth),
             ),
-            // gills
-            ColorFiltered(
+          ),
+          // cap texture, doesnt wanna work :(
+          Positioned(
+            top: 30,
+            child: Image.asset(
+                "../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.png",
+                fit: BoxFit.fill,
+                width: capWidth-45),
+          ),
+          // gills
+          Positioned(
+            top: 80,
+            child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["gills"]
                     ["color"]], // color overlay of gills
@@ -53,43 +67,32 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                   fit: BoxFit.cover,
                   width: 220),
             ),
-            // cap texture, doesnt wanna work :(
-            Positioned(
-              bottom: 20,
-              child: ColorFiltered(
-                  colorFilter: const ColorFilter.mode(
-                    Color.fromARGB(
-                        255, 20, 20, 20), // color overlay of cap texture
-                    BlendMode.modulate,
-                  ),
-                  child: SvgPicture.asset(
-                      "../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.svg",
-                      fit: BoxFit.cover,
-                      width: 150)),
+          ),
+          // stem
+          Positioned(
+            bottom: 40,
+            left: 158,
+            child: ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                colorMapper[mushroomFeatures["stem"]["color"]], // color overlay of stem (overlays ring and root too)
+                BlendMode.modulate,
+              ),
+              child: SvgPicture.asset(
+                  "../assets/stem/${mushroomFeatures["stem"]["roots"]}.svg",
+                  fit: BoxFit.cover,
+                  height: 175),
             ),
-          ],
-        ),
-
-        // stem and ring
-        ColorFiltered(
-            colorFilter: ColorFilter.mode(
-              colorMapper[mushroomFeatures["stem"][
-                  "color"]], // color overlay of stem (overlays ring and root too)
-              BlendMode.modulate,
-            ),
-            child: Stack(
-              children: [
-                SvgPicture.asset(
-                    "../assets/stem/${mushroomFeatures["stem"]["roots"]}.svg",
-                    fit: BoxFit.cover,
-                    height: 150),
-                SvgPicture.asset(
-                    "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
-                    fit: BoxFit.cover,
-                    height: 50),
-              ],
-            ))
-      ],
+          ),
+          Positioned(
+            left: 165,
+            bottom: 160,
+            child: SvgPicture.asset(
+                "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
+                fit: BoxFit.cover,
+                height: 50),
+          ),
+        ],
+      ),
     );
   }
 }
