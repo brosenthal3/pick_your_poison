@@ -159,7 +159,7 @@ class Tutorial3 extends StatelessWidget {
               "Our classification models gives you an idea of its safety",
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 20, 20, 20),
-                fontSize: 26,
+                fontSize: 22,
                 fontWeight: FontWeight.w700,
               )),
         ),
@@ -195,8 +195,7 @@ class Tutorial4 extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(30),
-          child: Image.asset("..assets/tutorial/tutorial-4.png",
-              width: 100), //png doesn't want to cooperate
+          child: Image.asset("../assets/tutorial/tutorial-4.png", fit: BoxFit.cover, height: 250), //png doesn't want to cooperate
         ),
       ],
     );

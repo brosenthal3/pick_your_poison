@@ -54,11 +54,14 @@ Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
             padding: EdgeInsets.zero,
           ),
           onPressed: onPressed,
-          child: Center(
-            child: SvgPicture.asset(
-              imagePath,
-              width: 75,
-              fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Center(
+              child: SvgPicture.asset(
+                imagePath,
+                width: 75,
+                fit: BoxFit.cover,
+              ),
             ),
           ), // // add image here based on the textInput
         ),

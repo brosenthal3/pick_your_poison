@@ -23,7 +23,7 @@ class _PredictionPageState extends State<PredictionPage> {
         ),
       ),
       body: Expanded(
-        child: Container(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -90,7 +90,7 @@ class _PredictionPageState extends State<PredictionPage> {
                       children: [
                         TextSpan(
                             text:
-                                "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
+                            "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
                             //textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               color: Color.fromARGB(255, 20, 20, 20),
@@ -101,6 +101,7 @@ class _PredictionPageState extends State<PredictionPage> {
                   textAlign: TextAlign.center,
                 ),
               ),
+              SizedBox(height: 30),
             ],
           ),
         ),

@@ -170,15 +170,16 @@ class _CapOptionsState extends State<CapOptions> {
     return ScrollableOptionsContainer(
       child: Column(
         children: [
+          // Shape: bell (b), conical (C), convex (x), flat (f), sunken (s), spherical (p)
           MushroomDesignerOptionsColumn(label: "Shape", options: [
-            MushroomOptionButton("Bell", () {}),
-            MushroomOptionButton("Conical", () {}),
-            MushroomOptionButton("Convex", () {}),
-            MushroomOptionButton("Flat", () {}),
-            MushroomOptionButton("Sunken", () {}),
-            MushroomOptionButton("Spherical", () {})
+            MushroomOptionButton("Bell", () => updateMushroomFeatures("shape", "b")),
+            MushroomOptionButton("Conical", () => updateMushroomFeatures("shape", "c")),
+            MushroomOptionButton("Convex", () => updateMushroomFeatures("shape", "x")),
+            MushroomOptionButton("Flat", () => updateMushroomFeatures("shape", "f")),
+            MushroomOptionButton("Sunken", () => updateMushroomFeatures("shape", "s")),
+            MushroomOptionButton("Spherical", () => updateMushroomFeatures("shape", "p"))
           ]),
-          /*
+          /* for now, no need for diameter
             const SizedBox(height: 20),
             MushroomDesignerOptionsColumn(
               label: "Diameter",
@@ -316,7 +317,7 @@ class OtherOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScrollableOptionsContainer(
-        child: Column(
+      child: Column(
       children: [
         MushroomDesignerOptionsColumn(
             label: "Ring type",
