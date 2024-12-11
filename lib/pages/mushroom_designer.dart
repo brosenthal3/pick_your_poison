@@ -275,12 +275,13 @@ class StalkOptions extends StatelessWidget {
               label: "Root",
               //- Root: swollen (s), bulbous (b), club (c), cup (u), equal (e), rhizomorphous (z), rooted (r)
               options: [
-                MushroomOptionButton("Swollen", () {}),
-                MushroomOptionButton("Bulbous", () {}),
-                MushroomOptionButton("Cup", () {}),
-                MushroomOptionButton("Equal", () {}),
-                MushroomOptionButton("Rhizomorphs", () {}),
-                MushroomOptionButton("Rooted", () {}),
+                MushroomOptionButton("Swollen", () {updateMushroomFeatures("roots", "s");}),
+                MushroomOptionButton("Bulbous", () {updateMushroomFeatures("roots", "b");}),
+                MushroomOptionButton("Club", () {updateMushroomFeatures("roots", "c");}),
+                MushroomOptionButton("Cup", () {updateMushroomFeatures("roots", "u");}),
+                MushroomOptionButton("Equal", () {updateMushroomFeatures("roots", "e");}),
+                MushroomOptionButton("Rhizomorphs", () {updateMushroomFeatures("roots", "z");}),
+                MushroomOptionButton("Rooted", () {updateMushroomFeatures("roots", "r");}),
               ]),
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(
