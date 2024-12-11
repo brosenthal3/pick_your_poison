@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
+import 'dart:math';
 
 class PredictionPage extends StatefulWidget {
   @override
@@ -9,10 +10,16 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
-  final String prediction = "POISONOUS";
+  Random random = Random();  // for now, RNG for prediction, later this will be replaced with a model
+  late String prediction = "POISONOUS";
 
   @override
   Widget build(BuildContext context) {
+    final int randomNumber = random.nextInt(100);
+    if(randomNumber > 50) {
+      prediction = "EDIBLE";
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
       appBar: AppBar(
@@ -42,7 +49,7 @@ class _PredictionPageState extends State<PredictionPage> {
               SizedBox(height: 10),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                color: const Color.fromARGB(255, 214, 27, 14),
+                color: prediction == "POISONOUS" ? Color.fromARGB(255, 214, 27, 14) : Color.fromARGB(255, 0, 128, 0),
                 child: Center(
                   child: Text(
                     prediction,
