@@ -54,8 +54,9 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
           child: Column(
             children: [
               // dynamic mushroom design widget (to be implemented)
+              const SizedBox(height: 10),
               const DynamicMushroomDesign(),
-              const SizedBox(height: 30),
+              const SizedBox(height: 10),
               // mushroom design options (to be implemented)
               MushroomDesignerOptions(currentPage),
             ],
@@ -196,16 +197,16 @@ class _CapOptionsState extends State<CapOptions> {
             ), */
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(label: "Surface", options: [
-            MushroomOptionButton("Fibrous", () {}),
-            MushroomOptionButton("Grooves", () {}),
-            MushroomOptionButton("Scaly", () {}),
-            MushroomOptionButton("Smooth", () {}),
-            MushroomOptionButton("Shiny", () {}),
-            MushroomOptionButton("Leathery", () {}),
-            MushroomOptionButton("Silky", () {}),
-            MushroomOptionButton("Sticky", () {}),
-            MushroomOptionButton("Wrinkled", () {}),
-            MushroomOptionButton("Fleshy", () {}),
+            MushroomOptionButton("Fibrous", () {updateMushroomFeatures("surface", "i");}),
+            MushroomOptionButton("Grooves", () {updateMushroomFeatures("surface", "g");}),
+            MushroomOptionButton("Scaly", () {updateMushroomFeatures("surface", "y");}),
+            MushroomOptionButton("Smooth", () {updateMushroomFeatures("surface", "s");}),
+            MushroomOptionButton("Shiny", () {updateMushroomFeatures("surface", "h");}),
+            MushroomOptionButton("Leathery", () {updateMushroomFeatures("surface", "l");}),
+            MushroomOptionButton("Silky", () {updateMushroomFeatures("surface", "k");}),
+            MushroomOptionButton("Sticky", () {updateMushroomFeatures("surface", "t");}),
+            MushroomOptionButton("Wrinkled", () {updateMushroomFeatures("surface", "w");}),
+            MushroomOptionButton("Fleshy", () {updateMushroomFeatures("surface", "e");}),
           ]),
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(
@@ -383,7 +384,12 @@ class ScrollableOptionsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: Colors.white,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            top: BorderSide(width: 1, color: Colors.black54),),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: child,

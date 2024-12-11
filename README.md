@@ -25,7 +25,7 @@ Our ML algorithms predict the most similar real-life mushroom species and its to
 # Mushroom features overview:
 ### Cap:
 - Shape: bell (b), conical (C), convex (x), flat (f), sunken (s), spherical (p)
-- Surface: fibrous (i), grooves (g), scaley (y), smooth (s)
+- Surface: fibrous (i), grooves (g), scaley (y), smooth (s), shiny (h), leathery (l), silky (k), sticky (t), wrinkled (w), fleshy (e)
 - Color: black (k), brown (n), buff (b), cinnamon (o), grey (g), green (r), pink (p), purple (u), red (e), white (w), yellow (y), blue (l)
 
 ### Gill:

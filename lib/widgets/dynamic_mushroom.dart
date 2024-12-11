@@ -65,11 +65,11 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
           ),
           // cap texture, doesnt wanna work :(
           Positioned(
-            top: 30,
-            child: Image.asset(
+            top: 0,
+            child: mushroomFeatures["cap"]["surface"] != 's' ? Image.asset(
                 "../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.png",
                 fit: BoxFit.fill,
-                width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]-25,),
+                height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0],) : Container(),
           ),
           // gills
           Positioned(
