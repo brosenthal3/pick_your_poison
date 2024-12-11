@@ -237,9 +237,9 @@ class GillOptions extends StatelessWidget {
       child: Column(
         children: [
           MushroomDesignerOptionsColumn(label: "Spacing", options: [
-            MushroomOptionButton("None", () {}),
-            MushroomOptionButton("Close", () {}),
-            MushroomOptionButton("Distant", () {})
+            MushroomOptionButton("None", () {updateMushroomFeatures("spacing", "f");}),
+            MushroomOptionButton("Close", () {updateMushroomFeatures("spacing", "c");}),
+            MushroomOptionButton("Distant", () {updateMushroomFeatures("spacing", "d");})
           ]),
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(

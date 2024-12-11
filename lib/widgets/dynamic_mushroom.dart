@@ -23,7 +23,21 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
         Provider.of<MushroomFeaturesProvider>(context, listen: true);
     final mushroomFeatures = mushroomFeaturesProvider.mushroomFeatures;
 
-    double capWidth = 250;
+    // Shape: bell (b), conical (c), convex (x), flat (f), sunken (s), spherical (p)
+    final Map mushroomAttributes = {
+      // cap height, gills width, gills top, stem top
+      "b": [150, 210.0, 80.0, 83.0],
+      "c": [160.0, 175.0, 95.0, 95.0],
+      "x": [150.0, 210.0, 80.0, 83.0],
+      "f": [115.0, 230.0, 35.0, 40.0],
+      "s": [120.0, 280.0, 43.0, 110.0],
+      "p": [160.0, 195.0, 90.0, 93.0],
+    };
+
+    late String gillsSuffix = "";
+    if (mushroomFeatures["cap"]["shape"] == "s") {
+      gillsSuffix = "_s";
+    }
 
     return SizedBox(
       height: 300,
@@ -34,15 +48,19 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
           // cap
           Positioned(
             top: 0,
-            child: ColorFiltered(
-              colorFilter: ColorFilter.mode(
-                colorMapper[mushroomFeatures["cap"]["color"]], // color overlay of cap
-                BlendMode.modulate,
-              ),
-              child: SvgPicture.asset(
-                  "../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg",
-                  fit: BoxFit.cover,
-                  width: capWidth),
+            child: Stack(
+              children: [
+                ColorFiltered(
+                  colorFilter: ColorFilter.mode(
+                    colorMapper[mushroomFeatures["cap"]["color"]], // color overlay of cap
+                    BlendMode.modulate,
+                  ),
+                  child: SvgPicture.asset(
+                      "../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg",
+                      fit: BoxFit.cover,
+                      height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]),
+                ),
+              ],
             ),
           ),
           // cap texture, doesnt wanna work :(
@@ -51,11 +69,11 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
             child: Image.asset(
                 "../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.png",
                 fit: BoxFit.fill,
-                width: capWidth-45),
+                width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]-25,),
           ),
           // gills
           Positioned(
-            top: 80,
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][2],
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["gills"]
@@ -63,14 +81,14 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                 BlendMode.modulate,
               ),
               child: SvgPicture.asset(
-                  "../assets/gills/${mushroomFeatures["gills"]["spacing"]}.svg",
+                  "../assets/gills/${mushroomFeatures["gills"]["spacing"]}$gillsSuffix.svg", // change to name as
                   fit: BoxFit.cover,
-                  width: 220),
+                  width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][1]),
             ),
           ),
           // stem
           Positioned(
-            bottom: 40,
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3],
             left: 158,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
@@ -84,8 +102,8 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
             ),
           ),
           Positioned(
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+10,
             left: 165,
-            bottom: 160,
             child: SvgPicture.asset(
                 "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
                 fit: BoxFit.cover,
