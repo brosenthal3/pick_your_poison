@@ -59,7 +59,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       "z": 90,
       "y": 80,
       "m": 82,
-    };
+    }; 
     
 
     late String gillsSuffix = "";

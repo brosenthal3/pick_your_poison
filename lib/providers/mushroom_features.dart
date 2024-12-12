@@ -5,12 +5,12 @@ class MushroomFeaturesProvider with ChangeNotifier {
     "cap": {
       "shape": "b",
       "diameter": 10,
-      "surface": "i",
-      "color": "e",
+      "surface": "s",
+      "color": "w",
     },
     "gills": {
-      "spacing": "c",
-      "color": "k",
+      "spacing": "f",
+      "color": "w",
     },
     "stem": {
       "surface": "g",
