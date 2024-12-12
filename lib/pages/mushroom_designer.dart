@@ -55,7 +55,22 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
             children: [
               // dynamic mushroom design widget (to be implemented)
               const SizedBox(height: 10),
-              const DynamicMushroomDesign(),
+              Stack(
+                children: [
+                  DynamicMushroomDesign(),
+                  Positioned(
+                    right: 20,
+                    bottom: 20,
+                    child: FloatingActionButton(onPressed: (){},
+                    backgroundColor: Colors.red,
+                    shape: const CircleBorder(),
+                    elevation: 0,
+                    mini: true,
+                    child:  const Text("!", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: Colors.white),),
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 10),
               // mushroom design options (to be implemented)
               MushroomDesignerOptions(currentPage),
@@ -318,6 +333,13 @@ class OtherOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider =
+        Provider.of<MushroomFeaturesProvider>(context);
+
+    void updateMushroomFeatures(String feature, String value) {
+      mushroomFeaturesProvider.updateFeature("other", feature, value);
+    }
+
     return ScrollableOptionsContainer(
       child: Column(
       children: [
@@ -326,17 +348,17 @@ class OtherOptions extends StatelessWidget {
             // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g),
             // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
             options: [
-              MushroomOptionButton("None", () {}),
-              MushroomOptionButton("Cobwebby", () {}),
-              MushroomOptionButton("Evenescent", () {}),
-              MushroomOptionButton("Flaring", () {}),
-              MushroomOptionButton("Grooved", () {}),
-              MushroomOptionButton("Large", () {}),
-              MushroomOptionButton("Pendant", () {}),
-              MushroomOptionButton("Sheathing", () {}),
-              MushroomOptionButton("Zone", () {}),
-              MushroomOptionButton("Scales", () {}),
-              MushroomOptionButton("Moveable", () {}),
+              MushroomOptionButton("None", () {updateMushroomFeatures("ring", "f");}),
+              MushroomOptionButton("Cobwebby", () {updateMushroomFeatures("ring", "c");}),
+              MushroomOptionButton("Evenescent", () {updateMushroomFeatures("ring", "e");}),
+              MushroomOptionButton("Flaring", () {updateMushroomFeatures("ring", "r");}),
+              MushroomOptionButton("Grooved", () {updateMushroomFeatures("ring", "g");}),
+              MushroomOptionButton("Large", () {updateMushroomFeatures("ring", "l");}),
+              MushroomOptionButton("Pendant", () {updateMushroomFeatures("ring", "p");}),
+              MushroomOptionButton("Sheathing", () {updateMushroomFeatures("ring", "s");}),
+              MushroomOptionButton("Zone", () {updateMushroomFeatures("ring", "z");}),
+              MushroomOptionButton("Scales", () {updateMushroomFeatures("ring", "y");}),
+              MushroomOptionButton("Moveable", () {updateMushroomFeatures("ring", "m");}),
             ]),
       ],
     ));

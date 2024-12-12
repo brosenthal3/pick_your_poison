@@ -34,6 +34,34 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       "p": [160.0, 195.0, 90.0, 93.0],
     };
 
+    final Map stemRingAttributes = {
+      // stem position, ring position, ring width
+      "s": [0, 165, 70],
+      "b": [0, 165, 70],
+      "c": [0, 165, 70],
+      "u": [0, 165, 70], 
+      "e": [0, 165, 70],
+      "z": [0, 165, 70],
+      "r": [0, 165, 70],
+    };
+
+    final Map ringAttributes = {
+      //- Ring: none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
+      // ring width based on ring types
+      "c": 75,
+      "f": 75,
+      "e": 95,
+      "r": 150,
+      "g": 95,
+      "l": 155,
+      "p": 120,
+      "s": 110,
+      "z": 90,
+      "y": 80,
+      "m": 82,
+    };
+    
+
     late String gillsSuffix = "";
     if (mushroomFeatures["cap"]["shape"] == "s") {
       gillsSuffix = "_s";
@@ -102,12 +130,19 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
             ),
           ),
           Positioned(
-            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+10,
-            left: 165,
-            child: SvgPicture.asset(
-                "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
-                fit: BoxFit.cover,
-                height: 50),
+            top: mushroomFeatures["other"]["ring"] == 'c' ? mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+10
+            : mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+60,
+            //left: stemRingAttributes[mushroomFeatures["stem"]["roots"]][1],
+            child: mushroomFeatures["other"]["ring"] == 'f' ? Container() : ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                colorMapper[mushroomFeatures["stem"]["color"]], // color overlay of stem (overlays ring and root too)
+                BlendMode.modulate,
+              ),
+              child: SvgPicture.asset(
+                  "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
+                  fit: BoxFit.cover,
+                  width: ringAttributes[mushroomFeatures["other"]["ring"]]),
+            ),
           ),
         ],
       ),
