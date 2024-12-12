@@ -127,7 +127,7 @@ Map<String, Color> colorMapperFunc() {
     "u": Color.fromARGB(255, 130, 102, 153), // muted purple
     "e": Color.fromARGB(255, 237, 34, 20), // muted red
     "w": Color.fromARGB(255, 245, 245, 245), // muted white
-    "y": Color.fromARGB(255, 255, 220, 40), // muted yellow
-    "l": Color.fromARGB(255, 44, 136, 255), // muted blue
+    "y": Color.fromARGB(255, 235, 211, 87), // muted yellow
+    "l": Color.fromARGB(255, 66, 135, 227), // muted blue
   };
 }

@@ -4,7 +4,6 @@ import 'package:pick_your_poison/providers/mushroom_features.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
 import 'dart:math';
-import '../providers/mushroom_features.dart';
 import 'package:provider/provider.dart';
 
 class PredictionPage extends StatefulWidget {
@@ -20,7 +19,6 @@ class _PredictionPageState extends State<PredictionPage> {
   @override
   Widget build(BuildContext context) {
     final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
-    final int randomNumber = random.nextInt(100);
 
     void restartDesign(){
       Navigator.pushReplacementNamed(context, '/mushroom_designer');
