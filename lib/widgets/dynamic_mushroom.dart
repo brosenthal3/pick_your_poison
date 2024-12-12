@@ -39,6 +39,8 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       gillsSuffix = "_s";
     }
 
+    late String capTexturePath = "../assets/cap/texture/texture_capshape/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}.png";
+
     return SizedBox(
       height: 300,
       width: double.infinity,
@@ -63,13 +65,11 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
               ],
             ),
           ),
-          // cap texture, doesnt wanna work :(
           Positioned(
             top: 0,
-            child: mushroomFeatures["cap"]["surface"] != 's' ? Image.asset(
-                "../assets/cap/texture/${mushroomFeatures["cap"]["surface"]}.png",
+            child: Image.asset(capTexturePath,
                 fit: BoxFit.fill,
-                height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0],) : Container(),
+                height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]-10,),
           ),
           // gills
           Positioned(
@@ -89,7 +89,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
           // stem
           Positioned(
             top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3],
-            left: 158,
+            //left: 158,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["stem"]["color"]], // color overlay of stem (overlays ring and root too)

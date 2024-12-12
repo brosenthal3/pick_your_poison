@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../providers/mushroom_features.dart';
 
 class MushroomDesigner extends StatefulWidget {
+  const MushroomDesigner({super.key});
+
   @override
   _MushroomDesignerState createState() => _MushroomDesignerState();
 }
@@ -18,34 +20,32 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
       appBar: AppBar(
         toolbarHeight: 100,
         backgroundColor: const Color(0xFFF2EDE2),
-        title: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              currentPage == "cap"
-                  ? Container()
-                  : BackButton(
-                      onPressed:
-                          goBackward), // if currentPage is cap, don't show back button
-              StandardText(currentPage, 25),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent[200],
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-                ),
-                onPressed: goForward,
-                child: Text(
-                  currentPage == "other" ? "Predict" : "Next",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            currentPage == "cap"
+                ? Container()
+                : BackButton(
+                    onPressed:
+                        goBackward), // if currentPage is cap, don't show back button
+            StandardText(currentPage, 25),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent[200],
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+              ),
+              onPressed: goForward,
+              child: Text(
+                currentPage == "other" ? "Predict" : "Next",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       body: Container(
