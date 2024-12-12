@@ -16,6 +16,20 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
 
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider =
+        Provider.of<MushroomFeaturesProvider>(context);
+
+    List getPrediction() {
+      double pred = mushroomFeaturesProvider.getPrediction();
+      if (pred == 1) {
+        return ["!", Colors.redAccent[200]];
+      } else {
+        return [":)", Colors.greenAccent[200]];
+      }
+    }
+
+    final List prediction = getPrediction();
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
@@ -62,11 +76,11 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                     right: 20,
                     bottom: 20,
                     child: FloatingActionButton(onPressed: (){},
-                    backgroundColor: Colors.red,
+                    backgroundColor: prediction[1],
                     shape: const CircleBorder(),
                     elevation: 0,
                     mini: true,
-                    child:  const Text("!", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: Colors.white),),
+                    child: Text(prediction[0], style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: Colors.white),),
                     ),
                   ),
                 ],
@@ -116,7 +130,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
 // builds the correct options section based on the current stage
 class MushroomDesignerOptions extends StatelessWidget {
   final String stage;
-  MushroomDesignerOptions(this.stage);
+  const MushroomDesignerOptions(this.stage, {super.key});
 
   Widget getOptions(String stage) {
     if (stage == "cap") {
@@ -169,8 +183,7 @@ class CapOptions extends StatefulWidget {
 }
 
 class _CapOptionsState extends State<CapOptions> {
-  final MushroomDesignerOptions mushroomDesignerOptions =
-      MushroomDesignerOptions("cap");
+  final MushroomDesignerOptions mushroomDesignerOptions = MushroomDesignerOptions("cap");
   double capDiameter = 10;
   final colorMapper = colorMapperFunc();
 
@@ -186,6 +199,12 @@ class _CapOptionsState extends State<CapOptions> {
     return ScrollableOptionsContainer(
       child: Column(
         children: [
+          MushroomDesignerOptionsColumn(
+              label: "Color",
+              options: mushroomDesignerOptions
+                  .getColorOptions(updateMushroomFeatures)
+          ),
+          const SizedBox(height: 20),
           // Shape: bell (b), conical (C), convex (x), flat (f), sunken (s), spherical (p)
           MushroomDesignerOptionsColumn(label: "Shape", options: [
             MushroomOptionButton("Bell", () => updateMushroomFeatures("shape", "b")),
@@ -223,11 +242,7 @@ class _CapOptionsState extends State<CapOptions> {
             MushroomOptionButton("Wrinkled", () {updateMushroomFeatures("surface", "w");}),
             MushroomOptionButton("Fleshy", () {updateMushroomFeatures("surface", "e");}),
           ]),
-          const SizedBox(height: 20),
-          MushroomDesignerOptionsColumn(
-              label: "Color",
-              options: mushroomDesignerOptions
-                  .getColorOptions(updateMushroomFeatures)),
+          
         ],
       ),
     );
@@ -252,16 +267,17 @@ class GillOptions extends StatelessWidget {
     return ScrollableOptionsContainer(
       child: Column(
         children: [
+          MushroomDesignerOptionsColumn(
+              label: "Color",
+              options: mushroomDesignerOptions
+                  .getColorOptions(updateMushroomFeatures)
+          ),
+          const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(label: "Spacing", options: [
             MushroomOptionButton("None", () {updateMushroomFeatures("spacing", "f");}),
             MushroomOptionButton("Close", () {updateMushroomFeatures("spacing", "c");}),
             MushroomOptionButton("Distant", () {updateMushroomFeatures("spacing", "d");})
           ]),
-          const SizedBox(height: 20),
-          MushroomDesignerOptionsColumn(
-              label: "Color",
-              options: mushroomDesignerOptions
-                  .getColorOptions(updateMushroomFeatures))
         ],
       ),
     );
@@ -288,6 +304,12 @@ class StalkOptions extends StatelessWidget {
       child: Column(
         children: [
           MushroomDesignerOptionsColumn(
+              label: "Color",
+              options: mushroomDesignerOptions
+                  .getColorOptions(updateMushroomFeatures)
+          ),
+          const SizedBox(height: 20),
+          MushroomDesignerOptionsColumn(
               label: "Root",
               //- Root: swollen (s), bulbous (b), club (c), cup (u), equal (e), rhizomorphous (z), rooted (r)
               options: [
@@ -299,11 +321,6 @@ class StalkOptions extends StatelessWidget {
                 MushroomOptionButton("Rhizomorphs", () {updateMushroomFeatures("roots", "z");}),
                 MushroomOptionButton("Rooted", () {updateMushroomFeatures("roots", "r");}),
               ]),
-          const SizedBox(height: 20),
-          MushroomDesignerOptionsColumn(
-              label: "Color",
-              options: mushroomDesignerOptions
-                  .getColorOptions(updateMushroomFeatures)),
           const SizedBox(height: 20),
           MushroomDesignerOptionsColumn(
               label: "Surface",

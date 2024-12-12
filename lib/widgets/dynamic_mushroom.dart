@@ -67,7 +67,16 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       gillsSuffix = "_s";
     }
 
-    late String capTexturePath = "../assets/cap/texture/texture_capshape/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}.png";
+    late String capTexturePathSuffix = "";
+    if (mushroomFeatures["cap"]["color"] == "k"){
+      capTexturePathSuffix = "/black/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}_black.png";
+    } else if (mushroomFeatures["cap"]["color"] == "w" || mushroomFeatures["cap"]["color"] == "b") {
+      capTexturePathSuffix = "/white/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}_white.png";
+    } else {
+      capTexturePathSuffix = "/other/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}.png";
+    }
+
+    final String capTexturePath = "../assets/cap/texture$capTexturePathSuffix";
 
     return SizedBox(
       height: 300,
@@ -97,7 +106,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
             top: 0,
             child: Image.asset(capTexturePath,
                 fit: BoxFit.fill,
-                height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]-10,),
+                height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]-5,),
           ),
           // gills
           Positioned(

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pick_your_poison/providers/mushroom_features.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
 import 'dart:math';
+import '../providers/mushroom_features.dart';
+import 'package:provider/provider.dart';
 
 class PredictionPage extends StatefulWidget {
   @override
@@ -13,20 +16,55 @@ class _PredictionPageState extends State<PredictionPage> {
   Random random = Random();  // for now, RNG for prediction, later this will be replaced with a model
   late String prediction = "POISONOUS";
 
+
   @override
   Widget build(BuildContext context) {
+    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
     final int randomNumber = random.nextInt(100);
-    if(randomNumber > 50) {
-      prediction = "EDIBLE";
+
+    void restartDesign(){
+      Navigator.pushReplacementNamed(context, '/mushroom_designer');
+      mushroomFeaturesProvider.resetMushroom();
     }
+      
+    List getPrediction() {
+      double pred = mushroomFeaturesProvider.getPrediction();
+      if (pred == 1) {
+        return ["POISONOUS", const Color.fromARGB(255, 214, 27, 14)];
+      } else {
+        return ["EDIBLE", const Color.fromARGB(255, 0, 128, 0)];
+      }
+    }
+
+    late List prediction = getPrediction();
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
       appBar: AppBar(
         backgroundColor: const Color(0xFFF2EDE2),
         toolbarHeight: 100,
-        title: Container(
-          child: StandardText("Back", 25),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: StandardText("Back", 25),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent[200],
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+              ),
+              onPressed: restartDesign,
+              child: const Text(
+                "Start again",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       body: Expanded(
@@ -46,13 +84,13 @@ class _PredictionPageState extends State<PredictionPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                color: prediction == "POISONOUS" ? Color.fromARGB(255, 214, 27, 14) : Color.fromARGB(255, 0, 128, 0),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                color: prediction[1],
                 child: Center(
                   child: Text(
-                    prediction,
+                    prediction[0],
                     style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 25,

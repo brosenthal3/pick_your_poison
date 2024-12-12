@@ -50,7 +50,6 @@ class _TutorialState extends State<Tutorial> {
       if (currentIndex < 3) {
         currentIndex += 1;
       } else {
-        print('Go to mushroom designer');
         Navigator.pushReplacementNamed(context, '/mushroom_designer');
       }
     });
