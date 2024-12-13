@@ -12,19 +12,20 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
-  Random random = Random();  // for now, RNG for prediction, later this will be replaced with a model
+  Random random =
+      Random(); // for now, RNG for prediction, later this will be replaced with a model
   late String prediction = "POISONOUS";
-
 
   @override
   Widget build(BuildContext context) {
-    final mushroomFeaturesProvider = Provider.of<MushroomFeaturesProvider>(context);
+    final mushroomFeaturesProvider =
+        Provider.of<MushroomFeaturesProvider>(context);
 
-    void restartDesign(){
+    void restartDesign() {
       Navigator.pushReplacementNamed(context, '/mushroom_designer');
       mushroomFeaturesProvider.resetMushroom();
     }
-      
+
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
@@ -49,7 +50,7 @@ class _PredictionPageState extends State<PredictionPage> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.redAccent[200],
+                backgroundColor: const Color.fromARGB(255, 231, 72, 38),
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
               ),
@@ -133,7 +134,7 @@ class _PredictionPageState extends State<PredictionPage> {
                       children: [
                         TextSpan(
                             text:
-                            "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
+                                "This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.",
                             //textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               color: Color.fromARGB(255, 20, 20, 20),
