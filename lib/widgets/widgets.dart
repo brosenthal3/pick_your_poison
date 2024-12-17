@@ -155,3 +155,40 @@ extension StringExtension on String {
       return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
     }
 }
+
+class PredictionText extends StatelessWidget {
+  final List<dynamic> prediction;
+
+  const PredictionText({required this.prediction});
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          const TextSpan(
+            text: "This mushroom is most likely ",
+            style: TextStyle(color: Color.fromARGB(255, 20, 20, 20),
+            fontSize: 18,
+            fontWeight: FontWeight.w700,),
+          ),
+          TextSpan(
+            text: "${prediction[2]}",
+            style: TextStyle(
+              color: prediction[1],
+              fontSize: 20,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const TextSpan(
+            text: ". Finish your mushroom design and press on predict for a more accurate prediction.",
+            style: TextStyle(
+              color: Color.fromARGB(255, 20, 20, 20),
+              fontSize: 18,
+              fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
+    );
+  }
+}

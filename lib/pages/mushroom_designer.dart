@@ -29,9 +29,9 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
-        return [":(", Color.fromARGB(255, 237, 34, 20)];
+        return [":(", Color.fromARGB(255, 163, 35, 26), "poisonous"];
       } else {
-        return [":)", Colors.greenAccent[200]];
+        return [":)", const Color.fromARGB(255, 32, 161, 38), 'not poisonous'];
       }
     }
 
@@ -78,7 +78,18 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                     right: 20,
                     bottom: 20,
                     child: FloatingActionButton(
-                      onPressed: () {},
+                      onPressed: () {showDialog(context: context, builder: (BuildContext context) => AlertDialog(
+                        title: StandardText("Prediction", 30),
+                        content: PredictionText(prediction: prediction),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: StandardText("OK", 15),
+                          ),
+                        ],
+                      ));},
                       backgroundColor: prediction[1],
                       shape: const CircleBorder(),
                       elevation: 0,
