@@ -185,50 +185,59 @@ class ArrowPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
-      ..color = Color(0xFF807A72)
+      ..color = Color(0xFF807A72) // Line color
       ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
+
+    final Paint circlePaint = Paint()
+      ..color = Color(0xFF807A72) // Circle color (same as the line color)
+      ..style = PaintingStyle.fill;
 
     // Define button dimensions
     final double buttonWidth = 120; // Adjust according to actual button width
     final double buttonHeight = 55; // Adjust according to actual button height
 
-    // Draw L-shaped lines for each button
+    // Draw L-shaped lines for each button with circles at the endpoints
 
     // Cap Button
-    _drawLShapedLine(
+    _drawLShapedLineWithCircle(
       canvas,
       paint,
+      circlePaint,
       Offset(buttonWidth + 20, buttonHeight / 2),
       Offset(size.width / 2.5, size.height * 0.2),
     );
 
     // Gills Button
-    _drawLShapedLine(
+    _drawLShapedLineWithCircle(
       canvas,
       paint,
+      circlePaint,
       Offset(size.width - 20 - buttonWidth, buttonHeight / 2),
       Offset(size.width / 2 + 50, size.height * 0.4),
     );
 
     // Ring Button
-    _drawLShapedLine(
+    _drawLShapedLineWithCircle(
       canvas,
       paint,
+      circlePaint,
       Offset(size.width - 20 - buttonWidth, size.height / 2 + 30),
       Offset(size.width / 2 + 20, size.height / 2 + 30),
     );
 
     // Stem Button
-    _drawLShapedLine(
+    _drawLShapedLineWithCircle(
       canvas,
       paint,
+      circlePaint,
       Offset(buttonWidth + 20, size.height * 0.8 - 20),
       Offset(size.width / 2 - 10, size.height * 0.8 - 20),
     );
   }
 
-  void _drawLShapedLine(Canvas canvas, Paint paint, Offset start, Offset end) {
+  void _drawLShapedLineWithCircle(
+      Canvas canvas, Paint paint, Paint circlePaint, Offset start, Offset end) {
     final Path path = Path();
     path.moveTo(start.dx, start.dy);
 
@@ -238,7 +247,11 @@ class ArrowPainter extends CustomPainter {
     // 2. Vertical segment
     path.lineTo(end.dx, end.dy);
 
+    // Draw the path (L-shaped line)
     canvas.drawPath(path, paint);
+
+    // Draw a circle at the end of the line
+    canvas.drawCircle(end, 6, circlePaint); // Circle with radius 6
   }
 
   @override
