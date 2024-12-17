@@ -155,15 +155,20 @@ class MushroomBodyMapPage extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 231, 72, 38),
+              backgroundColor: pagesVisited == 4
+                  ? Color.fromARGB(255, 231, 72, 38)
+                  : Color.fromARGB(128, 122, 114, 100),
+              foregroundColor: Colors.white,
+              disabledBackgroundColor: Color.fromARGB(128, 122, 114, 100),
+              disabledForegroundColor: Colors.white,
               padding:
                   const EdgeInsets.symmetric(vertical: 25, horizontal: 150),
+              elevation: 0,
             ),
-            onPressed: () => startPrediction(),
+            onPressed: pagesVisited == 4 ? () => startPrediction() : null,
             child: const Text(
               "Predict",
               style: TextStyle(
-                color: Colors.white,
                 fontSize: 20,
               ),
             ),
