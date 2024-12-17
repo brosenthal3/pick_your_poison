@@ -26,6 +26,9 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     final mushroomFeaturesProvider =
         Provider.of<MushroomFeaturesProvider>(context);
 
+    // set page to visited
+    mushroomFeaturesProvider.updateVisitedPage(currentPage);
+
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
@@ -77,36 +80,12 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                   Positioned(
                     right: 20,
                     bottom: 20,
-                    child: FloatingActionButton(
-                      onPressed: () {showDialog(context: context, builder: (BuildContext context) => AlertDialog(
-                        title: StandardText("Prediction", 30),
-                        content: PredictionText(prediction: prediction),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: StandardText("OK", 15),
-                          ),
-                        ],
-                      ));},
-                      backgroundColor: prediction[1],
-                      shape: const CircleBorder(),
-                      elevation: 0,
-                      mini: true,
-                      child: Text(
-                        prediction[0],
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
+                    child: RealTimePrediction(prediction: prediction),
                   ),
                 ],
               ),
               const SizedBox(height: 10),
-              // mushroom design options (to be implemented)
+              // mushroom design options
               MushroomDesignerOptions(currentPage),
             ],
           ),

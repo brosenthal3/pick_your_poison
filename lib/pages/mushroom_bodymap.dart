@@ -2,16 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import 'package:pick_your_poison/widgets/widgets.dart';
+import 'Package:provider/provider.dart';
+import 'package:pick_your_poison/providers/mushroom_features.dart';
 
 class MushroomBodyMapPage extends StatelessWidget {
   const MushroomBodyMapPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    startPrediction() {
+    final mushroomFeaturesProvider =
+        Provider.of<MushroomFeaturesProvider>(context, listen: true);
+    
+    bool isPageVisited(String page) {
+      return mushroomFeaturesProvider.isPageVisited(page);
+    }
+
+    void startPrediction() {
       // TODO: perform API call to predict mushroom
       Navigator.pushNamed(context, '/prediction_page');
     }
+
+    Color editedColor = const Color.fromARGB(255, 112, 170, 37).withOpacity(0.6);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
@@ -43,38 +54,37 @@ class MushroomBodyMapPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: Container(
-              height: 400,
-              padding: EdgeInsets.all(20),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 400,
+            child: Center(
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   DynamicMushroomDesign(),
                   
                   Positioned(
-                    left: 20,
                     top: 10,
-                    child: BodyMapButton("Cap", () => Navigator.pushNamed(context, '/mushroom_designer/cap'))
+                    left: 40,
+                    child: BodyMapButton("Cap", () => Navigator.pushNamed(context, '/mushroom_designer/cap'), color: isPageVisited("cap") ? editedColor : null )
                   ),
               
                   Positioned(
                     top: 80,
-                    right: 5,
-                    child: BodyMapButton("Gills", () => Navigator.pushNamed(context, '/mushroom_designer/gills'))
+                    right: 25,
+                    child: BodyMapButton("Gills", () => Navigator.pushNamed(context, '/mushroom_designer/gills'), color: isPageVisited("gills") ? editedColor : null )
                   ),
                   Positioned(
                     top: 160,
-                    right: 5,
-                    child: BodyMapButton("Ring", () => Navigator.pushNamed(context, '/mushroom_designer/other'))
+                    right: 25,
+                    child: BodyMapButton("Ring", () => Navigator.pushNamed(context, '/mushroom_designer/other'), color: isPageVisited("other") ? editedColor : null )
                   ),
 
                   Positioned(
                     bottom: 40,
-                    left: 20,
-                    child: BodyMapButton("Stem", () => Navigator.pushNamed(context, '/mushroom_designer/stem'))
+                    left: 40,
+                    child: BodyMapButton("Stem", () => Navigator.pushNamed(context, '/mushroom_designer/stem'), color: isPageVisited("stem") ? editedColor : null )
                   ),
-                  
                 ],
               ),
             ),

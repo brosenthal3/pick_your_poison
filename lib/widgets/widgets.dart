@@ -34,10 +34,10 @@ ElevatedButton SkipButton(String text, Function onPressed) {
   );
 }
 
-ElevatedButton BodyMapButton(String text, Function onPressed) {
+ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromARGB(255, 80, 69, 66),
+      backgroundColor: color ?? const Color.fromARGB(255, 80, 69, 66).withOpacity(0.5),
       padding:
           const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
     ),
@@ -56,7 +56,7 @@ Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
   final String imagePath =
-      "../assets/icons/$textInputLower.svg"; // will later be used as image path for icon
+      "../assets/icons/$textInputLower.svg";
 
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -188,6 +188,44 @@ class PredictionText extends StatelessWidget {
               fontWeight: FontWeight.w700),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class RealTimePrediction extends StatelessWidget {
+  const RealTimePrediction({
+    super.key,
+    required this.prediction,
+  });
+
+  final List prediction;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {showDialog(context: context, builder: (BuildContext context) => AlertDialog(
+        title: StandardText("Prediction", 30),
+        content: PredictionText(prediction: prediction),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: StandardText("OK", 15),
+          ),
+        ],
+      ));},
+      backgroundColor: prediction[1],
+      shape: const CircleBorder(),
+      elevation: 0,
+      mini: true,
+      child: Text(
+        prediction[0],
+        style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white),
       ),
     );
   }
