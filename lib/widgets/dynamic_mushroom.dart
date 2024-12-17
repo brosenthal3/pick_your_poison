@@ -110,7 +110,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
           ),
           // gills
           Positioned(
-            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][2],
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][2] - (mushroomFeatures["gills"]["spacing"] == "d" ? 3 : 0),
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["gills"]
@@ -120,7 +120,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
               child: SvgPicture.asset(
                   "../assets/gills/${mushroomFeatures["gills"]["spacing"]}$gillsSuffix.svg", // change to name as
                   fit: BoxFit.cover,
-                  width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][1]),
+                  width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][1] + (mushroomFeatures["gills"]["spacing"] == "d" ? 6 : 0)),
             ),
           ),
           // stem
