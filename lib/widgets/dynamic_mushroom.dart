@@ -78,6 +78,15 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
 
     final String capTexturePath = "../assets/cap/texture$capTexturePathSuffix";
 
+    late String stemTextureBG = "";
+    if (mushroomFeatures["stem"]["color"] == "w" || mushroomFeatures["stem"]["color"] == "b") {
+      stemTextureBG = "light-bg";
+    } else {
+      stemTextureBG = "dark-bg";
+    }
+
+    final String stemTexturePath = "../assets/stem/texture/$stemTextureBG/${mushroomFeatures["stem"]["surface"]}_${mushroomFeatures["stem"]["roots"]}.png";
+
     return SizedBox(
       height: 300,
       width: double.infinity,
@@ -139,7 +148,14 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
             ),
           ),
 
-          // TODO: stem texture
+          Positioned(
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3] + (['c', 'e', 'z', 'r'].contains(mushroomFeatures["stem"]["roots"]) ? 4 : 1),
+            left: mushroomFeatures["stem"]["roots"] == 'u' ? 157 : null, // only cup needs direct spacing, others are centered.
+            child: 
+              Image.asset(stemTexturePath,
+              fit: BoxFit.fill,
+              height: 175),
+          ),
 
           Positioned(
             top: mushroomFeatures["other"]["ring"] == 'c' ? mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+10

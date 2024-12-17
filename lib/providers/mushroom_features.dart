@@ -25,7 +25,7 @@ class MushroomFeaturesProvider with ChangeNotifier {
         "color": "w",
       },
       "stem": {
-        "surface": "g",
+        "surface": "s",
         "color": "w",
         "roots": "s",
       },

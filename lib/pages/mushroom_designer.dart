@@ -367,18 +367,39 @@ class StalkOptions extends StatelessWidget {
           MushroomDesignerOptionsColumn(
               label: "Surface",
               //- Surface: fibrous (i), grooves (g), scaley (y), smooth (s), shiny (h), leathery (l), silky (k), sticky (t), wrinkled (w), fleshy (e)
-              options: [
-                MushroomOptionButton("Fibrous", () {}),
-                MushroomOptionButton("Grooves", () {}),
-                MushroomOptionButton("Scaly", () {}),
-                MushroomOptionButton("Smooth", () {}),
-                MushroomOptionButton("Shiny", () {}),
-                MushroomOptionButton("Leathery", () {}),
-                MushroomOptionButton("Silky", () {}),
-                MushroomOptionButton("Sticky", () {}),
-                MushroomOptionButton("Wrinkled", () {}),
-                MushroomOptionButton("Fleshy", () {}),
-              ]),
+              options: 
+              [
+            MushroomOptionButton("Fibrous", () {
+              updateMushroomFeatures("surface", "i");
+            }),
+            MushroomOptionButton("Grooves", () {
+              updateMushroomFeatures("surface", "g");
+            }),
+            MushroomOptionButton("Scaly", () {
+              updateMushroomFeatures("surface", "y");
+            }),
+            MushroomOptionButton("Smooth", () {
+              updateMushroomFeatures("surface", "s");
+            }),
+            MushroomOptionButton("Shiny", () {
+              updateMushroomFeatures("surface", "h");
+            }),
+            MushroomOptionButton("Leathery", () {
+              updateMushroomFeatures("surface", "l");
+            }),
+            MushroomOptionButton("Silky", () {
+              updateMushroomFeatures("surface", "k");
+            }),
+            MushroomOptionButton("Sticky", () {
+              updateMushroomFeatures("surface", "t");
+            }),
+            MushroomOptionButton("Wrinkled", () {
+              updateMushroomFeatures("surface", "w");
+            }),
+            MushroomOptionButton("Fleshy", () {
+              updateMushroomFeatures("surface", "e");
+            }),
+          ]),
         ],
       ),
     );
