@@ -34,6 +34,24 @@ ElevatedButton SkipButton(String text, Function onPressed) {
   );
 }
 
+ElevatedButton BodyMapButton(String text, Function onPressed) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Color.fromARGB(255, 80, 69, 66),
+      padding:
+          const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
+    ),
+    onPressed: () => onPressed(),
+    child: Text(
+      text,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
+    ),
+  );
+}
+
 Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");

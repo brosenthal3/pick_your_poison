@@ -106,6 +106,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   startDesigner() {
-    Navigator.pushReplacementNamed(context, '/mushroom_designer');
+    Navigator.pushReplacementNamed(context, '/mushroom_bodymap');
   }
 }
