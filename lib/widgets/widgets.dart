@@ -86,7 +86,7 @@ Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
         Text(
           textInput,
           style: TextStyle(
-            color: Color.fromARGB(255, 20, 20, 20),
+            color: const Color.fromARGB(255, 40, 40, 40),
             fontSize: 17,
           ),
         ),
@@ -112,7 +112,7 @@ Column MushroomOptionButtonColor(
       SizedBox(height: 10),
       Text(textInput,
           style: TextStyle(
-            color: Color.fromARGB(255, 20, 20, 20),
+            color: const Color.fromARGB(255, 40, 40, 40),
             fontSize: 17,
           )),
     ],
@@ -123,7 +123,7 @@ Text StandardText(String text, double size) {
   return Text(
     text,
     style: GoogleFonts.poppins(
-      color: const Color.fromARGB(255, 20, 20, 20),
+      color: const Color.fromARGB(255, 40, 40, 40),
       fontSize: size,
       fontWeight: FontWeight.w700,
     ),
@@ -165,29 +165,30 @@ class PredictionText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         children: [
-          const TextSpan(
+          TextSpan(
             text: "This mushroom is most likely ",
-            style: TextStyle(
-              color: Color.fromARGB(255, 20, 20, 20),
+            style: GoogleFonts.poppins(
+              color: const Color.fromARGB(255, 20, 20, 20),
               fontSize: 18,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w400,
             ),
           ),
           TextSpan(
             text: "${prediction[2]}",
-            style: TextStyle(
+            style: GoogleFonts.poppins(
               color: prediction[1],
               fontSize: 18,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          const TextSpan(
+          TextSpan(
             text:
-                ". Finish your mushroom design and press on predict for a more accurate prediction.",
-            style: TextStyle(
-                color: Color.fromARGB(255, 20, 20, 20),
-                fontSize: 18,
-                fontWeight: FontWeight.w700),
+                ". Finish your mushroom design and press on the predict button for a more accurate result.",
+            style: GoogleFonts.poppins(
+              color: const Color.fromARGB(255, 20, 20, 20),
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ],
       ),
@@ -205,31 +206,42 @@ class RealTimePrediction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) => AlertDialog(
-                  title: StandardText("Prediction", 30),
-                  content: PredictionText(prediction: prediction),
-                  actions: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: StandardText("OK", 17),
+    return SizedBox(
+      width: 60,
+      height: 60,
+      child: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                    title: Text(
+                      "Prediction",
+                      style: GoogleFonts.poppins(
+                        color: const Color.fromARGB(255, 20, 20, 20),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ],
-                ));
-      },
-      backgroundColor: prediction[1],
-      shape: const CircleBorder(),
-      elevation: 0,
-      mini: true,
-      child: Text(
-        prediction[0],
-        style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                    content: PredictionText(prediction: prediction),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: StandardText("OK", 17),
+                      ),
+                    ],
+                  ));
+        },
+        backgroundColor: prediction[1],
+        shape: const CircleBorder(),
+        elevation: 0,
+        mini: true,
+        child: Text(
+          prediction[0],
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
       ),
     );
   }

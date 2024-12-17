@@ -68,7 +68,7 @@ class Tutorial1 extends StatelessWidget {
             textAlign: TextAlign.center,
             "Design your own mushroom",
             style: GoogleFonts.poppins(
-              color: const Color.fromARGB(255, 20, 20, 20),
+              color: const Color.fromARGB(255, 40, 40, 40),
               fontSize: 26,
               fontWeight: FontWeight.w700,
             ),
@@ -98,7 +98,7 @@ class Tutorial2 extends StatelessWidget {
             TextSpan(
                 text: "Find out if it could be \n",
                 style: GoogleFonts.poppins(
-                  color: const Color.fromARGB(255, 20, 20, 20),
+                  color: const Color.fromARGB(255, 40, 40, 40),
                   fontSize: 26,
                   fontWeight: FontWeight.w700,
                 ),
@@ -114,7 +114,7 @@ class Tutorial2 extends StatelessWidget {
                   TextSpan(
                     text: "or ",
                     style: GoogleFonts.poppins(
-                      color: const Color.fromARGB(255, 20, 20, 20),
+                      color: const Color.fromARGB(255, 40, 40, 40),
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
                     ),
@@ -157,7 +157,7 @@ class Tutorial3 extends StatelessWidget {
               textAlign: TextAlign.center,
               "Our classification models gives you an idea of its safety",
               style: GoogleFonts.poppins(
-                color: const Color.fromARGB(255, 20, 20, 20),
+                color: const Color.fromARGB(255, 40, 40, 40),
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               )),
@@ -187,7 +187,7 @@ class Tutorial4 extends StatelessWidget {
               textAlign: TextAlign.center,
               "See which real-life mushroom \n your creation resembles",
               style: GoogleFonts.poppins(
-                color: const Color.fromARGB(255, 20, 20, 20),
+                color: const Color.fromARGB(255, 40, 40, 40),
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               )),
@@ -219,7 +219,7 @@ class DotsIndicator extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: currentIndex == index
-                ? const Color.fromARGB(255, 20, 20, 20)
+                ? const Color.fromARGB(255, 40, 40, 40)
                 : Colors.grey,
           ),
         );

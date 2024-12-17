@@ -32,9 +32,9 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
-        return [":(", Color.fromARGB(255, 163, 35, 26), "poisonous"];
+        return ["✘", Color.fromARGB(255, 163, 35, 26), "poisonous"];
       } else {
-        return [":)", const Color.fromARGB(255, 32, 161, 38), 'not poisonous'];
+        return ["✔", const Color.fromARGB(255, 32, 161, 38), 'not poisonous'];
       }
     }
 
@@ -367,39 +367,38 @@ class StalkOptions extends StatelessWidget {
           MushroomDesignerOptionsColumn(
               label: "Surface",
               //- Surface: fibrous (i), grooves (g), scaley (y), smooth (s), shiny (h), leathery (l), silky (k), sticky (t), wrinkled (w), fleshy (e)
-              options: 
-              [
-            MushroomOptionButton("Fibrous", () {
-              updateMushroomFeatures("surface", "i");
-            }),
-            MushroomOptionButton("Grooves", () {
-              updateMushroomFeatures("surface", "g");
-            }),
-            MushroomOptionButton("Scaly", () {
-              updateMushroomFeatures("surface", "y");
-            }),
-            MushroomOptionButton("Smooth", () {
-              updateMushroomFeatures("surface", "s");
-            }),
-            MushroomOptionButton("Shiny", () {
-              updateMushroomFeatures("surface", "h");
-            }),
-            MushroomOptionButton("Leathery", () {
-              updateMushroomFeatures("surface", "l");
-            }),
-            MushroomOptionButton("Silky", () {
-              updateMushroomFeatures("surface", "k");
-            }),
-            MushroomOptionButton("Sticky", () {
-              updateMushroomFeatures("surface", "t");
-            }),
-            MushroomOptionButton("Wrinkled", () {
-              updateMushroomFeatures("surface", "w");
-            }),
-            MushroomOptionButton("Fleshy", () {
-              updateMushroomFeatures("surface", "e");
-            }),
-          ]),
+              options: [
+                MushroomOptionButton("Fibrous", () {
+                  updateMushroomFeatures("surface", "i");
+                }),
+                MushroomOptionButton("Grooves", () {
+                  updateMushroomFeatures("surface", "g");
+                }),
+                MushroomOptionButton("Scaly", () {
+                  updateMushroomFeatures("surface", "y");
+                }),
+                MushroomOptionButton("Smooth", () {
+                  updateMushroomFeatures("surface", "s");
+                }),
+                MushroomOptionButton("Shiny", () {
+                  updateMushroomFeatures("surface", "h");
+                }),
+                MushroomOptionButton("Leathery", () {
+                  updateMushroomFeatures("surface", "l");
+                }),
+                MushroomOptionButton("Silky", () {
+                  updateMushroomFeatures("surface", "k");
+                }),
+                MushroomOptionButton("Sticky", () {
+                  updateMushroomFeatures("surface", "t");
+                }),
+                MushroomOptionButton("Wrinkled", () {
+                  updateMushroomFeatures("surface", "w");
+                }),
+                MushroomOptionButton("Fleshy", () {
+                  updateMushroomFeatures("surface", "e");
+                }),
+              ]),
         ],
       ),
     );
