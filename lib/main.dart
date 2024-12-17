@@ -4,6 +4,7 @@ import 'package:pick_your_poison/pages/mushroom_designer.dart';
 import 'package:pick_your_poison/pages/tutorial.dart';
 import 'package:pick_your_poison/pages/prediction_page.dart';
 import 'package:pick_your_poison/pages/species_page.dart';
+import 'package:pick_your_poison/pages/mushroom_bodymap.dart';
 import 'package:provider/provider.dart';
 import 'providers/mushroom_features.dart'; // Import the provider class
 
@@ -25,9 +26,13 @@ class MainApp extends StatelessWidget {
         routes: {
           '/': (context) => HomePage(),
           '/tutorial': (context) => Tutorial(),
-          '/mushroom_designer': (context) => MushroomDesigner(),
+          '/mushroom_designer/cap': (context) => MushroomDesigner(currentPage: "cap"),
+          '/mushroom_designer/gills': (context) => MushroomDesigner(currentPage: "gills"),
+          '/mushroom_designer/stem': (context) => MushroomDesigner(currentPage: "stem"),
+          '/mushroom_designer/other': (context) => MushroomDesigner(currentPage: "other"),
           '/prediction_page': (context) => PredictionPage(),
           '/species_page': (context) => SpeciesPredictionPage(),
+          '/mushroom_bodymap': (context) => MushroomBodyMapPage(),
         });
   }
 }

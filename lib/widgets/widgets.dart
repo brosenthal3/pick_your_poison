@@ -34,11 +34,29 @@ ElevatedButton SkipButton(String text, Function onPressed) {
   );
 }
 
+ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: color ?? const Color.fromARGB(255, 80, 69, 66).withOpacity(0.5),
+      padding:
+          const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
+    ),
+    onPressed: () => onPressed(),
+    child: Text(
+      text,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
+    ),
+  );
+}
+
 Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
   final String imagePath =
-      "../assets/icons/$textInputLower.svg"; // will later be used as image path for icon
+      "../assets/icons/$textInputLower.svg";
 
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -130,4 +148,85 @@ Map<String, Color> colorMapperFunc() {
     "y": Color.fromARGB(255, 235, 211, 87), // muted yellow
     "l": Color.fromARGB(255, 66, 135, 227), // muted blue
   };
+}
+
+extension StringExtension on String {
+    String capitalize() {
+      return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+    }
+}
+
+class PredictionText extends StatelessWidget {
+  final List<dynamic> prediction;
+
+  const PredictionText({required this.prediction});
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          const TextSpan(
+            text: "This mushroom is most likely ",
+            style: TextStyle(color: Color.fromARGB(255, 20, 20, 20),
+            fontSize: 18,
+            fontWeight: FontWeight.w700,),
+          ),
+          TextSpan(
+            text: "${prediction[2]}",
+            style: TextStyle(
+              color: prediction[1],
+              fontSize: 20,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const TextSpan(
+            text: ". Finish your mushroom design and press on predict for a more accurate prediction.",
+            style: TextStyle(
+              color: Color.fromARGB(255, 20, 20, 20),
+              fontSize: 18,
+              fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class RealTimePrediction extends StatelessWidget {
+  const RealTimePrediction({
+    super.key,
+    required this.prediction,
+  });
+
+  final List prediction;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {showDialog(context: context, builder: (BuildContext context) => AlertDialog(
+        title: StandardText("Prediction", 30),
+        content: PredictionText(prediction: prediction),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: StandardText("OK", 15),
+          ),
+        ],
+      ));},
+      backgroundColor: prediction[1],
+      shape: const CircleBorder(),
+      elevation: 0,
+      mini: true,
+      child: Text(
+        prediction[0],
+        style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white),
+      ),
+    );
+  }
 }
