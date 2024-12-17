@@ -50,8 +50,7 @@ class _TutorialState extends State<Tutorial> {
       if (currentIndex < 3) {
         currentIndex += 1;
       } else {
-        Navigator.pushReplacementNamed(context, '/');  
-        Navigator.pushNamed(context, '/mushroom_bodymap');
+        Navigator.pushReplacementNamed(context, '/mushroom_bodymap');
       }
     });
   }
@@ -195,7 +194,8 @@ class Tutorial4 extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(30),
-          child: Image.asset("../assets/tutorial/tutorial-4.png", fit: BoxFit.contain, height: 250), //png doesn't want to cooperate
+          child: Image.asset("../assets/tutorial/tutorial-4.png",
+              fit: BoxFit.contain, height: 250), //png doesn't want to cooperate
         ),
       ],
     );

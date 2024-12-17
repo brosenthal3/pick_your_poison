@@ -37,9 +37,9 @@ ElevatedButton SkipButton(String text, Function onPressed) {
 ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: color ?? const Color.fromARGB(255, 80, 69, 66).withOpacity(0.5),
-      padding:
-          const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
+      backgroundColor:
+          color ?? const Color.fromARGB(255, 80, 69, 66).withOpacity(0.5),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
     ),
     onPressed: () => onPressed(),
     child: Text(
@@ -55,8 +55,7 @@ ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
 Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
-  final String imagePath =
-      "../assets/icons/$textInputLower.svg";
+  final String imagePath = "../assets/icons/$textInputLower.svg";
 
   return Padding(
     padding: const EdgeInsets.all(8.0),
@@ -151,9 +150,9 @@ Map<String, Color> colorMapperFunc() {
 }
 
 extension StringExtension on String {
-    String capitalize() {
-      return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
-    }
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  }
 }
 
 class PredictionText extends StatelessWidget {
@@ -168,24 +167,27 @@ class PredictionText extends StatelessWidget {
         children: [
           const TextSpan(
             text: "This mushroom is most likely ",
-            style: TextStyle(color: Color.fromARGB(255, 20, 20, 20),
-            fontSize: 18,
-            fontWeight: FontWeight.w700,),
+            style: TextStyle(
+              color: Color.fromARGB(255, 20, 20, 20),
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
           ),
           TextSpan(
             text: "${prediction[2]}",
             style: TextStyle(
               color: prediction[1],
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: FontWeight.w800,
             ),
           ),
           const TextSpan(
-            text: ". Finish your mushroom design and press on predict for a more accurate prediction.",
+            text:
+                ". Finish your mushroom design and press on predict for a more accurate prediction.",
             style: TextStyle(
-              color: Color.fromARGB(255, 20, 20, 20),
-              fontSize: 18,
-              fontWeight: FontWeight.w700),
+                color: Color.fromARGB(255, 20, 20, 20),
+                fontSize: 18,
+                fontWeight: FontWeight.w700),
           ),
         ],
       ),
@@ -204,18 +206,22 @@ class RealTimePrediction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {showDialog(context: context, builder: (BuildContext context) => AlertDialog(
-        title: StandardText("Prediction", 30),
-        content: PredictionText(prediction: prediction),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: StandardText("OK", 15),
-          ),
-        ],
-      ));},
+      onPressed: () {
+        showDialog(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  title: StandardText("Prediction", 30),
+                  content: PredictionText(prediction: prediction),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: StandardText("OK", 17),
+                    ),
+                  ],
+                ));
+      },
       backgroundColor: prediction[1],
       shape: const CircleBorder(),
       elevation: 0,
@@ -223,9 +229,7 @@ class RealTimePrediction extends StatelessWidget {
       child: Text(
         prediction[0],
         style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white),
+            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }
