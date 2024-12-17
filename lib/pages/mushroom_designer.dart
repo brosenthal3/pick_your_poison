@@ -5,14 +5,21 @@ import 'package:provider/provider.dart';
 import '../providers/mushroom_features.dart';
 
 class MushroomDesigner extends StatefulWidget {
-  const MushroomDesigner({super.key});
+  final String currentPage;
+  const MushroomDesigner({super.key, required this.currentPage});
 
   @override
   _MushroomDesignerState createState() => _MushroomDesignerState();
 }
 
 class _MushroomDesignerState extends State<MushroomDesigner> {
-  String currentPage = "cap";
+  late String currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    currentPage = widget.currentPage;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
-        return ["!", Color.fromARGB(255, 237, 34, 20)];
+        return [":(", Color.fromARGB(255, 237, 34, 20)];
       } else {
         return [":)", Colors.greenAccent[200]];
       }
@@ -38,13 +45,8 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            currentPage == "cap"
-                ? Container()
-                : BackButton(
-                    onPressed:
-                        goBackward), // if currentPage is cap, don't show back button
-            StandardText(currentPage, 25),
-            ElevatedButton(
+            StandardText(currentPage.capitalize(), 25),
+            /*ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 231, 72, 38),
                 padding:
@@ -58,7 +60,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                   fontSize: 20,
                 ),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

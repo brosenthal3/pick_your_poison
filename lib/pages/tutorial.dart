@@ -50,7 +50,8 @@ class _TutorialState extends State<Tutorial> {
       if (currentIndex < 3) {
         currentIndex += 1;
       } else {
-        Navigator.pushReplacementNamed(context, '/mushroom_designer');
+        Navigator.pushReplacementNamed(context, '/');  
+        Navigator.pushNamed(context, '/mushroom_bodymap');
       }
     });
   }

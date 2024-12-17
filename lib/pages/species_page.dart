@@ -21,7 +21,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
         backgroundColor: const Color(0xFFF2EDE2),
         toolbarHeight: 100,
         title: Container(
-          child: StandardText("Back", 25),
+          child: StandardText("Your Species Prediction", 25),
         ),
       ),
       body: Column(

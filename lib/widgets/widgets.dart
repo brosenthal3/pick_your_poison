@@ -149,3 +149,9 @@ Map<String, Color> colorMapperFunc() {
     "l": Color.fromARGB(255, 66, 135, 227), // muted blue
   };
 }
+
+extension StringExtension on String {
+    String capitalize() {
+      return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+    }
+}

@@ -22,10 +22,14 @@ class _PredictionPageState extends State<PredictionPage> {
         Provider.of<MushroomFeaturesProvider>(context);
 
     void restartDesign() {
-      Navigator.pushReplacementNamed(context, '/mushroom_designer');
+      Navigator.pushReplacementNamed(context, '/mushroom_bodymap');
       mushroomFeaturesProvider.resetMushroom();
     }
 
+    void getSpeciesPrediction() {
+      Navigator.pushNamed(context, '/species_page');
+    }
+    
     List getPrediction() {
       double pred = mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
@@ -42,29 +46,26 @@ class _PredictionPageState extends State<PredictionPage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFFF2EDE2),
         toolbarHeight: 100,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: StandardText("Back", 25),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(255, 231, 72, 38),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-              ),
-              onPressed: restartDesign,
-              child: const Text(
-                "Start again",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
+        actions: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 231, 72, 38),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                ),
+                onPressed: restartDesign,
+                child: const Text(
+                  "Start again",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
                 ),
               ),
             ),
           ],
-        ),
       ),
       body: Expanded(
         child: SingleChildScrollView(
@@ -151,14 +152,5 @@ class _PredictionPageState extends State<PredictionPage> {
         ),
       ),
     );
-  }
-
-  getSpeciesPrediction() {
-    Navigator.pushNamed(context, '/species_page');
-  }
-
-  newMushroomDesign() {
-    Navigator.pushReplacementNamed(context, '/mushroom_designer');
-    // TODO: reset global state variables of mushroom features, or dont lol
   }
 }

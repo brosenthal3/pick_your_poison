@@ -53,25 +53,26 @@ class MushroomBodyMapPage extends StatelessWidget {
                   DynamicMushroomDesign(),
                   
                   Positioned(
-                    left: 40,
-                    top: 30,
-                    child: BodyMapButton("Cap", () => Navigator.pushNamed(context, '/mushroom_designer'))
+                    left: 20,
+                    top: 10,
+                    child: BodyMapButton("Cap", () => Navigator.pushNamed(context, '/mushroom_designer/cap'))
                   ),
               
                   Positioned(
                     top: 80,
                     right: 5,
-                    child: BodyMapButton("Gills", () => Navigator.pushNamed(context, '/mushroom_designer'))
+                    child: BodyMapButton("Gills", () => Navigator.pushNamed(context, '/mushroom_designer/gills'))
                   ),
                   Positioned(
                     top: 160,
-                    child: BodyMapButton("Ring", () => Navigator.pushNamed(context, '/mushroom_designer'))
+                    right: 5,
+                    child: BodyMapButton("Ring", () => Navigator.pushNamed(context, '/mushroom_designer/other'))
                   ),
 
                   Positioned(
-                    top: 260,
-                    left: 60,
-                    child: BodyMapButton("Stem", () => Navigator.pushNamed(context, '/mushroom_designer'))
+                    bottom: 40,
+                    left: 20,
+                    child: BodyMapButton("Stem", () => Navigator.pushNamed(context, '/mushroom_designer/stem'))
                   ),
                   
                 ],
