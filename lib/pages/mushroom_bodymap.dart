@@ -23,8 +23,8 @@ class MushroomBodyMapPage extends StatelessWidget {
       Navigator.pushNamed(context, '/prediction_page');
     }
 
-    Color editedColor =
-        const Color.fromARGB(255, 112, 170, 37).withOpacity(0.7);
+    Color editedColor = Color.fromARGB(255, 231, 72, 38);
+    //.withOpacity(0.7);
     double pagesVisited = 0;
     // loop through all the visited pages and calculate the progress bar value
     for (var value in ["cap", "gills", "stem", "other"]) {
@@ -40,26 +40,6 @@ class MushroomBodyMapPage extends StatelessWidget {
         elevation: 0.0,
         toolbarHeight: 100,
         title: Container(),
-        /* actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 231, 72, 38),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 35),
-                ),
-                onPressed: () => startPrediction(),
-                child: const Text(
-                  "Predict",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ),
-          ]*/
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -88,40 +68,61 @@ class MushroomBodyMapPage extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     const DynamicMushroomDesign(),
+                    CustomPaint(
+                      size: Size(double.infinity, 350),
+                      painter: ArrowPainter(),
+                    ),
                     Positioned(
-                        top: 10,
-                        left: 40,
-                        child: BodyMapButton(
-                            "Cap",
-                            () => Navigator.pushNamed(
-                                context, '/mushroom_designer/cap'),
-                            color: isPageVisited("cap") ? editedColor : null)),
+                        top: 0,
+                        left: 20,
+                        child: SizedBox(
+                          width: 120,
+                          height: 55,
+                          child: BodyMapButton(
+                              "Cap",
+                              () => Navigator.pushNamed(
+                                  context, '/mushroom_designer/cap'),
+                              color: isPageVisited("cap") ? editedColor : null),
+                        )),
                     Positioned(
-                        top: 80,
-                        right: 25,
-                        child: BodyMapButton(
-                            "Gills",
-                            () => Navigator.pushNamed(
-                                context, '/mushroom_designer/gills'),
-                            color:
-                                isPageVisited("gills") ? editedColor : null)),
+                        top: 0,
+                        right: 20,
+                        child: SizedBox(
+                          width: 120,
+                          height: 55,
+                          child: BodyMapButton(
+                              "Gills",
+                              () => Navigator.pushNamed(
+                                  context, '/mushroom_designer/gills'),
+                              color:
+                                  isPageVisited("gills") ? editedColor : null),
+                        )),
                     Positioned(
-                        top: 160,
-                        right: 25,
-                        child: BodyMapButton(
-                            "Ring",
-                            () => Navigator.pushNamed(
-                                context, '/mushroom_designer/other'),
-                            color:
-                                isPageVisited("other") ? editedColor : null)),
+                        bottom: 120,
+                        right: 20,
+                        child: SizedBox(
+                          width: 120,
+                          height: 55,
+                          child: BodyMapButton(
+                              "Ring",
+                              () => Navigator.pushNamed(
+                                  context, '/mushroom_designer/other'),
+                              color:
+                                  isPageVisited("other") ? editedColor : null),
+                        )),
                     Positioned(
-                        bottom: 40,
-                        left: 40,
-                        child: BodyMapButton(
-                            "Stem",
-                            () => Navigator.pushNamed(
-                                context, '/mushroom_designer/stem'),
-                            color: isPageVisited("stem") ? editedColor : null)),
+                        bottom: 60,
+                        left: 20,
+                        child: SizedBox(
+                          width: 120,
+                          height: 55,
+                          child: BodyMapButton(
+                              "Stem",
+                              () => Navigator.pushNamed(
+                                  context, '/mushroom_designer/stem'),
+                              color:
+                                  isPageVisited("stem") ? editedColor : null),
+                        )),
                   ],
                 ),
               ),
@@ -146,7 +147,8 @@ class MushroomBodyMapPage extends StatelessWidget {
                 SizedBox(width: 5),
                 Text("${pagesVisited.toInt()}/4",
                     style: const TextStyle(
-                        fontSize: 20, color: Color.fromARGB(255, 80, 69, 66))),
+                        fontSize: 20,
+                        color: const Color.fromARGB(255, 75, 75, 75))),
               ],
             ),
           ),
@@ -157,9 +159,9 @@ class MushroomBodyMapPage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: pagesVisited == 4
                   ? Color.fromARGB(255, 231, 72, 38)
-                  : Color.fromARGB(128, 122, 114, 100),
+                  : Color(0xFF807A72),
               foregroundColor: Colors.white,
-              disabledBackgroundColor: Color.fromARGB(128, 122, 114, 100),
+              disabledBackgroundColor: Color(0xFF807A72),
               disabledForegroundColor: Colors.white,
               padding:
                   const EdgeInsets.symmetric(vertical: 25, horizontal: 150),
@@ -177,4 +179,68 @@ class MushroomBodyMapPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ArrowPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = Color(0xFF807A72)
+      ..strokeWidth = 2.0
+      ..style = PaintingStyle.stroke;
+
+    // Define button dimensions
+    final double buttonWidth = 120; // Adjust according to actual button width
+    final double buttonHeight = 55; // Adjust according to actual button height
+
+    // Draw L-shaped lines for each button
+
+    // Cap Button
+    _drawLShapedLine(
+      canvas,
+      paint,
+      Offset(buttonWidth + 20, buttonHeight / 2),
+      Offset(size.width / 2.5, size.height * 0.2),
+    );
+
+    // Gills Button
+    _drawLShapedLine(
+      canvas,
+      paint,
+      Offset(size.width - 20 - buttonWidth, buttonHeight / 2),
+      Offset(size.width / 2 + 50, size.height * 0.4),
+    );
+
+    // Ring Button
+    _drawLShapedLine(
+      canvas,
+      paint,
+      Offset(size.width - 20 - buttonWidth, size.height / 2 + 30),
+      Offset(size.width / 2 + 20, size.height / 2 + 30),
+    );
+
+    // Stem Button
+    _drawLShapedLine(
+      canvas,
+      paint,
+      Offset(buttonWidth + 20, size.height * 0.8 - 20),
+      Offset(size.width / 2 - 10, size.height * 0.8 - 20),
+    );
+  }
+
+  void _drawLShapedLine(Canvas canvas, Paint paint, Offset start, Offset end) {
+    final Path path = Path();
+    path.moveTo(start.dx, start.dy);
+
+    // Draw an L-shaped line with two segments:
+    // 1. Horizontal segment
+    path.lineTo(end.dx, start.dy);
+    // 2. Vertical segment
+    path.lineTo(end.dx, end.dy);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }

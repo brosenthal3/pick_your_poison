@@ -26,10 +26,14 @@ class MainApp extends StatelessWidget {
         routes: {
           '/': (context) => HomePage(),
           '/tutorial': (context) => Tutorial(),
-          '/mushroom_designer/cap': (context) => MushroomDesigner(currentPage: "cap"),
-          '/mushroom_designer/gills': (context) => MushroomDesigner(currentPage: "gills"),
-          '/mushroom_designer/stem': (context) => MushroomDesigner(currentPage: "stem"),
-          '/mushroom_designer/other': (context) => MushroomDesigner(currentPage: "other"),
+          '/mushroom_designer/cap': (context) =>
+              MushroomDesigner(currentPage: "cap"),
+          '/mushroom_designer/gills': (context) =>
+              MushroomDesigner(currentPage: "gills"),
+          '/mushroom_designer/stem': (context) =>
+              MushroomDesigner(currentPage: "stem"),
+          '/mushroom_designer/other': (context) =>
+              MushroomDesigner(currentPage: "other"),
           '/prediction_page': (context) => PredictionPage(),
           '/species_page': (context) => SpeciesPredictionPage(),
           '/mushroom_bodymap': (context) => MushroomBodyMapPage(),
