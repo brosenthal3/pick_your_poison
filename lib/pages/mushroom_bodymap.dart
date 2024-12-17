@@ -22,7 +22,7 @@ class MushroomBodyMapPage extends StatelessWidget {
       Navigator.pushNamed(context, '/prediction_page');
     }
 
-    Color editedColor = const Color.fromARGB(255, 112, 170, 37).withOpacity(0.6);
+    Color editedColor = const Color.fromARGB(255, 112, 170, 37).withOpacity(0.7);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
@@ -53,10 +53,11 @@ class MushroomBodyMapPage extends StatelessWidget {
         ]
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(height: 20),
+          StandardText("Design Your Mushroom", 28),
           SizedBox(
-            height: 400,
+            height: 350,
             child: Center(
               child: Stack(
                 alignment: Alignment.center,
@@ -90,7 +91,13 @@ class MushroomBodyMapPage extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(15),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              border: Border(
+                top: BorderSide(width: 1, color: Colors.black54),
+              ),
+            ),
+            padding: const EdgeInsets.all(30),
             child: StandardText("Select a part of the mushroom to start designing.\n\nPress predict to get your toxicity and species predictions.", 20),
           ),
         ],
