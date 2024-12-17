@@ -34,7 +34,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       "p": [160.0, 195.0, 90.0, 93.0],
     };
 
-    final Map stemRingAttributes = {
+    final Map stemRingPosition = {
       // stem position, ring position, ring width
       "s": [0, 165, 70],
       "b": [0, 165, 70],
@@ -125,8 +125,8 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
           ),
           // stem
           Positioned(
-            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3],
-            //left: 158,
+            top: mushroomAttributes[mushroomFeatures["cap"]["shape"]][3] + (['c', 'e', 'z', 'r'].contains(mushroomFeatures["stem"]["roots"]) ? 4 : 1),
+            left: mushroomFeatures["stem"]["roots"] == 'u' ? 157 : null, // only cup needs direct spacing, others are centered.
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["stem"]["color"]], // color overlay of stem (overlays ring and root too)
@@ -138,10 +138,13 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                   height: 175),
             ),
           ),
+
+          // TODO: stem texture
+
           Positioned(
             top: mushroomFeatures["other"]["ring"] == 'c' ? mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+10
-            : mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+60,
-            //left: stemRingAttributes[mushroomFeatures["stem"]["roots"]][1],
+            : mushroomAttributes[mushroomFeatures["cap"]["shape"]][3]+60, // only cobwebby ring should be higher
+            //left: 175,
             child: mushroomFeatures["other"]["ring"] == 'f' ? Container() : ColorFiltered(
               colorFilter: ColorFilter.mode(
                 colorMapper[mushroomFeatures["stem"]["color"]], // color overlay of stem (overlays ring and root too)
@@ -158,3 +161,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
     );
   }
 }
+
+// Stems:
+  // all work well for sunken cap (always looks clunky)
+  // club, equal, rhiz and rooted need a few pixels down
