@@ -23,6 +23,13 @@ class MushroomBodyMapPage extends StatelessWidget {
     }
 
     Color editedColor = const Color.fromARGB(255, 112, 170, 37).withOpacity(0.7);
+    double pagesVisited = 0;
+    // loop through all the visited pages and calculate the progress bar value
+    for (var value in ["cap", "gills", "stem", "other"]) {
+      if (isPageVisited(value)) {
+        pagesVisited += 1;
+      }
+    }
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
@@ -38,7 +45,7 @@ class MushroomBodyMapPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 231, 72, 38),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 35),
               ),
               onPressed: () => startPrediction(),
               child: const Text(
@@ -62,8 +69,7 @@ class MushroomBodyMapPage extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  DynamicMushroomDesign(),
-                  
+                  const DynamicMushroomDesign(),
                   Positioned(
                     top: 10,
                     left: 40,
@@ -88,6 +94,26 @@ class MushroomBodyMapPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),  
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  // three quarters page width
+                  width: MediaQuery.of(context).size.width * 0.70,
+                  child: LinearProgressIndicator(
+                    value: pagesVisited / 4,
+                    backgroundColor: const Color.fromARGB(255, 80, 69, 66),
+                    valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 231, 72, 38)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                SizedBox(width: 5),
+                Text("${pagesVisited.toInt()}/4", style: const TextStyle(fontSize: 20, color: Color.fromARGB(255, 80, 69, 66))),
+              ],
             ),
           ),
           Container(
