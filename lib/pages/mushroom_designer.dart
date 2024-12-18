@@ -406,9 +406,7 @@ class StalkOptions extends StatelessWidget {
 }
 
 class OtherOptions extends StatelessWidget {
-  const OtherOptions({
-    super.key,
-  });
+  const OtherOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -419,82 +417,97 @@ class OtherOptions extends StatelessWidget {
       mushroomFeaturesProvider.updateFeature("other", feature, value);
     }
 
+    final List<Map<String, String>> options = [
+      {"label": "None", "value": "f"},
+      {"label": "Cobwebby", "value": "c"},
+      {"label": "Evenescent", "value": "e"},
+      {"label": "Flaring", "value": "r"},
+      {"label": "Grooved", "value": "g"},
+      {"label": "Large", "value": "l"},
+      {"label": "Pendant", "value": "p"},
+      {"label": "Sheathing", "value": "s"},
+      {"label": "Zone", "value": "z"},
+      {"label": "Scales", "value": "y"},
+      {"label": "Moveable", "value": "m"},
+    ];
+
     return ScrollableOptionsContainer(
-        child: Column(
-      children: [
-        MushroomDesignerOptionsColumn(
-            label: "Ring type",
-            // none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g),
-            // large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
-            options: [
-              MushroomOptionButton("None", () {
-                updateMushroomFeatures("ring", "f");
-              }),
-              MushroomOptionButton("Cobwebby", () {
-                updateMushroomFeatures("ring", "c");
-              }),
-              MushroomOptionButton("Evenescent", () {
-                updateMushroomFeatures("ring", "e");
-              }),
-              MushroomOptionButton("Flaring", () {
-                updateMushroomFeatures("ring", "r");
-              }),
-              MushroomOptionButton("Grooved", () {
-                updateMushroomFeatures("ring", "g");
-              }),
-              MushroomOptionButton("Large", () {
-                updateMushroomFeatures("ring", "l");
-              }),
-              MushroomOptionButton("Pendant", () {
-                updateMushroomFeatures("ring", "p");
-              }),
-              MushroomOptionButton("Sheathing", () {
-                updateMushroomFeatures("ring", "s");
-              }),
-              MushroomOptionButton("Zone", () {
-                updateMushroomFeatures("ring", "z");
-              }),
-              MushroomOptionButton("Scales", () {
-                updateMushroomFeatures("ring", "y");
-              }),
-              MushroomOptionButton("Moveable", () {
-                updateMushroomFeatures("ring", "m");
-              }),
-            ]),
-      ],
-    ));
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+              padding: EdgeInsets.fromLTRB(25, 10, 0, 0),
+              child: StandardText("Ring type", 20)),
+          const SizedBox(height: 15),
+          SizedBox(
+            height: 400,
+            child: GridView.builder(
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 1.0,
+              ),
+              itemCount: options.length,
+              itemBuilder: (context, index) {
+                return MushroomOptionButton(
+                  options[index]["label"]!,
+                  () =>
+                      updateMushroomFeatures("ring", options[index]["value"]!),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
 class MushroomDesignerOptionsColumn extends StatelessWidget {
-  const MushroomDesignerOptionsColumn(
-      {super.key, required this.label, required this.options});
+  const MushroomDesignerOptionsColumn({
+    super.key,
+    required this.label,
+    required this.options,
+    this.isGrid = false,
+  });
 
   final String label;
   final List<Widget> options;
+  final bool isGrid;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10),
-            StandardText(label, 20),
-            const SizedBox(height: 15),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  spacing: 15,
-                  children: options),
-            ),
-            const SizedBox(height: 10),
-          ],
-        ));
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 10),
+          StandardText(label, 20),
+          const SizedBox(height: 15),
+          isGrid
+              ? GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15,
+                  children: options,
+                )
+              : SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Wrap(
+                    spacing: 15,
+                    children: options,
+                  ),
+                ),
+          const SizedBox(height: 10),
+        ],
+      ),
+    );
   }
 }
 
