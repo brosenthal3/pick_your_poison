@@ -63,7 +63,7 @@ class Tutorial1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: Text(
             textAlign: TextAlign.center,
             "Design your own mushroom",
@@ -74,10 +74,10 @@ class Tutorial1 extends StatelessWidget {
             ),
           )),
       Padding(
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: SvgPicture(
           SvgAssetLoader("../assets/tutorial/tutorial-1.svg"),
-          height: 250,
+          height: 300,
         ),
       ),
     ]);
@@ -92,7 +92,7 @@ class Tutorial2 extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: Text.rich(
             textAlign: TextAlign.center,
             TextSpan(
@@ -131,10 +131,10 @@ class Tutorial2 extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
             SvgAssetLoader("../assets/tutorial/tutorial-2.svg"),
-            height: 250,
+            height: 300,
           ),
         ),
       ],
@@ -152,7 +152,7 @@ class Tutorial3 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: Text(
               textAlign: TextAlign.center,
               "Our classification models gives you an idea of its safety",
@@ -163,10 +163,10 @@ class Tutorial3 extends StatelessWidget {
               )),
         ),
         Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
             SvgAssetLoader("../assets/tutorial/tutorial-3.svg"),
-            height: 250,
+            height: 300,
           ),
         ),
       ],

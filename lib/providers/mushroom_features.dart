@@ -13,7 +13,7 @@ class MushroomFeaturesProvider with ChangeNotifier {
   }
 
   void resetMushroom() {
-    _mushroomFeatures =  {
+    _mushroomFeatures = {
       "cap": {
         "shape": "b",
         "diameter": 10,
@@ -29,9 +29,7 @@ class MushroomFeaturesProvider with ChangeNotifier {
         "color": "w",
         "roots": "s",
       },
-      "other": {
-        "ring": "c"
-      }
+      "other": {"ring": "f"}
     };
     _visitedPages = {
       "cap": false,
@@ -45,10 +43,9 @@ class MushroomFeaturesProvider with ChangeNotifier {
 
   // placeholder function until the model is working
   double getPrediction() {
-    if (_mushroomFeatures["cap"]["shape"] != 'b'){
+    if (_mushroomFeatures["cap"]["shape"] != 'b') {
       return 1;
-    }
-    else {
+    } else {
       return 0;
     }
   }

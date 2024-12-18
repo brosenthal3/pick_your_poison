@@ -53,14 +53,15 @@ class _PredictionPageState extends State<PredictionPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 231, 72, 38),
                 padding:
-                    const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
               ),
               onPressed: restartDesign,
-              child: const Text(
+              child: Text(
                 "Start again",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
@@ -74,14 +75,26 @@ class _PredictionPageState extends State<PredictionPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                child: Text(
-                  "Your mushroom is likely*",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    color: const Color.fromARGB(255, 20, 20, 20),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
+                child: Text.rich(
+                  TextSpan(
+                    text: "Your mushroom is ",
+                    style: GoogleFonts.poppins(
+                      color: const Color.fromARGB(255, 20, 20, 20),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "likely",
+                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: "*",
+                        style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
               const SizedBox(height: 10),
@@ -93,26 +106,26 @@ class _PredictionPageState extends State<PredictionPage> {
                     prediction[0],
                     style: GoogleFonts.poppins(
                       color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               const Center(
                 child: DynamicMushroomDesign(),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   "Want to learn about the most similar real-life species?",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     color: const Color.fromARGB(255, 20, 20, 20),
                     fontSize: 20,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

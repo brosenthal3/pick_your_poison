@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(40),
                     child: SvgPicture(
                       SvgAssetLoader("../assets/mushroom.svg"),
                       height: 250,

@@ -49,7 +49,7 @@ class MushroomBodyMapPage extends StatelessWidget {
             child: StandardText("Design Your Mushroom", 28),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Text(
                 textAlign: TextAlign.center,
                 "Customise all features in order to get a toxicity prediction",

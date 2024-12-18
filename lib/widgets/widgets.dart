@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 ElevatedButton HomeButton(String text, Function onPressed) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromARGB(255, 20, 20, 20),
+      backgroundColor: Color.fromARGB(255, 30, 30, 30),
       padding: EdgeInsets.symmetric(vertical: 25, horizontal: 80),
     ),
     onPressed: () => onPressed(),
