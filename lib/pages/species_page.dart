@@ -21,7 +21,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
         backgroundColor: const Color(0xFFF2EDE2),
         toolbarHeight: 100,
         title: Container(
-          child: StandardText("Your Species Prediction", 25),
+          child: StandardText("Species Prediction", 25),
         ),
       ),
       body: Column(
@@ -31,7 +31,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
             child: Container(
               padding: EdgeInsets.fromLTRB(40, 0, 40, 20),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Stack(
@@ -51,26 +51,22 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                       Positioned(
                         bottom: 20,
                         left: 25,
-                        child: Text(
-                          mushroomFamily,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        child: Text(mushroomFamily,
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            )),
                       ),
                       Positioned(
                         bottom: 50,
                         left: 25,
-                        child: Text(
-                          mushroomSpecies,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
+                        child: Text(mushroomSpecies,
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w600,
+                            )),
                       ),
                     ],
                   ),
