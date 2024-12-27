@@ -39,7 +39,15 @@ class MushroomBodyMapPage extends StatelessWidget {
         backgroundColor: const Color(0xFFF2EDE2),
         elevation: 0.0,
         toolbarHeight: 100,
-        title: Container(),
+        leading: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+          child: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () {
+              // TO DO: navigate back to tutorial
+            },
+          ),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
