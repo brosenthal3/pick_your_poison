@@ -21,15 +21,35 @@ class _TutorialState extends State<Tutorial> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFF2EDE2),
-          centerTitle: true,
-          elevation: 0.0,
-          toolbarHeight: 200,
-          title: const Center(
-            child: SvgPicture(
-              SvgAssetLoader("../assets/logo.svg"),
-              height: 100,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(200),
+          child: AppBar(
+            backgroundColor: const Color(0xFFF2EDE2),
+            elevation: 0.0,
+            automaticallyImplyLeading: false, // Avoid default behavior
+            flexibleSpace: Stack(
+              alignment: Alignment.center,
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: currentIndex > 0
+                      ? Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: IconButton(
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.black),
+                            onPressed: goBackIndex,
+                          ),
+                        )
+                      : null,
+                ),
+                const Center(
+                  child: SvgPicture(
+                    SvgAssetLoader("../assets/logo.svg"),
+                    height: 100,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -51,6 +71,14 @@ class _TutorialState extends State<Tutorial> {
         currentIndex += 1;
       } else {
         Navigator.pushReplacementNamed(context, '/mushroom_bodymap');
+      }
+    });
+  }
+
+  goBackIndex() {
+    setState(() {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
       }
     });
   }
