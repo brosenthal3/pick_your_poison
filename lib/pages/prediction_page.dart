@@ -12,10 +12,6 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
-  Random random =
-      Random(); // for now, RNG for prediction, later this will be replaced with a model
-  late String prediction = "POISONOUS";
-
   @override
   Widget build(BuildContext context) {
     final mushroomFeaturesProvider =
@@ -30,8 +26,8 @@ class _PredictionPageState extends State<PredictionPage> {
       Navigator.pushNamed(context, '/species_page');
     }
 
-    List getPrediction() {
-      double pred = mushroomFeaturesProvider.getPrediction();
+    Future<List> getPrediction() async {
+      double pred = await mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
         return ["POISONOUS", const Color.fromARGB(255, 214, 27, 14)];
       } else {
@@ -39,7 +35,7 @@ class _PredictionPageState extends State<PredictionPage> {
       }
     }
 
-    late List prediction = getPrediction();
+    late Future<List> prediction = getPrediction();
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EDE2),
@@ -98,19 +94,30 @@ class _PredictionPageState extends State<PredictionPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                color: prediction[1],
-                child: Center(
-                  child: Text(
-                    prediction[0],
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+              FutureBuilder<List>(
+                future: prediction,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  } else if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  } else {
+                    return Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      color: snapshot.data![1],
+                      child: Center(
+                        child: Text(
+                          snapshot.data![0],
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
               ),
               const SizedBox(height: 40),
               const Center(

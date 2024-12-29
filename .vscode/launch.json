@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pick_your_poison",
+            "request": "launch",
+            "type": "dart",
+            "args": ["--web-port", "8080"]
+        },
+        {
+            "name": "pick_your_poison (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "args": ["--web-port", "8080"]
+        },
+        {
+            "name": "pick_your_poison (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "args": ["--web-port", "8080"]
+        }
+    ]
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pick_your_poison/providers/mushroom_features.dart';
 import '../widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class SpeciesPredictionPage extends StatefulWidget {
   const SpeciesPredictionPage({super.key});
@@ -10,8 +12,29 @@ class SpeciesPredictionPage extends StatefulWidget {
 }
 
 class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
-  final String mushroomFamily = "Amanitaceae Family";
-  final String mushroomSpecies = "Amanita phalloides";
+  late String mushroomFamily = '';
+  late String mushroomSpecies = '';
+
+  String get mushroomSpeciesAsset {
+    return mushroomSpecies.toLowerCase().replaceAll(' ', '-');
+  }
+  String get mushroomFamilyAsset {
+    return mushroomFamily.replaceAll(' ', '_');
+  }
+
+  @override
+  void initState() {
+    asynchInitState();
+  }
+
+  Future<void> asynchInitState() async {
+    final mushroomProvider = Provider.of<MushroomFeaturesProvider>(context, listen: true);
+    final speciesInfo = await mushroomProvider.getSpecies();
+    setState(() {
+      mushroomFamily = speciesInfo['family'] ?? '';
+      mushroomSpecies = speciesInfo['species'] ?? '';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +47,11 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
           child: StandardText("Species Prediction", 25),
         ),
       ),
-      body: Column(
+      body: (mushroomFamily.isEmpty || mushroomSpecies.isEmpty)
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
@@ -43,7 +70,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                 Colors.black.withOpacity(0.5),
                                 BlendMode.darken),
                             child: Image(
-                                image: AssetImage("../assets/deathcap.jpg"),
+                                image: AssetImage("../assets/Species/$mushroomFamilyAsset/$mushroomSpeciesAsset.jpg"),
                                 height: 330,
                                 width: 350,
                                 fit: BoxFit.cover)),

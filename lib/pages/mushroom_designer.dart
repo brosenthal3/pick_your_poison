@@ -29,8 +29,8 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
     // set page to visited
     mushroomFeaturesProvider.updateVisitedPage(currentPage);
 
-    List getPrediction() {
-      double pred = mushroomFeaturesProvider.getPrediction();
+    Future<List> getPrediction() async {
+      double pred = await mushroomFeaturesProvider.getPrediction();
       if (pred == 1) {
         return ["✘", Color.fromARGB(255, 163, 35, 26), "poisonous"];
       } else {
@@ -38,7 +38,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
       }
     }
 
-    final List prediction = getPrediction();
+    final Future<List> prediction = getPrediction();
 
     return Scaffold(
       appBar: AppBar(
@@ -80,7 +80,18 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                   Positioned(
                     right: 20,
                     bottom: 20,
-                    child: RealTimePrediction(prediction: prediction),
+                    child: FutureBuilder<List>(
+                      future: prediction,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else {
+                          return RealTimePrediction(prediction: snapshot.data!);
+                        }
+                      },
+                    ),
                   ),
                 ],
               ),
