@@ -28,7 +28,10 @@ class _PredictionPageState extends State<PredictionPage> {
 
     Future<List> getPrediction() async {
       double pred = await mushroomFeaturesProvider.getPrediction();
-      if (pred == 1) {
+      Map species = await mushroomFeaturesProvider.getSpecies();
+      double speciesPred = species['class'] == 'p' ? 1 : 0;
+      double finalPred = pred == 1 || speciesPred == 1 ? 1 : 0; 
+      if (finalPred == 1) {
         return ["POISONOUS", const Color.fromARGB(255, 214, 27, 14)];
       } else {
         return ["EDIBLE", const Color.fromARGB(255, 0, 128, 0)];

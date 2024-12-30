@@ -20,7 +20,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
     return "../assets/Species/$family/$species.jpg";
   }
 
-  Future<String> getDescription(String mushroomSpecies) async {
+  Future<List> getDescription(String mushroomSpecies) async {
     // parse JSON file species_descriptions.json to get description
 
     Future<List<Map<String, dynamic>>> loadJsonData() async {
@@ -29,13 +29,17 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
       return jsonResponse.map((item) => item as Map<String, dynamic>).toList();
     }
 
-    Future<String> getDescriptionInner(String mushroomSpecies) async {
+    Future<List> getDescriptionInner(String mushroomSpecies) async {
       List<Map<String, dynamic>> speciesList = await loadJsonData();
       Map<String, dynamic>? species = speciesList.firstWhere(
         (element) => element['name'].toLowerCase() == mushroomSpecies.toLowerCase(),
         orElse: () => {},
       );
-      return species != null ? species['description'] : 'Description not found';
+      if (species.isNotEmpty) {
+        return [species['description'], species['scientific name']];
+      } else {
+        return ['Description not found', 'Scientific name not found'];
+      }
     }
 
     return getDescriptionInner(mushroomSpecies);
@@ -46,12 +50,13 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
     final mushroomProvider =
         Provider.of<MushroomFeaturesProvider>(context, listen: true);
 
-    Future<Map> getSpeciesInfo() async {
+    Future<List> getSpeciesInfo() async {
       final speciesInfo = await mushroomProvider.getSpecies();
-      return speciesInfo;
+      final description = await getDescription(speciesInfo['name']);
+      return [speciesInfo, description];
     }
 
-    late Future<Map> speciesInfo = getSpeciesInfo();
+    late Future<List> speciesInfo = getSpeciesInfo();
 
     return Scaffold(
         backgroundColor: const Color(0xFFF2EDE2),
@@ -64,7 +69,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
         ),
         body: Column(
           children: [
-            FutureBuilder<Map>(
+            FutureBuilder<List>(
               future: speciesInfo,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -74,7 +79,10 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Center(child: Text('No data available'));
                 } else {
-                  final speciesData = snapshot.data!;
+                  final speciesInfo = snapshot.data!;
+                  final speciesData = speciesInfo[0];
+                  final description = speciesInfo[1][0];
+                  final scientificName = speciesInfo[1][1];
                   final mushroomSpecies = speciesData['name'];
                   final mushroomFamily = speciesData['family'];
                   final mushroomHabitat = speciesData['habitat'].join(', ');
@@ -150,8 +158,10 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                       ),
                                     ),
                                     Text(
-                                      textAlign: TextAlign.right,
-                                      'Scientific name',
+                                      textAlign: TextAlign.right,                                      
+                                      softWrap: true,
+                                      overflow: TextOverflow.ellipsis,
+                                      scientificName,
                                       style: GoogleFonts.poppins(
                                         color: const Color.fromARGB(
                                             255, 20, 20, 20),
@@ -216,31 +226,18 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   ],
                                 ),
                                 SizedBox(height: 10),
-                                FutureBuilder<String>(
-                                  future: getDescription(mushroomSpecies),
-                                  builder: (context, snapshot) {
-                                    if (snapshot.connectionState == ConnectionState.waiting) {
-                                      return Center(child: CircularProgressIndicator());
-                                    } else if (snapshot.hasError) {
-                                      return Center(child: Text('Error: ${snapshot.error}'));
-                                    } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                                      return Center(child: Text('No description available'));
-                                    } else {
-                                      return Padding(
-                                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                                        child: Text(
-                                          textAlign: TextAlign.left,
-                                          snapshot.data!,
-                                          style: GoogleFonts.poppins(
-                                            color: const Color.fromARGB(255, 20, 20, 20),
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                  },
-                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                  child: Text(
+                                    textAlign: TextAlign.left,
+                                    description,
+                                    style: GoogleFonts.poppins(
+                                      color: const Color.fromARGB(255, 20, 20, 20),
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ),
