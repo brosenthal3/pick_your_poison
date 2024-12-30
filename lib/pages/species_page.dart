@@ -20,7 +20,8 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
 
   @override
   Widget build(BuildContext context) {
-    final mushroomProvider = Provider.of<MushroomFeaturesProvider>(context, listen: true);
+    final mushroomProvider =
+        Provider.of<MushroomFeaturesProvider>(context, listen: true);
 
     Future<Map> getSpeciesInfo() async {
       final speciesInfo = await mushroomProvider.getSpecies();
@@ -30,16 +31,16 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
     late Future<Map> speciesInfo = getSpeciesInfo();
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF2EDE2),
-      appBar: AppBar(
         backgroundColor: const Color(0xFFF2EDE2),
-        toolbarHeight: 100,
-        title: Container(
-          child: StandardText("Species Prediction", 25),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFF2EDE2),
+          toolbarHeight: 100,
+          title: Container(
+            child: StandardText("Species Prediction", 25),
+          ),
         ),
-      ),
-      body: Column(
-        children: [
+        body: Column(
+          children: [
             FutureBuilder<Map>(
               future: speciesInfo,
               builder: (context, snapshot) {
@@ -53,6 +54,8 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                   final speciesData = snapshot.data!;
                   final mushroomSpecies = speciesData['name'];
                   final mushroomFamily = speciesData['family'];
+                  // final mushroomHabitat = speciesData['habitat'];
+                  // final mushroomSeason = speciesData['season'];
                   return Expanded(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(40, 0, 40, 20),
@@ -70,7 +73,8 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                     BlendMode.darken,
                                   ),
                                   child: Image(
-                                    image: AssetImage(mushroomSpeciesAsset(mushroomSpecies, mushroomFamily)),
+                                    image: AssetImage(mushroomSpeciesAsset(
+                                        mushroomSpecies, mushroomFamily)),
                                     height: 330,
                                     width: 350,
                                     fit: BoxFit.cover,
@@ -106,16 +110,105 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                           const SizedBox(height: 10),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(8, 20, 8, 20),
-                            child: Center(
-                              child: Text(
-                                textAlign: TextAlign.left,
-                                speciesData['description'] ?? 'No description available',
-                                style: GoogleFonts.poppins(
-                                  color: const Color.fromARGB(255, 20, 20, 20),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      textAlign: TextAlign.left,
+                                      'Scientific name',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Text(
+                                      textAlign: TextAlign.right,
+                                      'Scientific name',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      textAlign: TextAlign.left,
+                                      'Habitat',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Text(
+                                      textAlign: TextAlign.right,
+                                      'Habitat',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      textAlign: TextAlign.left,
+                                      'Season',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Text(
+                                      textAlign: TextAlign.right,
+                                      'Season',
+                                      style: GoogleFonts.poppins(
+                                        color: const Color.fromARGB(
+                                            255, 20, 20, 20),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                  child: Text(
+                                    textAlign: TextAlign.left,
+                                    speciesData['description'] ??
+                                        'No description available',
+                                    style: GoogleFonts.poppins(
+                                      color:
+                                          const Color.fromARGB(255, 20, 20, 20),
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -126,7 +219,6 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
               },
             ),
           ],
-        )
-    );
+        ));
   }
 }
