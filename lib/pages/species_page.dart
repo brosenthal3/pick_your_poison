@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pick_your_poison/providers/mushroom_features.dart';
 import '../widgets/widgets.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 
 class SpeciesPredictionPage extends StatefulWidget {
   const SpeciesPredictionPage({super.key});
@@ -16,6 +18,27 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
     String species = mushroomSpecies.toLowerCase().replaceAll(' ', '-');
     String family = mushroomFamily.replaceAll(' ', '_');
     return "../assets/Species/$family/$species.jpg";
+  }
+
+  Future<String> getDescription(String mushroomSpecies) async {
+    // parse JSON file species_descriptions.json to get description
+
+    Future<List<Map<String, dynamic>>> loadJsonData() async {
+      String jsonString = await rootBundle.loadString('assets/species_descriptions.json');
+      List<dynamic> jsonResponse = json.decode(jsonString);
+      return jsonResponse.map((item) => item as Map<String, dynamic>).toList();
+    }
+
+    Future<String> getDescriptionInner(String mushroomSpecies) async {
+      List<Map<String, dynamic>> speciesList = await loadJsonData();
+      Map<String, dynamic>? species = speciesList.firstWhere(
+        (element) => element['name'].toLowerCase() == mushroomSpecies.toLowerCase(),
+        orElse: () => {},
+      );
+      return species != null ? species['description'] : 'Description not found';
+    }
+
+    return getDescriptionInner(mushroomSpecies);
   }
 
   @override
@@ -54,8 +77,8 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                   final speciesData = snapshot.data!;
                   final mushroomSpecies = speciesData['name'];
                   final mushroomFamily = speciesData['family'];
-                  // final mushroomHabitat = speciesData['habitat'];
-                  // final mushroomSeason = speciesData['season'];
+                  final mushroomHabitat = speciesData['habitat'].join(', ');
+                  final mushroomSeason = speciesData['season'].join(', ');
                   return Expanded(
                     child: Container(
                       padding: EdgeInsets.fromLTRB(40, 0, 40, 20),
@@ -155,7 +178,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                     ),
                                     Text(
                                       textAlign: TextAlign.right,
-                                      'Habitat',
+                                      mushroomHabitat,
                                       style: GoogleFonts.poppins(
                                         color: const Color.fromARGB(
                                             255, 20, 20, 20),
@@ -182,7 +205,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                     ),
                                     Text(
                                       textAlign: TextAlign.right,
-                                      'Season',
+                                      mushroomSeason,
                                       style: GoogleFonts.poppins(
                                         color: const Color.fromARGB(
                                             255, 20, 20, 20),
@@ -193,20 +216,30 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   ],
                                 ),
                                 SizedBox(height: 10),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                                  child: Text(
-                                    textAlign: TextAlign.left,
-                                    speciesData['description'] ??
-                                        'No description available',
-                                    style: GoogleFonts.poppins(
-                                      color:
-                                          const Color.fromARGB(255, 20, 20, 20),
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
+                                FutureBuilder<String>(
+                                  future: getDescription(mushroomSpecies),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.connectionState == ConnectionState.waiting) {
+                                      return Center(child: CircularProgressIndicator());
+                                    } else if (snapshot.hasError) {
+                                      return Center(child: Text('Error: ${snapshot.error}'));
+                                    } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                                      return Center(child: Text('No description available'));
+                                    } else {
+                                      return Padding(
+                                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                        child: Text(
+                                          textAlign: TextAlign.left,
+                                          snapshot.data!,
+                                          style: GoogleFonts.poppins(
+                                            color: const Color.fromARGB(255, 20, 20, 20),
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                               ],
                             ),
