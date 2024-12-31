@@ -13,6 +13,49 @@ class PredictionPage extends StatefulWidget {
 
 class _PredictionPageState extends State<PredictionPage> {
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(
+              'DISCLAIMER',
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            content: Text(
+              'This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.',
+              style: GoogleFonts.poppins(
+                color: const Color.fromARGB(255, 20, 20, 20),
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text(
+                  'I Understand',
+                  style: GoogleFonts.poppins(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final mushroomFeaturesProvider =
         Provider.of<MushroomFeaturesProvider>(context);
@@ -30,7 +73,7 @@ class _PredictionPageState extends State<PredictionPage> {
       double pred = await mushroomFeaturesProvider.getPrediction();
       Map species = await mushroomFeaturesProvider.getSpecies();
       double speciesPred = species['class'] == 'p' ? 1 : 0;
-      double finalPred = pred == 1 || speciesPred == 1 ? 1 : 0; 
+      double finalPred = pred == 1 || speciesPred == 1 ? 1 : 0;
       if (finalPred == 1) {
         return ["POISONOUS", const Color.fromARGB(255, 214, 27, 14)];
       } else {
@@ -106,7 +149,8 @@ class _PredictionPageState extends State<PredictionPage> {
                     return Text('Error: ${snapshot.error}');
                   } else {
                     return Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       color: snapshot.data![1],
                       child: Center(
                         child: Text(
@@ -145,7 +189,7 @@ class _PredictionPageState extends State<PredictionPage> {
                 child: HomeButton("Read More", getSpeciesPrediction),
               ),
               SizedBox(height: 20),
-              Container(
+              /* Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text.rich(
                   TextSpan(
@@ -168,7 +212,7 @@ class _PredictionPageState extends State<PredictionPage> {
                       ]),
                   textAlign: TextAlign.center,
                 ),
-              ),
+              ), */
               SizedBox(height: 30),
             ],
           ),
