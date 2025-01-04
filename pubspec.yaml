@@ -28,3 +28,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/cap/*
+    - assets/gills/*
+    - assets/icons/*
+    - assets/ring/*
+    - assets/species/*
+    - assets/tutorial/*
