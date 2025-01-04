@@ -44,7 +44,7 @@ class MushroomBodyMapPage extends StatelessWidget {
           child: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () {
-              // TO DO: navigate back to tutorial
+              Navigator.pushNamed(context, '/tutorial');
             },
           ),
         ),
