@@ -1,0 +1,1040 @@
+[
+    {
+        "family":"Amanita Family",
+        "name":"Fly Agaric",
+        "scientific name":"Amanita muscaria",
+        "description":"The Fly Agaric is an iconic mushroom with a bright red cap adorned with white warts, making it one of the most recognizable fungi. Found in woodlands, particularly near birch and conifer trees, it thrives in autumn. Despite its whimsical appearance, it contains toxic compounds and should not be consumed. Historically, it has been associated with folklore and shamanic rituals due to its psychoactive properties."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"Panther Cap",
+        "scientific name":"Amanita pantherina",
+        "description":"The Panther Cap features a brown cap sprinkled with white warts and a ring on its stem. This highly toxic mushroom is found in deciduous and mixed woodlands. It is often confused with edible species, making it especially dangerous. Its toxins can cause severe neurological symptoms if ingested."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"False Panther Cap",
+        "scientific name":"Amanita spissa",
+        "description":"Often mistaken for the Panther Cap, the False Panther Cap has a greyish-brown cap with a similar speckled appearance. It lacks the distinct ring on the stem and is less toxic, though still inedible. This mushroom is found in similar habitats, such as woodlands with acidic soil."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"The Blusher",
+        "scientific name":"Amanita rubescens",
+        "description":"The Blusher is named for its cap and stem, which blush red when bruised. Its brownish cap has scattered warts, and it is found in mixed forests. Although considered edible when cooked, it can be confused with toxic species, making identification critical."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"Death Cap",
+        "scientific name":"Amanita phalloides",
+        "description":"The Death Cap is a deadly poisonous mushroom with a pale greenish or white cap and a bulbous base. Found in deciduous forests, particularly with oak, beech, and hazel, it contains amatoxins, which can cause fatal liver and kidney damage. Its deceptive appearance resembles edible mushrooms, posing significant risk."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"False Death Cap",
+        "scientific name":"Amanita citrina",
+        "description":"The False Death Cap has a pale yellow or white cap and shares similarities with the Death Cap, though it is less toxic. Found in woodlands, it has a faint smell of raw potatoes. While not deadly, it is still not recommended for consumption."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"Destroying Angel",
+        "scientific name":"Amanita virosa",
+        "description":"The Destroying Angel is a lethal mushroom with a pure white appearance, including its cap, stem, and gills. Found in forests, it prefers acidic soils. Like the Death Cap, it contains amatoxins and can cause fatal poisoning. It is critical to differentiate this mushroom from edible white fungi."
+    },
+    {
+        "family":"Amanita Family",
+        "name":"Tawny Grisette",
+        "scientific name":"Amanita fulva",
+        "description":"The Tawny Grisette is a slender, tawny-brown mushroom with a smooth cap and striated edges. It lacks a ring but features a prominent volva at the base of its stem. Found in woodlands during late summer and autumn, it is considered edible but requires caution due to its resemblance to toxic species."
+    },
+    {
+        "family":"Lepiota Family",
+        "name":"Parasol Mushroom",
+        "scientific name":"Macrolepiota procera",
+        "description":"The Parasol Mushroom is a tall, striking species with a large, scaly cap and a ringed stem that can move freely. Found in grassy clearings and woodland edges, it is edible and highly sought after for its nutty flavor. However, it should be carefully distinguished from similar toxic species."
+    },
+    {
+        "family":"Lepiota Family",
+        "name":"Shaggy Parasol",
+        "scientific name":"Chlorophyllum rhacodes",
+        "description":"The Shaggy Parasol is smaller and more robust than the Parasol Mushroom, with a scaly cap that darkens when bruised. Found in wooded areas and gardens, it is edible when cooked but can cause allergic reactions in some individuals."
+    },
+    {
+        "family":"Lepiota Family",
+        "name":"Stinking Parasol",
+        "scientific name":"Lepiota cristata",
+        "description":"The Stinking Parasol is a small mushroom with a creamy white cap and a distinct, unpleasant odor. Commonly found in grassy areas and woodlands, it is toxic and not suitable for consumption. Its small size and smell help differentiate it from edible lookalikes."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Saffron Parasol",
+        "scientific name":"Cystolepiota clypeolaria",
+        "description":"The Saffron Parasol has a yellowish-brown, finely hairy cap and a slender stem with a delicate ring. Found in woodland leaf litter, it is inedible and of limited culinary interest. Its delicate appearance makes it easy to identify."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"The Deceiver",
+        "scientific name":"Laccaria laccata",
+        "description":"The Deceiver is a small, variable mushroom with a brown to pinkish cap and slender stem. Found in woodlands and grassy areas, it is edible but has little flavor. Its name comes from its ability to change appearance with age and weather, making identification tricky."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Amethyst Deceiver",
+        "scientific name":"Laccaria amethystina",
+        "description":"The Amethyst Deceiver is a striking purple mushroom found in woodlands. Its vivid color fades with age, adding to the challenge of identification. It is edible and often used as a garnish, but care must be taken to differentiate it from other purple species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Wood Blewit",
+        "scientific name":"Lepista nuda",
+        "description":"The Wood Blewit has a smooth, lilac-colored cap and pale purple gills that fade with age. Found in woodlands and compost heaps, it is a popular edible mushroom, though it must be thoroughly cooked to avoid digestive upset."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Field Blewit",
+        "scientific name":"Lepista saeva",
+        "description":"The Field Blewit is a pale, beige mushroom with a smooth cap and a distinctive, pleasant aroma. Found in grasslands and meadows, it is edible and prized for its delicate flavor. Like the Wood Blewit, it requires proper cooking."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Clouded Agaric",
+        "scientific name":"Clitocybe nebularis",
+        "description":"The Clouded Agaric has a smooth, grayish cap and dense white gills. Found in woodlands and grassy areas, it is edible when cooked but can cause reactions in some people. Its dense clusters make it easy to spot in autumn."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Club-footed Funnel Cap",
+        "scientific name":"Ampulloclitocybe clavipes",
+        "description":"The Club-footed Funnel Cap features a grayish cap and a bulbous, club-like base. Found in damp woodlands, it is considered inedible due to its tough texture. It often grows in association with decaying organic matter."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Common Funnel Cap",
+        "scientific name":"Clitocybe gibba",
+        "description":"The Common Funnel Cap has a smooth, pale orange cap that forms a funnel shape as it ages. Found in woodlands and grassy areas, it is edible when young but becomes tough and bitter with age. Its delicate appearance makes it a favorite among foragers."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Aniseed Funnel Cap",
+        "scientific name":"Clitocybe odora",
+        "description":"The Aniseed Funnel Cap is easily identified by its pale blue-green cap and strong aniseed aroma. Found in woodlands, it is edible and often used for its unique flavor. Its distinctive smell helps differentiate it from other funnel-shaped mushrooms."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Ivory Clitocybe",
+        "scientific name":"Clitocybe dealbata",
+        "description":"The Ivory Clitocybe is a small, white mushroom with a smooth cap and a dangerous reputation. Highly toxic, it contains muscarine and should not be consumed. Found in grassy areas, it can be mistaken for edible white fungi."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Wood Woolly-foot",
+        "scientific name":"Gymnopus peronatus",
+        "description":"The Wood Woolly-foot has a tawny-brown cap and a stem covered in fine, woolly hairs. Found in leaf litter, it is inedible due to its tough texture. Its fibrous stem is a key identification feature."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Russet Tough Shank",
+        "scientific name":"Gymnopus dryophilus",
+        "description":"The Russet Tough Shank has a reddish-brown cap and a slender, tough stem. Found in deciduous woodlands, it grows in leaf litter and is inedible due to its fibrous texture. Its small size and tough nature make it distinctive."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Clustered Tough Shank",
+        "scientific name":"Gymnopus acervatus",
+        "description":"The Clustered Tough Shank grows in tight clusters with small, reddish-brown caps and wiry stems. Found on decaying wood, it is inedible. Its clustered growth habit helps differentiate it from similar species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Greasy Tough Shank",
+        "scientific name":"Gymnopus ocior",
+        "description":"The Greasy Tough Shank features a smooth, greasy-looking cap and slender stem. Found in damp woodland environments, it is inedible. Its shiny cap texture is a key characteristic for identification."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Spotted Tough Shank",
+        "scientific name":"Gymnopus confluens",
+        "description":"The Spotted Tough Shank is a woodland mushroom with a pale cap that often develops small dark spots. Its fibrous stem and tough texture render it inedible. It frequently grows in large groups, making it a common sight in autumn."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Fairy Ring Champignon",
+        "scientific name":"Marasmius oreades",
+        "description":"The Fairy Ring Champignon is a small mushroom with a tan cap and widely spaced gills. It often forms \"fairy rings\" in grassy areas. Edible and highly regarded for its sweet flavor, it is a popular foraging choice, though care must be taken to avoid similar toxic species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Little Wheel Fungus",
+        "scientific name":"Marasmius rotula",
+        "description":"The Little Wheel Fungus has a delicate, white cap with radiating ridges resembling a wheel. Found on decaying wood, it is inedible due to its small size and tough texture. Its distinctive wheel-like appearance makes it easily recognizable."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Horse-hair Fungus",
+        "scientific name":"Marasmius androsaceus",
+        "description":"The Horse-hair Fungus features a tiny cap and an extremely thin, black stem resembling horse hair. Found on decaying wood and plant material, it is inedible. Its slender stem is a unique identification feature."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Bonnet Bell Cap",
+        "scientific name":"Mycena galericulata",
+        "description":"The Bonnet Bell Cap is a common woodland mushroom with a smooth, conical cap and delicate appearance. It grows on decaying wood and is inedible. Its translucent cap and clustered growth help distinguish it from other Mycena species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Stump Bell Cap",
+        "scientific name":"Mycena inclinata",
+        "description":"The Stump Bell Cap grows in clusters on tree stumps, featuring pale caps with a distinctive bell shape. It is inedible and often found in autumn. Its habitat and clustered growth are key identification features."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Tufted Bell Cap",
+        "scientific name":"Mycena arcangeliana",
+        "description":"The Tufted Bell Cap is a small, pale mushroom that grows in tufts on decaying wood. Its fragile cap and faint aroma of bleach make it unique. It is inedible and commonly found in mixed forests."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Milky Bell Cap",
+        "scientific name":"Mycena galopus",
+        "description":"The Milky Bell Cap is a delicate mushroom with a grayish-brown cap and a stem that exudes a milky fluid when broken. Found in woodland leaf litter, it is inedible. Its distinctive milk-like secretion aids identification."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Small Bleeding Bell Cap",
+        "scientific name":"Mycena sanguinolenta",
+        "description":"The Small Bleeding Bell Cap is a tiny mushroom with a reddish-brown cap and a stem that exudes red liquid when broken. Found in coniferous forests, it is inedible. Its bleeding characteristic is a key feature."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Lilac Bell Cap",
+        "scientific name":"Mycena pura",
+        "description":"The Lilac Bell Cap has a smooth, pale lilac cap and grows in woodlands. It has a faint smell of radishes and is considered mildly toxic. Its delicate color helps distinguish it from other bell caps."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Yellow-stemmed Bell Cap",
+        "scientific name":"Mycena epipterygia",
+        "description":"The Yellow-stemmed Bell Cap is a small mushroom with a pale cap and a distinctive yellow, slimy stem. Found in damp woodlands, it is inedible. Its stem color is a clear identifier."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Orange Bell Cap",
+        "scientific name":"Mycena leaiana",
+        "description":"The Orange Bell Cap is a bright orange mushroom found in woodlands, often on decaying wood. It grows in clusters and is inedible. Its vivid coloration makes it easily recognizable."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Orange Moss Agaric",
+        "scientific name":"Rickenella fibula",
+        "description":"The Orange Moss Agaric is a tiny, bright orange mushroom often found in mossy environments. Its small size and color make it distinctive, though it is inedible due to its tough texture."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Umbrella Navel Cap",
+        "scientific name":"Omphalina ericetorum",
+        "description":"The Umbrella Navel Cap has a funnel-shaped cap with a navel-like depression in the center. Found in heathland and mossy areas, it is inedible. Its preference for acidic soils and small size help with identification."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Rooting Shank",
+        "scientific name":"Xerula radicata",
+        "description":"The Rooting Shank is a medium-sized mushroom with a brownish cap, white gills, and a distinctive long, rooting stem that penetrates deep into the soil. Found near decaying wood or tree roots, it is inedible. Its deeply rooted stem is a key identifying feature."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Porcelain Mushroom",
+        "scientific name":"Oudemansiella mucida",
+        "description":"The Porcelain Mushroom is a delicate white or translucent mushroom with a glossy, slimy cap. Found on dead or dying beech trees, it is inedible due to its slimy texture. Its shiny, porcelain-like cap gives it its name and makes it visually striking."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Velvet Shank",
+        "scientific name":"Flammulina velutipes",
+        "description":"The Velvet Shank has an orange to yellow cap and a dark, velvety stem. Found on dead wood, it appears in winter and is edible when cooked. It is cultivated commercially as \"enoki mushrooms\" but differs in appearance in the wild."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Honey Fungus",
+        "scientific name":"Armillaria mellea",
+        "description":"The Honey Fungus is a parasitic mushroom with a yellowish-brown, scaly cap and a ring on its stem. Found on living trees and dead wood, it causes significant tree damage. Edible when properly prepared, but its parasitic nature makes it infamous among foresters."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Bulbous Honey Fungus",
+        "scientific name":"Armillaria gallica",
+        "description":"The Bulbous Honey Fungus resembles the Honey Fungus but has a bulbous stem base. Found in woodlands, it is parasitic and can cause tree decay. It is considered edible when cooked but must be carefully identified to avoid confusion with toxic species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Soap-scented Tricholoma",
+        "scientific name":"Tricholoma saponaceum",
+        "description":"The Soap-scented Tricholoma is a pale green or gray mushroom with a soapy odor when crushed. Found in woodlands, it is inedible due to its unpleasant taste and potential toxicity. Its distinctive smell aids in identification."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Grey Tricholoma",
+        "scientific name":"Tricholoma terreum",
+        "description":"The Grey Tricholoma is a small to medium mushroom with a gray, fibrous cap and white gills. Found in coniferous woodlands, it is edible but has little flavor. Its fibrous texture makes it easily identifiable."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Scaly Tricholoma",
+        "scientific name":"Tricholoma imbricatum",
+        "description":"The Scaly Tricholoma has a reddish-brown, scaly cap and grows in coniferous forests. It is considered inedible due to its bitter taste. Its scaly surface distinguishes it from other Tricholoma species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Yellow-brown Tricholoma",
+        "scientific name":"Tricholoma fulvum",
+        "description":"The Yellow-brown Tricholoma features a smooth, yellowish-brown cap and white gills. Found in damp, acidic woodlands, it is inedible. Its bright cap color helps differentiate it from other similar species."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Sulphur Tricholoma",
+        "scientific name":"Tricholoma sulphureum",
+        "description":"The Sulphur Tricholoma is a bright yellow mushroom with a strong, unpleasant sulfur-like smell. Found in woodlands, it is inedible due to its foul taste and odor. Its vivid color and smell make it easy to identify."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"St George's Mushroom",
+        "scientific name":"Calocybe gambosa",
+        "description":"St George's Mushroom is a sturdy, white mushroom with a convex cap and dense, creamy gills. Found in spring in grassy areas, it is a popular edible species with a pleasant, mealy aroma. Its early-season appearance sets it apart from many mushrooms."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Clustered Brown Cap",
+        "scientific name":"Lyophyllum decastes",
+        "description":"The Clustered Brown Cap grows in tight clusters with brown, smooth caps and white gills. Found in grassy and disturbed areas, it is edible and has a mild flavor. Its clustered growth habit aids in identification."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Changeable Melanoleuca",
+        "scientific name":"Melanoleuca cognata",
+        "description":"The Changeable Melanoleuca is a medium-sized mushroom with a brown, smooth cap and cream-colored gills. Found in grasslands and woodlands, it is considered edible but not highly regarded for its flavor. Its variability in color can make identification challenging."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Plums and custard",
+        "scientific name":"Tricholomopsis rutilans",
+        "description":"Plums and Custard is a visually striking mushroom with a deep purple cap and bright yellow gills. Found on decaying conifer wood, it is inedible. Its vibrant coloration makes it easy to identify."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Ivory Wax Cap",
+        "scientific name":"Hygrocybe virginea",
+        "description":"The Ivory Wax Cap is a small, creamy-white mushroom with a smooth cap and slimy texture. Found in grasslands, it is inedible. Its waxy appearance and pure color help distinguish it from other species."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Yellow Wax cap",
+        "scientific name":"Hygrocybe flavescens",
+        "description":"The Yellow Wax Cap has a bright yellow cap and slimy surface, typical of wax caps. Found in grassy areas, it is edible and appreciated for its sweet flavor. Its vibrant color and waxy texture are key identifiers."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Orange-red Wax Cap",
+        "scientific name":"Hygrocybe aurantiosplendens",
+        "description":"The Orange-red Wax Cap is a glossy, bright orange mushroom with a smooth cap. Found in grassy areas, it is edible and adds visual appeal to foraged collections. Its intense coloration is a distinguishing feature."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Blackening Wax Cap",
+        "scientific name":"Hygrocybe conica",
+        "description":"The Blackening Wax Cap is a brightly colored mushroom with an orange to red conical cap that blackens with age or when handled. Found in grassy areas, it is mildly toxic and not recommended for consumption. Its tendency to blacken makes it easy to identify."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Meadow Wax Cap",
+        "scientific name":"Hygrocybe pratensis",
+        "description":"The Meadow Wax Cap is a pale orange or buff mushroom with a dry, smooth cap. Found in grassy meadows, it is edible and has a pleasant flavor. Its waxy appearance and habitat distinguish it from other mushrooms."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Scarlet Hood",
+        "scientific name":"Hygrocybe coccinea",
+        "description":"The Scarlet Hood is a vibrant red mushroom with a waxy, bell-shaped cap and pale gills. Found in grassy areas, it is edible and visually striking. Its vivid scarlet color makes it a favorite among foragers."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Parrot Wax Cap",
+        "scientific name":"Hygrocybe psittacina",
+        "description":"The Parrot Wax Cap is a small, green mushroom that fades to yellow with age. Its slimy texture and vibrant color make it easily recognizable. Found in grasslands, it is edible but not highly regarded for its flavor."
+    },
+    {
+        "family":"Wax Gill Family",
+        "name":"Herald of Winter",
+        "scientific name":"Hygrophorus hypothejus",
+        "description":"The Herald of Winter is a small, orange-brown mushroom with a sticky cap and white gills. Found in coniferous forests in late autumn, it is edible and often associated with the onset of winter. Its slimy cap texture is a key identifier."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Common Yellow Russula",
+        "scientific name":"Russula ochroleuca",
+        "description":"The Common Yellow Russula has a yellow cap with a smooth, waxy texture and white gills. Found in woodlands, it is inedible due to its bitter taste. Its uniform yellow coloration makes it easy to distinguish."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Yellow-gilled Russula",
+        "scientific name":"Russula ochrospora",
+        "description":"The Yellow-gilled Russula features a pale yellow cap and gills, with a smooth stem. Found in mixed forests, it is inedible. Its yellow tones and fragile gills aid in identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Yellow Swamp Russula",
+        "scientific name":"Russula claroflava",
+        "description":"The Yellow Swamp Russula is a bright yellow mushroom that thrives in damp, swampy areas. Its cap has a smooth texture, and its gills are creamy white. It is edible and has a mild flavor, though its specific habitat makes it less commonly foraged."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Geranium-scented Russula",
+        "scientific name":"Russula fellea",
+        "description":"The Geranium-scented Russula has a yellow to orange cap and emits a strong geranium-like odor. Found in woodlands, it is toxic and inedible. Its distinct smell makes it unique among Russula species."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Stinking Russula",
+        "scientific name":"Russula foetens",
+        "description":"The Stinking Russula has a brownish-yellow cap and exudes a strong, unpleasant smell. Found in woodlands, it is toxic and should not be consumed. Its odor and slimy cap texture are key identifiers."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Fragile Russula",
+        "scientific name":"Russula fragilis",
+        "description":"The Fragile Russula is a small, brittle mushroom with a purple to reddish cap and pale gills. Found in damp woodlands, it is inedible due to its peppery taste. Its delicate structure makes it stand out among other Russulas."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Birch Russula",
+        "scientific name":"Russula betularum",
+        "description":"The Birch Russula is a small, pale mushroom often associated with birch trees. Its cap is cream-colored with pinkish hues, and it is inedible due to its acrid taste. Its preference for birch habitats aids in identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Bare-toothed Russula",
+        "scientific name":"Russula vesca",
+        "description":"The Bare-toothed Russula is a reddish-brown mushroom with a firm cap and cream-colored gills. Found in mixed forests, it is edible and has a mild, nutty flavor. Its robust texture and distinctive coloring make it appealing to foragers."
+    },
+    {
+        "family":"Russula Family",
+        "name":"The Charcoal Burner",
+        "scientific name":"Russula cyanoxantha",
+        "description":"The Charcoal Burner is a variable Russula with a cap that ranges from purple to green. It is edible and prized for its mild flavor. Found in woodlands, its distinctive color variation makes it unique among mushrooms."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Blackish Purple Russula",
+        "scientific name":"Russula atropurpurea",
+        "description":"The Blackish Purple Russula has a deep purple to black cap and white gills. Found in deciduous forests, it is edible and has a mild, nutty flavor. Its dark coloration helps with identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Blackening Russula",
+        "scientific name":"Russula nigricans",
+        "description":"The Blackening Russula is a large mushroom with a white cap that darkens to black with age. Found in woodlands, it is inedible due to its tough texture. Its blackening feature is a clear identifying trait."
+    },
+    {
+        "family":"Russula Family",
+        "name":"The Sickener",
+        "scientific name":"Russula emetica",
+        "description":"The Sickener has a bright red cap and white gills, making it visually striking. Found in coniferous forests, it is toxic and causes gastrointestinal distress if consumed. Its vivid red coloration warns of its toxicity."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Beechwood Sickener",
+        "scientific name":"Russula nobilis",
+        "description":"The Beechwood Sickener resembles The Sickener but prefers beech forests. Its bright red cap and white gills are similarly toxic, making it inedible. Its specific association with beech trees aids in identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Crab-scented Russula",
+        "scientific name":"Russula xerampelina",
+        "description":"The Crab-scented Russula has a reddish cap and emits a crab-like odor when cut. Found in woodlands, it is edible and valued for its unique aroma. Its smell and coloration help distinguish it from other Russulas."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Grass-green Russula",
+        "scientific name":"Russula aeruginea",
+        "description":"The Grass-green Russula has a smooth, green cap and creamy white gills. Found in deciduous and mixed woodlands, it is edible but not commonly foraged due to its mild flavor. Its green coloration helps distinguish it from other Russula species."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Peppery Milk Cap",
+        "scientific name":"Lactarius piperatus",
+        "description":"The Peppery Milk Cap is a pale, white mushroom that exudes a peppery-tasting milk when cut. Found in woodlands, it is considered inedible due to its intensely spicy taste. Its acrid milk secretion aids in identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Fleecy Milk Cap",
+        "scientific name":"Lactarius vellereus",
+        "description":"The Fleecy Milk Cap is a large, white mushroom with a velvety texture and dense gills. Found in woodlands, it exudes a mild-tasting milk but is inedible due to its tough, bitter flesh. Its large size and texture make it easily recognizable."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Oak Milk Cap",
+        "scientific name":"Lactarius quietus",
+        "description":"The Oak Milk Cap has a reddish-brown cap and grows in association with oak trees. It exudes a mild, watery milk and has a nutty aroma. Though edible, it is not highly regarded for its flavor. Its connection with oak habitats helps with identification."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Slimy Milk Cap",
+        "scientific name":"Lactarius blennius",
+        "description":"The Slimy Milk Cap is a grayish-green mushroom with a sticky, slimy cap surface. Found in beech woodlands, it exudes a mild-tasting milk. It is inedible due to its slimy texture and unappealing taste."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Ugly Milk Cap",
+        "scientific name":"Lactarius turpis",
+        "description":"The Ugly Milk Cap is a dark olive-brown mushroom with a rough, sticky cap. Found in coniferous woodlands, it exudes a bitter-tasting milk and is inedible. Its dark, unappealing appearance justifies its name."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Rufous Milk Cap",
+        "scientific name":"Lactarius rufus",
+        "description":"The Rufous Milk Cap is a reddish-brown mushroom with a slender stem. Found in acidic woodlands, it exudes a spicy, acrid milk and is inedible. Its distinctive coloration makes it easy to identify."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Sweet Milk Cap",
+        "scientific name":"Lactarius subdulcis",
+        "description":"The Sweet Milk Cap has a reddish-brown cap and exudes a sweet-tasting milk. Found in deciduous woodlands, it is considered edible but has limited culinary value. Its pleasant milk taste is a distinguishing feature."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Small Brown Milk Cap",
+        "scientific name":"Lactarius tabidus",
+        "description":"The Small Brown Milk Cap is a diminutive mushroom with a reddish-brown cap and a mild-tasting milk. Found in damp woodlands, it is inedible due to its small size and tough texture. Its petite stature sets it apart."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Coconut-scented Milk Cap",
+        "scientific name":"Lactarius glyciosmus",
+        "description":"The Coconut-scented Milk Cap has a pale cap and emits a strong coconut aroma when crushed. Found in woodlands, it is inedible but highly distinctive due to its unique fragrance."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Woolly Milk Cap",
+        "scientific name":"Lactarius torminosus",
+        "description":"The Woolly Milk Cap has a pale pink, woolly cap and exudes an acrid milk. Found in birch woodlands, it is inedible due to its bitter taste and irritant properties. Its woolly texture is a key identifier."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Saffron Milk Cap",
+        "scientific name":"Lactarius deliciosus",
+        "description":"The Saffron Milk Cap has a bright orange cap and exudes a carrot-colored milk when cut. Found in coniferous forests, it is highly prized as an edible mushroom. Its vivid coloration and milk secretion make it easy to identify."
+    },
+    {
+        "family":"Russula Family",
+        "name":"Spruce Milk Cap",
+        "scientific name":"Lactarius deterrimus",
+        "description":"The Spruce Milk Cap is an orange mushroom that grows in association with spruce trees. It exudes a bright orange milk and is edible but less flavorful than the Saffron Milk Cap. Its spruce habitat aids in identification."
+    },
+    {
+        "family":"Pluteus Family",
+        "name":"Fawn Pluteus",
+        "scientific name":"Pluteus cervinus",
+        "description":"The Fawn Pluteus, also known as the Deer Mushroom, has a smooth, brownish cap and pale pink gills that turn salmon-colored with maturity. Found on decaying wood in woodlands, it is edible but not highly regarded for its flavor. Its habitat and pink gills help distinguish it from similar species."
+    },
+    {
+        "family":"Pluteus Family",
+        "name":"Veined Pluteus",
+        "scientific name":"Pluteus phlebophorus",
+        "description":"The Veined Pluteus features a dark, radially veined cap and pale pink gills. Found on decaying wood, it is inedible due to its tough texture. Its veined cap surface and habitat are key identifying traits."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"Silky Nolanea",
+        "scientific name":"Entoloma sericeum",
+        "description":"The Silky Nolanea is a small, grayish-brown mushroom with a silky, shiny cap and a slender stem. Found in grasslands and woodlands, it is inedible due to its toxicity. Its delicate appearance makes it easy to identify."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"Striated Nolanea",
+        "scientific name":"Entoloma conferendum",
+        "description":"The Striated Nolanea has a small, pale brown cap with fine radial striations. Found in grassy areas, it is inedible and mildly toxic. Its striated cap surface is a distinctive feature."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"White Leptonia",
+        "scientific name":"Leptonia incana",
+        "description":"The White Leptonia is a small, whitish mushroom with a smooth, conical cap and pale gills. Found in grassy areas, it is inedible. Its pale coloration and habitat help with identification."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"Blue Leptonia",
+        "scientific name":"Leptonia cyanella",
+        "description":"The Blue Leptonia is a striking, small mushroom with a vivid blue cap and pale gills. Found in grasslands, it is inedible. Its rare blue coloration makes it visually distinctive."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"Livid Entoloma",
+        "scientific name":"Entoloma sinuatum",
+        "description":"The Livid Entoloma is a large, pale mushroom with a grayish cap and pinkish gills. Found in woodlands, it is highly toxic and often mistaken for edible species. Its subtle coloration and deadly reputation make accurate identification crucial."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"The Miller",
+        "scientific name":"Clitopilus prunulus",
+        "description":"The Miller has a pale, creamy cap and dense, decurrent gills that produce a pleasant mealy odor. Found in grasslands and woodlands, it is edible and valued for its mild flavor. Its scent and gill structure are key identifying features."
+    },
+    {
+        "family":"Entoloma Family",
+        "name":"Apricot Fungus",
+        "scientific name":"Chroogomphus rutilus",
+        "description":"The Apricot Fungus is an orange to reddish-brown mushroom with a sticky cap. Found in coniferous forests, it is edible but not highly regarded. Its coloration and association with conifers help identify it."
+    },
+    {
+        "family":"Bolbitius Family",
+        "name":"Egg Yolk Fungus",
+        "scientific name":"Bolbitius titubans",
+        "description":"The Egg Yolk Fungus has a bright yellow, slimy cap and pale gills that darken with age. Found in grassy areas and compost, it is inedible. Its vivid color and slimy texture are key characteristics."
+    },
+    {
+        "family":"Bolbitius Family",
+        "name":"Brown Bell Cap",
+        "scientific name":"Galerina marginata",
+        "description":"The Brown Bell Cap is a small, brown mushroom with a conical cap and a ringed stem. Found on decaying wood, it is highly toxic and can be fatal if ingested. Its small size and deadly reputation warrant caution."
+    },
+    {
+        "family":"Bolbitius Family",
+        "name":"Spring Agaric",
+        "scientific name":"Calocybe gambosa",
+        "description":"The Spring Agaric, also known as St George\u2019s Mushroom, has a creamy white cap and a dense, mealy aroma. Found in grassy areas during spring, it is edible and highly regarded for its flavor. Its early-season appearance makes it unique."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Shaggy Pholiota",
+        "scientific name":"Pholiota squarrosa",
+        "description":"The Shaggy Pholiota has a yellowish-brown, scaly cap and grows in clusters on dead wood. It is inedible due to its tough texture. Its shaggy, scaly cap helps distinguish it from similar species."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Charcoal Pholiota",
+        "scientific name":"Pholiota highlandensis",
+        "description":"The Charcoal Pholiota is a small, dark brown mushroom with a scaly cap and a preference for coniferous wood. It is inedible due to its tough texture. Its dark coloration and habitat make it distinctive."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Brown Stew Fungus",
+        "scientific name":"Hebeloma crustuliniforme",
+        "description":"The Brown Stew Fungus is a small, pale brown mushroom with a slimy cap and a radish-like smell. Found in woodlands, it is toxic and should not be consumed. Its slimy surface and odor help with identification."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Sulphur Tuft",
+        "scientific name":"Hypholoma fasciculare",
+        "description":"The Sulphur Tuft is a bright yellow mushroom with greenish gills and grows in dense clusters on decaying wood. It is highly toxic and causes severe gastrointestinal distress if ingested. Its vivid coloration and clustered growth make it easily recognizable."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Brick Caps",
+        "scientific name":"Hypholoma sublateritium",
+        "description":"Brick Caps are reddish-brown mushrooms with pale gills and grow in clusters on dead wood. They are edible when properly prepared but can be confused with toxic lookalikes. Their brick-red coloration and habitat help identify them."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Verdigris Toadstool",
+        "scientific name":"Stropharia aeruginosa",
+        "description":"The Verdigris Toadstool has a slimy, blue-green cap with white scales and pale gills that darken as it ages. Found in grasslands and woodlands, it is mildly toxic and should not be consumed. Its vibrant green hue and slimy texture make it distinctive."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Dung Roundhead",
+        "scientific name":"Stropharia semiglobata",
+        "description":"The Dung Roundhead is a small mushroom with a yellowish-brown, smooth cap and pale gills. Found on animal dung, it is inedible. Its preference for dung habitats and rounded cap help in identification."
+    },
+    {
+        "family":"Stropharia Family",
+        "name":"Magic Mushroom",
+        "scientific name":"Psilocybe semilanceata",
+        "description":"The Magic Mushroom, or Liberty Cap, is a small mushroom with a conical, brown cap and pale gills that turn purple with age. Found in grassy areas, it contains psychoactive compounds and is illegal in many countries. Its distinctive shape and hallucinogenic properties are well known."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Red-banded Cortinarius",
+        "scientific name":"Cortinarius armillatus",
+        "description":"The Red-banded Cortinarius has a reddish-brown cap and a stem with distinctive red bands. Found in coniferous forests, it is inedible. Its red-banded stem and association with conifers help with identification."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Purple Cortinarius",
+        "scientific name":"Cortinarius violaceus",
+        "description":"The Purple Cortinarius is a striking, deep purple mushroom with a velvety cap and thick, violet stem. Found in woodlands, it is inedible. Its vivid coloration makes it a visually unique species."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Blood-red Cortinarius",
+        "scientific name":"Cortinarius sanguineus",
+        "description":"The Blood-red Cortinarius is a small, reddish mushroom with a fibrous cap and stem. Found in coniferous forests, it is inedible due to its tough texture. Its deep red coloration aids in identification."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Red-staining Inocybe",
+        "scientific name":"Inocybe erubescens",
+        "description":"The Red-staining Inocybe has a pale cap that stains red when bruised. Found in woodlands, it is highly toxic and can be fatal if consumed. Its staining reaction and conical cap shape are distinguishing features."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Straw-coloured Inocybe",
+        "scientific name":"Inocybe rimosa",
+        "description":"The Straw-colored Inocybe has a pale yellow-brown cap with a fibrous texture. Found in woodlands, it is toxic and should not be consumed. Its straw-like color and cap structure aid identification."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Common White Inocybe",
+        "scientific name":"Inocybe geophylla",
+        "description":"The Common White Inocybe is a small, white mushroom with a smooth, conical cap. Found in woodlands, it is highly toxic and can cause severe poisoning if ingested. Its uniform white appearance makes it easy to confuse with edible species."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Poison Pie",
+        "scientific name":"Hebeloma crustuliniforme",
+        "description":"The Poison Pie is a pale, buff-colored mushroom with a slimy cap and a radish-like odor. Found in woodlands, it is toxic and not suitable for consumption. Its slimy texture and unpleasant smell are key identifiers."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Dark-centred Hebeloma",
+        "scientific name":"Hebeloma mesophaeum",
+        "description":"The Dark-centred Hebeloma has a pale cap with a distinct darker center and a slimy surface. Found in woodlands, it is toxic and should not be consumed. Its cap pattern and habitat make it recognizable."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Rusty Wood Rotter",
+        "scientific name":"Gymnopilus penetrans",
+        "description":"The Rusty Wood Rotter is a small, rusty-brown mushroom with a dry, fibrous cap. Found on decaying wood, it is inedible. Its rusty coloration and wood-dwelling habit are distinguishing features."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Spectacular Gymnopile",
+        "scientific name":"Gymnopilus junonius",
+        "description":"The Spectacular Gymnopile is a large, bright orange-yellow mushroom with a scaly cap. Found on decaying wood, it is inedible. Its vivid coloration and size make it an eye-catching species."
+    },
+    {
+        "family":"Cortinarius Family",
+        "name":"Moss Pixy Cap",
+        "scientific name":"Mycena aetites",
+        "description":"The Moss Pixy Cap is a tiny, grayish mushroom with a delicate, bell-shaped cap. Found in mossy woodlands, it is inedible due to its small size and fragile structure. Its habitat and size are key identifying features."
+    },
+    {
+        "family":"Mushroom Family",
+        "name":"Field Mushroom",
+        "scientific name":"Agaricus campestris",
+        "description":"The Field Mushroom is a white mushroom with a smooth cap and pink gills that turn brown with age. Found in grassy fields, it is a popular edible species with a pleasant, earthy flavor. Its changing gill color and habitat make it easy to identify."
+    },
+    {
+        "family":"Mushroom Family",
+        "name":"Cultivated Mushroom",
+        "scientific name":"Agaricus bisporus",
+        "description":"The Cultivated Mushroom, also known as the Button Mushroom, has a smooth white or brown cap and pinkish gills that darken with age. It is the most commonly cultivated edible mushroom, valued for its mild flavor. It is often found in grocery stores worldwide."
+    },
+    {
+        "family":"Mushroom Family",
+        "name":"Horse Mushroom",
+        "scientific name":"Agaricus arvensis",
+        "description":"The Horse Mushroom is a large, white mushroom with a thick stem and dense, cream-colored gills. Found in grassy areas, it is edible and highly regarded for its robust flavor. Its large size and habitat help differentiate it from other Agaricus species."
+    },
+    {
+        "family":"Mushroom Family",
+        "name":"Yellow-staining Mushroom",
+        "scientific name":"Agaricus xanthodermus",
+        "description":"The Yellow-staining Mushroom is a white mushroom that stains yellow when bruised, especially at the base of the stem. Found in grassy areas, it is toxic and can cause gastrointestinal distress. Its staining reaction is a key identifying feature."
+    },
+    {
+        "family":"Mushroom Family",
+        "name":"Bleeding Brown Mushroom",
+        "scientific name":"Agaricus langei",
+        "description":"The Bleeding Brown Mushroom has a reddish-brown cap that bruises or \"bleeds\" red when handled. Found in woodlands and grassy areas, it is edible but not commonly foraged due to its rarity. Its bleeding reaction and brownish hue make it distinctive."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Shaggy Ink Cap",
+        "scientific name":"Coprinus comatus",
+        "description":"The Shaggy Ink Cap is a tall, white mushroom with a shaggy, cylindrical cap that dissolves into a black, inky liquid as it ages. Found in grassy areas and disturbed soils, it is edible when young. Its unique appearance and \"self-digesting\" process are striking features."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Common Ink Cap",
+        "scientific name":"Coprinopsis atramentaria",
+        "description":"The Common Ink Cap is a small grayish-brown mushroom that also liquefies into black ink with age. Found on decaying wood, it is mildly toxic, especially when consumed with alcohol, due to its coprine content. Its habitat and distinctive cap texture aid identification."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Magpie Ink Cap",
+        "scientific name":"Coprinopsis picacea",
+        "description":"The Magpie Ink Cap has a striking black-and-white patterned cap and a slender stem. Found in woodlands, it is toxic and should not be consumed. Its unique magpie-like coloration makes it easy to identify."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Rusty Carpet Ink Cap",
+        "scientific name":"Coprinellus domesticus",
+        "description":"The Rusty Carpet Ink Cap is a small mushroom with a reddish-brown cap and a delicate, fibrous texture. Found on decaying wood, it is inedible. Its reddish cap and clustered growth habit help with identification."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Glistening Ink Cap",
+        "scientific name":"Coprinellus micaceus",
+        "description":"The Glistening Ink Cap has a delicate, golden-brown cap that sparkles with tiny mica-like granules. Found in clusters on decaying wood, it is edible when young but often overlooked due to its small size. Its shimmering cap surface is a key identifier."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Fairies' Bonnets",
+        "scientific name":"Coprinellus disseminatus",
+        "description":"Fairies' Bonnets are tiny mushrooms with grayish caps and delicate stems, growing in dense clusters on wood. They are inedible due to their small size and fragile nature. Their enchanting appearance often draws attention."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Fairy Parasol",
+        "scientific name":"Cystoderma amianthinum",
+        "description":"The Fairy Parasol has a small, orange-brown cap covered in fine granules and a slender, ringed stem. Found in grassy and mossy areas, it is inedible. Its delicate size and granular texture make it easily recognizable."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Common Crumble Cap",
+        "scientific name":"Coprinellus truncorum",
+        "description":"The Common Crumble Cap has a brown, conical cap and a fragile structure that easily crumbles. Found in grassy areas and on wood debris, it is inedible. Its crumbly texture and habitat are key features."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Two-toned Crumble Cap",
+        "scientific name":"Coprinellus radians",
+        "description":"The Two-toned Crumble Cap features a dark brown center that fades to light brown at the edges. Found on decaying wood, it is inedible due to its delicate structure. Its two-toned coloration helps distinguish it from other crumble caps."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Hay Cap",
+        "scientific name":"Panaeolina foenisecii",
+        "description":"The Hay Cap is a small, brown mushroom often found in lawns and grassy areas. It is mildly toxic and not recommended for consumption. Its preference for grass and its subtle coloration make it a common sight."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Petticoat Fungus",
+        "scientific name":"Panaeolus papilionaceus",
+        "description":"The Petticoat Fungus has a small, bell-shaped cap with a frilly edge resembling a petticoat. Found in grassy areas, often on dung, it is inedible. Its distinctive frilled edge and habitat help in identification."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Egg-shell Toadstool",
+        "scientific name":"Leucocoprinus birnbaumii",
+        "description":"The Egg-shell Toadstool is a bright yellow mushroom with a smooth, egg-shaped cap. Commonly found in potted plants and greenhouses, it is toxic and not suitable for consumption. Its bright color and preference for indoor habitats make it unique."
+    },
+    {
+        "family":"Ink Cap Family",
+        "name":"Weeping Widow",
+        "scientific name":"Lacrymaria lacrymabunda",
+        "description":"The Weeping Widow has a brown, fibrous cap and gills that exude black droplets, resembling tears. Found in grassy areas and disturbed soils, it is inedible. Its \"weeping\" gills and fibrous texture are distinctive."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Cep",
+        "scientific name":"Boletus edulis",
+        "description":"The Cep, also known as the Porcini, is a large, brown-capped mushroom with a thick, white stem. Found in woodlands, it is a prized edible species with a nutty, meaty flavor. Its robust size and dense flesh make it a favorite among foragers."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Bay Bolete",
+        "scientific name":"Imleria badia",
+        "description":"The Bay Bolete has a smooth, chestnut-brown cap and yellow pores that bruise blue when touched. Found in coniferous and mixed woodlands, it is edible and valued for its flavor. Its color and bruising reaction help with identification."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Red-cracked Bolete",
+        "scientific name":"Xerocomellus chrysenteron",
+        "description":"The Red-cracked Bolete has a reddish-brown cap that cracks with age, revealing yellow flesh beneath. Found in woodlands, it is edible but less popular than other boletes. Its cracked surface is a key identifier."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Yellow-cracked Bolete",
+        "scientific name":"Xerocomellus subtomentosus",
+        "description":"The Yellow-cracked Bolete has a yellow-brown cap with cracks and a sponge-like pore surface. Found in woodlands, it is edible but not highly regarded for its taste. Its cracked cap and yellowish tones help in identification."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Dotted-stemmed Bolete",
+        "scientific name":"Xerocomus porosporus",
+        "description":"The Dotted-stemmed Bolete features a brown cap and a stem dotted with fine, white spots. Found in woodlands, it is edible but not widely foraged due to its bland flavor. Its dotted stem is a unique identifying feature."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Lurid Bolete",
+        "scientific name":"Suillellus luridus",
+        "description":"The Lurid Bolete has a dark brown cap and bright orange pores that bruise blue when touched. Found in woodlands, it is edible when thoroughly cooked but toxic when raw. Its vivid pore color and rapid bruising are distinguishing characteristics."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Parasitic Bolete",
+        "scientific name":"Pseudoboletus parasiticus",
+        "description":"The Parasitic Bolete is a small, brown mushroom that grows exclusively on the Earthball fungus. It is edible but uncommon. Its symbiotic relationship with Earthballs makes it easily identifiable."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Bitter Bolete",
+        "scientific name":"Tylopilus felleus",
+        "description":"The Bitter Bolete has a brown cap and pale pores that bruise pink. Found in woodlands, it is inedible due to its extremely bitter taste. Its flavor and pink bruising reaction are key identifiers."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Peppery Bolete",
+        "scientific name":"Chalciporus piperatus",
+        "description":"The Peppery Bolete is a small, reddish-brown mushroom with a peppery taste. Found in coniferous forests, it is inedible due to its intense spiciness. Its distinctive flavor and habitat help in identification."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Orange Birch Bolete",
+        "scientific name":"Leccinum versipelle",
+        "description":"The Orange Birch Bolete has a bright orange cap and a slender, scaly stem. Found in association with birch trees, it is edible and highly regarded for its flavor. Its orange coloration and birch habitat aid identification."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Brown Birch Bolete",
+        "scientific name":"Leccinum scabrum",
+        "description":"The Brown Birch Bolete features a smooth, brown cap and a speckled, scaly stem. Found near birch trees, it is edible and commonly foraged. Its association with birch and characteristic stem make it recognizable."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Larch Bolete",
+        "scientific name":"Suillus grevillei",
+        "description":"The Larch Bolete has a slimy, yellowish-brown cap and grows exclusively under larch trees. It is edible when peeled and thoroughly cooked. Its slimy cap texture and larch habitat are distinguishing traits."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Slippery Jack",
+        "scientific name":"Suillus luteus",
+        "description":"The Slippery Jack is a medium-sized mushroom with a sticky, brown cap and a ringed stem. Found under pine trees, it is edible but requires peeling of the cap skin before cooking. Its sticky surface and pine association are key features."
+    },
+    {
+        "family":"Bolete Family",
+        "name":"Shallow-pored Bolete",
+        "scientific name":"Boletus subtomentosus",
+        "description":"The Shallow-pored Bolete has a velvety, brown cap and pale yellow pores. Found in woodlands, it is edible but less flavorful than other boletes. Its shallow pore structure and texture help distinguish it."
+    },
+    {
+        "family":"Paxillus Family",
+        "name":"Brown Roll-rim",
+        "scientific name":"Paxillus involutus",
+        "description":"The Brown Roll-rim has a velvety, brown cap with rolled edges and yellowish gills that bruise brown. Found in woodlands, it is highly toxic and should not be consumed. Its rolled cap edges and toxicity are key identifiers."
+    },
+    {
+        "family":"Paxillus Family",
+        "name":"Velvet Roll-rim",
+        "scientific name":"Tapinella atrotomentosa",
+        "description":"The Velvet Roll-rim has a dark brown cap and a velvety, blackish stem. Found on decaying wood, it is inedible due to its tough texture. Its velvety stem and habitat make it distinctive."
+    },
+    {
+        "family":"Paxillus Family",
+        "name":"False Chanterelle",
+        "scientific name":"Hygrophoropsis aurantiaca",
+        "description":"The False Chanterelle is an orange mushroom with a funnel-shaped cap and forked gills. Found in woodlands, it is inedible and often confused with true chanterelles. Its gill structure helps differentiate it from its edible counterpart."
+    },
+    {
+        "family":"Chanterelle Family",
+        "name":"Chanterelle",
+        "scientific name":"Cantharellus cibarius",
+        "description":"The Chanterelle is a bright yellow, funnel-shaped mushroom with thick, forked ridges instead of true gills. Found in woodlands, it is a prized edible species with a delicate, fruity aroma. Its distinctive ridges and vibrant color make it easy to recognize."
+    },
+    {
+        "family":"Chanterelle Family",
+        "name":"Tubed Chanterelle",
+        "scientific name":"Craterellus tubaeformis",
+        "description":"The Tubed Chanterelle has a yellow stem and a grayish-brown, funnel-shaped cap. Found in damp woodlands, it is edible and highly valued for its rich flavor. Its tubular structure and muted colors aid identification."
+    },
+    {
+        "family":"Chanterelle Family",
+        "name":"Horn of Plenty",
+        "scientific name":"Craterellus cornucopioides",
+        "description":"The Horn of Plenty is a black, funnel-shaped mushroom resembling a trumpet. Found in woodlands, it is edible and highly prized for its earthy, rich flavor. Its dark coloration and distinctive shape make it unmistakable."
+    },
+    {
+        "family":"Oyster Mushroom Family",
+        "name":"Oyster Mushroom",
+        "scientific name":"Pleurotus ostreatus",
+        "description":"The Oyster Mushroom has a fan-shaped, pale gray to white cap and white gills. Found on decaying wood, it is a popular edible species with a mild flavor. Its fan-like appearance and growing habit make it easily recognizable."
+    },
+    {
+        "family":"Oyster Mushroom Family",
+        "name":"Branched Oyster Mushroom",
+        "scientific name":"Pleurotus cornucopiae",
+        "description":"The Branched Oyster Mushroom features multiple, pale caps growing from a single point. Found on wood, it is edible and similar in flavor to the common Oyster Mushroom. Its branching growth pattern sets it apart."
+    },
+    {
+        "family":"Tricholoma Family",
+        "name":"Olive-brown Panellus",
+        "scientific name":"Panellus serotinus",
+        "description":"The Olive-brown Panellus has an olive-colored, fan-shaped cap with a slimy surface and white gills. Found on decaying wood, it is inedible. Its olive hue and preference for wood help in identification."
+    },
+    {
+        "family":"Crepidotus Family",
+        "name":"Soft Slipper Toadstool",
+        "scientific name":"Crepidotus mollis",
+        "description":"The Soft Slipper Toadstool is a small, fan-shaped mushroom with a soft, velvety texture. Found on decaying wood, it is inedible. Its texture and habitat are key distinguishing features."
+    },
+    {
+        "family":"Hydnum Family",
+        "name":"Hedgehog Fungus",
+        "scientific name":"Hydnum repandum",
+        "description":"The Hedgehog Fungus is a pale, creamy mushroom with spines instead of gills beneath its cap. Found in woodlands, it is edible and highly regarded for its nutty flavor. Its spiny underside makes it unmistakable."
+    },
+    {
+        "family":"Ear-Pick Family",
+        "name":"Ear-pick Fungus",
+        "scientific name":"Auriscalpium vulgare",
+        "description":"The Ear-pick Fungus is a tiny, dark brown mushroom with a bristly underside. Found on pine cones, it is inedible. Its unique habitat and bristly texture make it easy to identify."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Hairy Stereum",
+        "scientific name":"Stereum hirsutum",
+        "description":"The Hairy Stereum is a small, orange-brown bracket fungus with a hairy surface. Found on dead wood, it is inedible. Its bracket shape and hairy texture help in identification."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Silver Leaf Fungus",
+        "scientific name":"Chondrostereum purpureum",
+        "description":"The Silver Leaf Fungus has a thin, purplish fruiting body and grows on wood. It is parasitic and causes \"silver leaf disease\" in plants, particularly fruit trees. It is inedible. Its metallic sheen and destructive nature make it notable."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Dryad's Saddle",
+        "scientific name":"Cerioporus squamosus",
+        "description":"The Dryad's Saddle is a large, fan-shaped bracket fungus with a brown, scaly pattern. Found on dead wood, it is edible when young and has a cucumber-like aroma. Its large size and scale-like surface make it distinctive."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Fuzzy Polypore",
+        "scientific name":"Polyporus alveolaris",
+        "description":"The Fuzzy Polypore is a small, orange-brown bracket fungus with a fuzzy surface and porous underside. Found on dead wood, it is inedible. Its texture and pore structure aid identification."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Brown Goblet",
+        "scientific name":"Peziza badia",
+        "description":"The Brown Goblet is a cup-shaped fungus with a smooth, brown surface and a paler underside. Found in woodlands and grassy areas, it is inedible. Its goblet shape and habitat make it easily recognizable."
+    },
+    {
+        "family":"Saddle-Cup Family",
+        "name":"White Saddle",
+        "scientific name":"Helvella crispa",
+        "description":"The White Saddle is a pale, wrinkled fungus with a saddle-like cap and a hollow stem. Found in woodlands, it is inedible due to its tough texture. Its distinctive saddle shape is a key identifier."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Elfin's Saddle",
+        "scientific name":"Helvella lacunosa",
+        "description":"The Elfin's Saddle is a dark gray to black fungus with a twisted, saddle-like cap and a hollow stem. Found in woodlands, it is inedible. Its unique cap shape and dark coloration distinguish it from other fungi."
+    },
+    {
+        "family":"Bracket Fungi",
+        "name":"Turban Fungus",
+        "scientific name":"Gyromitra esculenta",
+        "description":"The Turban Fungus has a wrinkled, brain-like cap and a hollow stem. Found in sandy woodlands, it is highly toxic unless prepared with specific methods. Its unusual appearance and potential toxicity require careful handling."
+    },
+    {
+        "family":"Morel Family",
+        "name":"Common Morel",
+        "scientific name":"Morchella esculenta",
+        "description":"The Common Morel has a honeycomb-like, conical cap and a hollow interior. Found in woodlands and grassy areas, it is a prized edible mushroom with a rich, earthy flavor. Its distinctive texture and shape make it highly sought after."
+    },
+    {
+        "family":"Jelly Discs Family",
+        "name":"Jelly Babies",
+        "scientific name":"Leotia lubrica",
+        "description":"Jelly Babies are small, gelatinous fungi with a smooth, yellowish-green cap and stem. Found in woodlands, they are inedible due to their texture. Their jelly-like appearance makes them easily identifiable."
+    }
+]
