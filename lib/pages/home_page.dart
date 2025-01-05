@@ -4,6 +4,8 @@ import '../widgets/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -20,9 +22,9 @@ class _HomePageState extends State<HomePage> {
         toolbarHeight: 200,
         title: Stack(
           children: [
-            Center(
+            const Center(
               child: SvgPicture(
-                SvgAssetLoader("../assets/logo.svg"),
+                SvgAssetLoader("assets/logo.svg"),
                 height: 100,
               ),
             ),
@@ -30,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               right: 0,
               top: 0,
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: SkipButton("Skip >", startDesigner),
               ),
             ),
@@ -59,10 +61,10 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(40),
+                  const Padding(
+                    padding: EdgeInsets.all(40),
                     child: SvgPicture(
-                      SvgAssetLoader("../assets/mushroom.svg"),
+                      SvgAssetLoader("assets/mushroom.svg"),
                       height: 250,
                     ),
                   ), // potentially animation of mushroom being designed
@@ -77,12 +79,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           child: HomeButton("Watch Tutorial", startTutorial),
                         ),
                         /* Padding(

@@ -76,7 +76,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       capTexturePathSuffix = "/other/${mushroomFeatures["cap"]["surface"]}_${mushroomFeatures["cap"]["shape"]}.png";
     }
 
-    final String capTexturePath = "../assets/cap/texture$capTexturePathSuffix";
+    final String capTexturePath = "assets/cap/texture$capTexturePathSuffix";
 
     late String stemTextureBG = "";
     if (mushroomFeatures["stem"]["color"] == "w" || mushroomFeatures["stem"]["color"] == "b") {
@@ -85,7 +85,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       stemTextureBG = "dark-bg";
     }
 
-    final String stemTexturePath = "../assets/stem/texture/$stemTextureBG/${mushroomFeatures["stem"]["surface"]}_${mushroomFeatures["stem"]["roots"]}.png";
+    final String stemTexturePath = "assets/stem/texture/$stemTextureBG/${mushroomFeatures["stem"]["surface"]}_${mushroomFeatures["stem"]["roots"]}.png";
 
     return SizedBox(
       height: 300,
@@ -104,7 +104,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                     BlendMode.modulate,
                   ),
                   child: SvgPicture.asset(
-                      "../assets/cap/${mushroomFeatures["cap"]["shape"]}.svg",
+                      "assets/cap/${mushroomFeatures["cap"]["shape"]}.svg",
                       fit: BoxFit.cover,
                       height: mushroomAttributes[mushroomFeatures["cap"]["shape"]][0]),
                 ),
@@ -127,7 +127,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                 BlendMode.modulate,
               ),
               child: SvgPicture.asset(
-                  "../assets/gills/${mushroomFeatures["gills"]["spacing"]}$gillsSuffix.svg", // change to name as
+                  "assets/gills/${mushroomFeatures["gills"]["spacing"]}$gillsSuffix.svg", // change to name as
                   fit: BoxFit.cover,
                   width: mushroomAttributes[mushroomFeatures["cap"]["shape"]][1] + (mushroomFeatures["gills"]["spacing"] == "d" ? 6 : 0)),
             ),
@@ -142,7 +142,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                 BlendMode.modulate,
               ),
               child: SvgPicture.asset(
-                  "../assets/stem/${mushroomFeatures["stem"]["roots"]}.svg",
+                  "assets/stem/${mushroomFeatures["stem"]["roots"]}.svg",
                   fit: BoxFit.cover,
                   height: 175),
             ),
@@ -167,7 +167,7 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
                 BlendMode.modulate,
               ),
               child: SvgPicture.asset(
-                  "../assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
+                  "assets/ring/${mushroomFeatures["other"]["ring"]}.svg",
                   fit: BoxFit.cover,
                   width: ringAttributes[mushroomFeatures["other"]["ring"]]),
             ),

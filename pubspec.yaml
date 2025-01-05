@@ -28,9 +28,37 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/cap/*
-    - assets/gills/*
-    - assets/icons/*
-    - assets/ring/*
-    - assets/species/*
-    - assets/tutorial/*
+    - assets/cap/
+    - assets/cap/texture/black/
+    - assets/cap/texture/other/
+    - assets/cap/texture/white/
+    - assets/stem/
+    - assets/stem/texture/dark-bg/
+    - assets/stem/texture/light-bg/
+    - assets/gills/
+    - assets/icons/
+    - assets/ring/
+    - assets/Species/Amanita_Family/    
+    - assets/Species/Bolete_Family/  
+    - assets/Species/Chanterelle_Family/  
+    - assets/Species/Crepidotus_Family/  
+    - assets/Species/Entoloma_Family/  
+    - assets/Species/Ink_Cap_Family/      
+    - assets/Species/Lepiota_Family/  
+    - assets/Species/Mushroom_Family/         
+    - assets/Species/Paxillus_Family/  
+    - assets/Species/Russula_Family/     
+    - assets/Species/Stropharia_Family/  
+    - assets/Species/Wax_Gill_Family/
+    - assets/Species/Bolbitius_Family/  
+    - assets/Species/Bracket_Fungi/  
+    - assets/Species/Cortinarius_Family/  
+    - assets/Species/Ear-Pick_Family/    
+    - assets/Species/Hydnum_Family/    
+    - assets/Species/Jelly_Discs_Family/  
+    - assets/Species/Morel_Family/    
+    - assets/Species/Oyster_Mushroom_Family/  
+    - assets/Species/Pluteus_Family/   
+    - assets/Species/Saddle-Cup_Family/  
+    - assets/Species/Tricholoma_Family/
+    - assets/tutorial/

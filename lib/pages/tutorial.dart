@@ -45,7 +45,7 @@ class _TutorialState extends State<Tutorial> {
                 ),
                 const Center(
                   child: SvgPicture(
-                    SvgAssetLoader("../assets/logo.svg"),
+                    SvgAssetLoader("assets/logo.svg"),
                     height: 100,
                   ),
                 ),
@@ -104,7 +104,7 @@ class Tutorial1 extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: SvgPicture(
-          SvgAssetLoader("../assets/tutorial/tutorial-1.svg"),
+          SvgAssetLoader("assets/tutorial/tutorial-1.svg"),
           height: 300,
         ),
       ),
@@ -161,7 +161,7 @@ class Tutorial2 extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
-            SvgAssetLoader("../assets/tutorial/tutorial-2.svg"),
+            SvgAssetLoader("assets/tutorial/tutorial-2.svg"),
             height: 300,
           ),
         ),
@@ -193,7 +193,7 @@ class Tutorial3 extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
-            SvgAssetLoader("../assets/tutorial/tutorial-3.svg"),
+            SvgAssetLoader("assets/tutorial/tutorial-3.svg"),
             height: 300,
           ),
         ),
@@ -222,7 +222,7 @@ class Tutorial4 extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(30),
-          child: Image.asset("../assets/tutorial/tutorial-4.png",
+          child: Image.asset("assets/tutorial/tutorial-4.png",
               fit: BoxFit.contain, height: 250), //png doesn't want to cooperate
         ),
       ],

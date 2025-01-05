@@ -60,7 +60,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
   String mushroomSpeciesAsset(String mushroomSpecies, String mushroomFamily) {
     String species = mushroomSpecies.toLowerCase().replaceAll(' ', '-');
     String family = mushroomFamily.replaceAll(' ', '_');
-    return "../assets/Species/$family/$species.jpg";
+    return "assets/Species/$family/$species.jpg";
   }
 
   Future<List> getDescription(String mushroomSpecies) async {

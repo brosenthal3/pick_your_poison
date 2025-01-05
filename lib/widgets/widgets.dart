@@ -55,7 +55,7 @@ ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
 Padding MushroomOptionButton(String textInput, VoidCallback onPressed) {
   // transform textinput to lowercase and remove spaces
   final String textInputLower = textInput.toLowerCase().replaceAll(" ", "");
-  final String imagePath = "../assets/icons/$textInputLower.svg";
+  final String imagePath = "assets/icons/$textInputLower.svg";
 
   return Padding(
     padding: const EdgeInsets.all(8.0),

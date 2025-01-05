@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import 'package:pick_your_poison/widgets/widgets.dart';
@@ -19,11 +18,10 @@ class MushroomBodyMapPage extends StatelessWidget {
     }
 
     void startPrediction() {
-      // TODO: perform API call to predict mushroom
       Navigator.pushNamed(context, '/prediction_page');
     }
 
-    Color editedColor = Color.fromARGB(255, 231, 72, 38);
+    Color editedColor = const Color.fromARGB(255, 231, 72, 38);
     //.withOpacity(0.7);
     double pagesVisited = 0;
     // loop through all the visited pages and calculate the progress bar value
@@ -77,7 +75,7 @@ class MushroomBodyMapPage extends StatelessWidget {
                   children: [
                     const DynamicMushroomDesign(),
                     CustomPaint(
-                      size: Size(double.infinity, 350),
+                      size: const Size(double.infinity, 350),
                       painter: ArrowPainter(),
                     ),
                     Positioned(
@@ -160,9 +158,7 @@ class MushroomBodyMapPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: pagesVisited == 4
