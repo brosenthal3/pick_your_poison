@@ -137,7 +137,7 @@ class _PredictionPageState extends State<PredictionPage> {
               textAlign: TextAlign.center,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           FutureBuilder<List>(
             future: prediction,
             builder: (context, snapshot) {
@@ -210,7 +210,6 @@ class _PredictionPageState extends State<PredictionPage> {
               textAlign: TextAlign.center,
             ),
           ), */
-          SizedBox(height: 30),
         ],
       ),
     );

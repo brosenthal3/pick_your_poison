@@ -448,17 +448,17 @@ class OtherOptions extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: EdgeInsets.fromLTRB(25, 10, 0, 0),
+              padding: const EdgeInsets.fromLTRB(25, 10, 0, 0),
               child: StandardText("Ring type", 20)),
           const SizedBox(height: 15),
           SizedBox(
-            height: 400,
+            height: 550,
             child: GridView.builder(
-              physics: const BouncingScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 0,
-                mainAxisSpacing: 0,
+                mainAxisSpacing: 5,
                 childAspectRatio: 1.0,
               ),
               itemCount: options.length,
@@ -526,7 +526,7 @@ class MushroomDesignerOptionsColumn extends StatelessWidget {
 class ScrollableOptionsContainer extends StatelessWidget {
   final Widget child;
 
-  ScrollableOptionsContainer({super.key, required this.child});
+  const ScrollableOptionsContainer({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -543,6 +543,28 @@ class ScrollableOptionsContainer extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: child,
         ),
+      ),
+    );
+  }
+}
+
+class ScrollableRingOptionsContainer extends StatelessWidget {
+  final Widget child;
+
+  const ScrollableRingOptionsContainer({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            top: BorderSide(width: 1, color: Colors.black54),
+          ),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: child,
       ),
     );
   }
