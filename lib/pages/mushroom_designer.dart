@@ -48,7 +48,7 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            StandardText(currentPage.capitalize(), 25),
+            StandardText(currentPage.capitalize(), 22),
             /*ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 231, 72, 38),
@@ -83,7 +83,8 @@ class _MushroomDesignerState extends State<MushroomDesigner> {
                     child: FutureBuilder<List>(
                       future: prediction,
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
                           return CircularProgressIndicator();
                         } else if (snapshot.hasError) {
                           return Text('Error: ${snapshot.error}');
@@ -456,8 +457,8 @@ class OtherOptions extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: 0,
+                mainAxisSpacing: 0,
                 childAspectRatio: 1.0,
               ),
               itemCount: options.length,

@@ -109,7 +109,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
           backgroundColor: const Color(0xFFF2EDE2),
           toolbarHeight: 100,
           title: Container(
-            child: StandardText("Species Prediction", 25),
+            child: StandardText("Species Prediction", 23),
           ),
         ),
         body: SingleChildScrollView(
@@ -164,7 +164,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   mushroomFamily,
                                   style: GoogleFonts.poppins(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
@@ -176,7 +176,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   mushroomSpecies,
                                   style: GoogleFonts.poppins(
                                     color: Colors.white,
-                                    fontSize: 25,
+                                    fontSize: 22,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -196,7 +196,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 17,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -208,7 +208,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 19,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -219,7 +219,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 17,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -229,7 +229,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 19,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -240,7 +240,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 17,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -250,7 +250,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
-                                    fontSize: 19,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -264,7 +264,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                     style: GoogleFonts.poppins(
                                       color:
                                           const Color.fromARGB(255, 20, 20, 20),
-                                      fontSize: 17,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),

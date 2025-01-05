@@ -12,7 +12,7 @@ ElevatedButton HomeButton(String text, Function onPressed) {
     child: Text(text,
         style: GoogleFonts.poppins(
           color: Colors.white,
-          fontSize: 20,
+          fontSize: 18,
           fontWeight: FontWeight.w600,
         )),
   );
@@ -28,7 +28,7 @@ ElevatedButton SkipButton(String text, Function onPressed) {
     child: Text(text,
         style: GoogleFonts.poppins(
           color: Colors.black54,
-          fontSize: 17,
+          fontSize: 16,
           fontWeight: FontWeight.w600,
         )),
   );
@@ -46,7 +46,7 @@ ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
       text,
       style: TextStyle(
         color: Colors.white,
-        fontSize: 20,
+        fontSize: 16,
       ),
     ),
   );
@@ -169,7 +169,7 @@ class PredictionText extends StatelessWidget {
             text: "This mushroom is most likely ",
             style: GoogleFonts.poppins(
               color: const Color.fromARGB(255, 20, 20, 20),
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -177,7 +177,7 @@ class PredictionText extends StatelessWidget {
             text: "${prediction[2]}",
             style: GoogleFonts.poppins(
               color: prediction[1],
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -186,7 +186,7 @@ class PredictionText extends StatelessWidget {
                 ". Finish your mushroom design and press on the predict button for a more accurate result.",
             style: GoogleFonts.poppins(
               color: const Color.fromARGB(255, 20, 20, 20),
-              fontSize: 18,
+              fontSize: 17,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -218,7 +218,7 @@ class RealTimePrediction extends StatelessWidget {
                       "Prediction",
                       style: GoogleFonts.poppins(
                         color: const Color.fromARGB(255, 20, 20, 20),
-                        fontSize: 30,
+                        fontSize: 26,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -240,7 +240,7 @@ class RealTimePrediction extends StatelessWidget {
         child: Text(
           prediction[0],
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
     );

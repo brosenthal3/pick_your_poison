@@ -22,8 +22,9 @@ class _TutorialState extends State<Tutorial> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(200),
+          preferredSize: const Size.fromHeight(160),
           child: AppBar(
+            toolbarHeight: 160,
             backgroundColor: const Color(0xFFF2EDE2),
             elevation: 0.0,
             automaticallyImplyLeading: false, // Avoid default behavior
@@ -46,7 +47,7 @@ class _TutorialState extends State<Tutorial> {
                 const Center(
                   child: SvgPicture(
                     SvgAssetLoader("assets/logo.svg"),
-                    height: 100,
+                    height: 80,
                   ),
                 ),
               ],
@@ -97,7 +98,7 @@ class Tutorial1 extends StatelessWidget {
             "Design your own mushroom",
             style: GoogleFonts.poppins(
               color: const Color.fromARGB(255, 40, 40, 40),
-              fontSize: 26,
+              fontSize: 24,
               fontWeight: FontWeight.w700,
             ),
           )),
@@ -105,7 +106,7 @@ class Tutorial1 extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: SvgPicture(
           SvgAssetLoader("assets/tutorial/tutorial-1.svg"),
-          height: 300,
+          height: 250,
         ),
       ),
     ]);
@@ -127,7 +128,7 @@ class Tutorial2 extends StatelessWidget {
                 text: "Find out if it could be \n",
                 style: GoogleFonts.poppins(
                   color: const Color.fromARGB(255, 40, 40, 40),
-                  fontSize: 26,
+                  fontSize: 24,
                   fontWeight: FontWeight.w700,
                 ),
                 children: [
@@ -135,7 +136,7 @@ class Tutorial2 extends StatelessWidget {
                     text: "POISONOUS ",
                     style: GoogleFonts.poppins(
                       color: const Color.fromARGB(255, 237, 34, 20),
-                      fontSize: 26,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -143,7 +144,7 @@ class Tutorial2 extends StatelessWidget {
                     text: "or ",
                     style: GoogleFonts.poppins(
                       color: const Color.fromARGB(255, 40, 40, 40),
-                      fontSize: 26,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -151,7 +152,7 @@ class Tutorial2 extends StatelessWidget {
                     text: "EDIBLE",
                     style: GoogleFonts.poppins(
                       color: const Color.fromARGB(255, 94, 135, 67),
-                      fontSize: 26,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
                   )
@@ -162,7 +163,7 @@ class Tutorial2 extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
             SvgAssetLoader("assets/tutorial/tutorial-2.svg"),
-            height: 300,
+            height: 250,
           ),
         ),
       ],
@@ -186,7 +187,7 @@ class Tutorial3 extends StatelessWidget {
               "Our classification models gives you an idea of its safety",
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 40, 40, 40),
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w700,
               )),
         ),
@@ -194,7 +195,7 @@ class Tutorial3 extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
           child: SvgPicture(
             SvgAssetLoader("assets/tutorial/tutorial-3.svg"),
-            height: 300,
+            height: 250,
           ),
         ),
       ],
@@ -216,14 +217,14 @@ class Tutorial4 extends StatelessWidget {
               "See which real-life mushroom \n your creation resembles",
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 40, 40, 40),
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.w700,
               )),
         ),
         Padding(
           padding: const EdgeInsets.all(30),
           child: Image.asset("assets/tutorial/tutorial-4.png",
-              fit: BoxFit.contain, height: 250), //png doesn't want to cooperate
+              fit: BoxFit.contain, height: 200), //png doesn't want to cooperate
         ),
       ],
     );

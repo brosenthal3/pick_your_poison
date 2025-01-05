@@ -36,7 +36,7 @@ class MushroomBodyMapPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFF2EDE2),
         elevation: 0.0,
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
           child: IconButton(
@@ -51,22 +51,22 @@ class MushroomBodyMapPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: StandardText("Design Your Mushroom", 28),
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+            child: StandardText("Design Your Mushroom", 24),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
                 textAlign: TextAlign.center,
                 "Customise all features in order to get a toxicity prediction",
                 style: GoogleFonts.poppins(
                   color: const Color.fromARGB(255, 75, 75, 75),
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: FontWeight.w500,
                 )),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 70, 0, 50),
+            padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
             child: SizedBox(
               height: 350,
               child: Center(
@@ -83,7 +83,7 @@ class MushroomBodyMapPage extends StatelessWidget {
                         left: 20,
                         child: SizedBox(
                           width: 120,
-                          height: 55,
+                          height: 50,
                           child: BodyMapButton(
                               "Cap",
                               () => Navigator.pushNamed(
@@ -95,7 +95,7 @@ class MushroomBodyMapPage extends StatelessWidget {
                         right: 20,
                         child: SizedBox(
                           width: 120,
-                          height: 55,
+                          height: 50,
                           child: BodyMapButton(
                               "Gills",
                               () => Navigator.pushNamed(
@@ -108,7 +108,7 @@ class MushroomBodyMapPage extends StatelessWidget {
                         right: 20,
                         child: SizedBox(
                           width: 120,
-                          height: 55,
+                          height: 50,
                           child: BodyMapButton(
                               "Ring",
                               () => Navigator.pushNamed(
@@ -121,7 +121,7 @@ class MushroomBodyMapPage extends StatelessWidget {
                         left: 20,
                         child: SizedBox(
                           width: 120,
-                          height: 55,
+                          height: 50,
                           child: BodyMapButton(
                               "Stem",
                               () => Navigator.pushNamed(
@@ -135,13 +135,13 @@ class MushroomBodyMapPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   // three quarters page width
-                  width: MediaQuery.of(context).size.width * 0.70,
+                  width: MediaQuery.of(context).size.width * 0.60,
                   child: LinearProgressIndicator(
                     value: pagesVisited / 4,
                     backgroundColor: const Color.fromARGB(255, 80, 69, 66),
@@ -150,15 +150,15 @@ class MushroomBodyMapPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                SizedBox(width: 5),
+                //SizedBox(width: 5),
                 Text("${pagesVisited.toInt()}/4",
                     style: const TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: const Color.fromARGB(255, 75, 75, 75))),
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: pagesVisited == 4
@@ -168,14 +168,14 @@ class MushroomBodyMapPage extends StatelessWidget {
               disabledBackgroundColor: Color(0xFF807A72),
               disabledForegroundColor: Colors.white,
               padding:
-                  const EdgeInsets.symmetric(vertical: 25, horizontal: 150),
+                  const EdgeInsets.symmetric(vertical: 25, horizontal: 120),
               elevation: 0,
             ),
             onPressed: pagesVisited == 4 ? () => startPrediction() : null,
             child: const Text(
               "Predict",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
           ),
@@ -235,8 +235,8 @@ class ArrowPainter extends CustomPainter {
       canvas,
       paint,
       circlePaint,
-      Offset(buttonWidth + 20, size.height * 0.8 - 20),
-      Offset(size.width / 2 - 10, size.height * 0.8 - 20),
+      Offset(buttonWidth + 20, size.height * 0.8 - 15),
+      Offset(size.width / 2 - 10, size.height * 0.8 - 25),
     );
   }
 

@@ -19,13 +19,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(0xFFF2EDE2),
         centerTitle: true,
         elevation: 0.0,
-        toolbarHeight: 200,
+        toolbarHeight: 160,
         title: Stack(
           children: [
             const Center(
               child: SvgPicture(
                 SvgAssetLoader("assets/logo.svg"),
-                height: 100,
+                height: 80,
               ),
             ),
             Positioned(
@@ -43,12 +43,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
-              StandardText("Welcome to the", 26),
+              StandardText("Welcome to the", 24),
               Text(
                 "Mushroom Designer",
                 style: GoogleFonts.poppins(
                   color: const Color(0xFFE74826),
-                  fontSize: 30,
+                  fontSize: 28,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(40),
                     child: SvgPicture(
                       SvgAssetLoader("assets/mushroom.svg"),
-                      height: 250,
+                      height: 200,
                     ),
                   ), // potentially animation of mushroom being designed
                   Center(
@@ -73,13 +73,13 @@ class _HomePageState extends State<HomePage> {
                       "How does it work?",
                       style: GoogleFonts.poppins(
                         color: const Color.fromARGB(255, 20, 20, 20),
-                        fontSize: 26,
+                        fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

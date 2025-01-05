@@ -102,7 +102,7 @@ class _PredictionPageState extends State<PredictionPage> {
                 "Start again",
                 style: GoogleFonts.poppins(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -120,7 +120,7 @@ class _PredictionPageState extends State<PredictionPage> {
                 text: "Your mushroom is ",
                 style: GoogleFonts.poppins(
                   color: const Color.fromARGB(255, 20, 20, 20),
-                  fontSize: 20,
+                  fontSize: 17,
                   fontWeight: FontWeight.w500,
                 ),
                 children: [
@@ -147,15 +147,14 @@ class _PredictionPageState extends State<PredictionPage> {
                 return Text('Error: ${snapshot.error}');
               } else {
                 return Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   color: snapshot.data![1],
                   child: Center(
                     child: Text(
                       snapshot.data![0],
                       style: GoogleFonts.poppins(
                         color: Colors.white,
-                        fontSize: 28,
+                        fontSize: 24,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -164,24 +163,24 @@ class _PredictionPageState extends State<PredictionPage> {
               }
             },
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           const Center(
             child: DynamicMushroomDesign(),
           ),
-          const SizedBox(height: 10),
+          //const SizedBox(height: 10),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               "Want to learn about the most similar real-life species?",
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 20, 20, 20),
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: HomeButton("Read More", getSpeciesPrediction),
