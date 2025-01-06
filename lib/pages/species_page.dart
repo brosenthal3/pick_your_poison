@@ -33,7 +33,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
               'This is a beta feature. Mushroom species predictions might be inaccurate and should be not relied on for mushroom identification or consumption.',
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 20, 20, 20),
-                fontSize: 17,
+                fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),
             ),
