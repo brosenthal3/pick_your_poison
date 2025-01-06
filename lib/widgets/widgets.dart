@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 ElevatedButton HomeButton(String text, Function onPressed) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Color.fromARGB(255, 30, 30, 30),
-      padding: EdgeInsets.symmetric(vertical: 25, horizontal: 80),
+      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 80),
     ),
     onPressed: () => onPressed(),
     child: Text(text,
@@ -16,7 +16,7 @@ ElevatedButton HomeButton(String text, Function onPressed) {
           fontWeight: FontWeight.w600,
         )),
   );
-}
+} 
 
 ElevatedButton SkipButton(String text, Function onPressed) {
   return ElevatedButton(
@@ -39,12 +39,12 @@ ElevatedButton BodyMapButton(String text, Function onPressed, {Color? color}) {
     style: ElevatedButton.styleFrom(
       backgroundColor:
           color ?? const Color.fromARGB(255, 80, 69, 66).withOpacity(0.5),
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 45),
     ),
     onPressed: () => onPressed(),
     child: Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 16,
       ),

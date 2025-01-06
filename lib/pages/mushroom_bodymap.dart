@@ -81,54 +81,38 @@ class MushroomBodyMapPage extends StatelessWidget {
                     Positioned(
                         top: 0,
                         left: 20,
-                        child: SizedBox(
-                          width: 120,
-                          height: 50,
-                          child: BodyMapButton(
-                              "Cap",
-                              () => Navigator.pushNamed(
-                                  context, '/mushroom_designer/cap'),
-                              color: isPageVisited("cap") ? editedColor : null),
-                        )),
+                        child: BodyMapButton(
+                            "Cap",
+                            () => Navigator.pushNamed(
+                                context, '/mushroom_designer/cap'),
+                            color: isPageVisited("cap") ? editedColor : null)),
                     Positioned(
                         top: 0,
                         right: 20,
-                        child: SizedBox(
-                          width: 120,
-                          height: 50,
-                          child: BodyMapButton(
-                              "Gills",
-                              () => Navigator.pushNamed(
-                                  context, '/mushroom_designer/gills'),
-                              color:
-                                  isPageVisited("gills") ? editedColor : null),
-                        )),
+                        child: BodyMapButton(
+                            "Gills",
+                            () => Navigator.pushNamed(
+                                context, '/mushroom_designer/gills'),
+                            color:
+                                isPageVisited("gills") ? editedColor : null)),
                     Positioned(
                         bottom: 120,
                         right: 20,
-                        child: SizedBox(
-                          width: 120,
-                          height: 50,
-                          child: BodyMapButton(
-                              "Ring",
-                              () => Navigator.pushNamed(
-                                  context, '/mushroom_designer/other'),
-                              color:
-                                  isPageVisited("other") ? editedColor : null),
-                        )),
+                        child: BodyMapButton(
+                            "Ring",
+                            () => Navigator.pushNamed(
+                                context, '/mushroom_designer/other'),
+                            color:
+                                isPageVisited("other") ? editedColor : null)),
                     Positioned(
                         bottom: 60,
                         left: 20,
-                        child: SizedBox(
-                          width: 120,
-                          height: 50,
-                          child: BodyMapButton(
-                              "Stem",
-                              () => Navigator.pushNamed(
-                                  context, '/mushroom_designer/stem'),
-                              color:
-                                  isPageVisited("stem") ? editedColor : null),
-                        )),
+                        child: BodyMapButton(
+                            "Stem",
+                            () => Navigator.pushNamed(
+                                context, '/mushroom_designer/stem'),
+                            color:
+                                isPageVisited("stem") ? editedColor : null)),
                   ],
                 ),
               ),
@@ -168,7 +152,7 @@ class MushroomBodyMapPage extends StatelessWidget {
               disabledBackgroundColor: Color(0xFF807A72),
               disabledForegroundColor: Colors.white,
               padding:
-                  const EdgeInsets.symmetric(vertical: 25, horizontal: 120),
+                  const EdgeInsets.symmetric(vertical: 20, horizontal: 120),
               elevation: 0,
             ),
             onPressed: pagesVisited == 4 ? () => startPrediction() : null,
