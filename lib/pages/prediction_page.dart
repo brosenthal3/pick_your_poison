@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pick_your_poison/providers/mushroom_features.dart';
 import 'package:pick_your_poison/widgets/dynamic_mushroom.dart';
 import '../widgets/widgets.dart';
-import 'dart:math';
 import 'package:provider/provider.dart';
 
 class PredictionPage extends StatefulWidget {

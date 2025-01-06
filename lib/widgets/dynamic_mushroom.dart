@@ -34,17 +34,6 @@ class _DynamicMushroomDesignState extends State<DynamicMushroomDesign> {
       "p": [160.0, 195.0, 90.0, 93.0],
     };
 
-    final Map stemRingPosition = {
-      // stem position, ring position, ring width
-      "s": [0, 165, 70],
-      "b": [0, 165, 70],
-      "c": [0, 165, 70],
-      "u": [0, 165, 70], 
-      "e": [0, 165, 70],
-      "z": [0, 165, 70],
-      "r": [0, 165, 70],
-    };
-
     final Map ringAttributes = {
       //- Ring: none (f), cobwebby (c), evenescent (e), flaring (r), grooved (g), large (l), pendant (p), sheathing (s), zone (z), scaly (y), moveable (m)
       // ring width based on ring types
