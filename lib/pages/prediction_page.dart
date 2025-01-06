@@ -22,7 +22,7 @@ class _PredictionPageState extends State<PredictionPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(
-              'DISCLAIMER',
+              'Disclaimer',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
               ),
@@ -31,7 +31,7 @@ class _PredictionPageState extends State<PredictionPage> {
               'This app is for educational and entertainment purposes only and should not be used for real-life mushroom identification or consumption decisions.',
               style: GoogleFonts.poppins(
                 color: const Color.fromARGB(255, 20, 20, 20),
-                fontSize: 17,
+                fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),
             ),
