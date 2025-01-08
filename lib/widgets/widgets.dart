@@ -238,7 +238,8 @@ class RealTimePrediction extends StatelessWidget {
         elevation: 0,
         mini: true,
         child: Text(
-          prediction[0],
+          // take prediction sign, show ? if error occurs
+          prediction[0].length < 2 ? prediction[0] : '?',
           style: TextStyle(
               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
         ),

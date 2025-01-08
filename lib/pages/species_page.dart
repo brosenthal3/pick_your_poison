@@ -225,7 +225,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                 ),
                                 Text(
                                   textAlign: TextAlign.right,
-                                  mushroomHabitat,
+                                    mushroomHabitat[0].toUpperCase() + mushroomHabitat.substring(1),
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
@@ -246,7 +246,7 @@ class _SpeciesPredictionPageState extends State<SpeciesPredictionPage> {
                                 ),
                                 Text(
                                   textAlign: TextAlign.right,
-                                  mushroomSeason,
+                                  mushroomSeason[0].toUpperCase() + mushroomSeason.substring(1),
                                   style: GoogleFonts.poppins(
                                     color:
                                         const Color.fromARGB(255, 20, 20, 20),
